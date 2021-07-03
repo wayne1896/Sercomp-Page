@@ -75,8 +75,9 @@ $db =  connect();
                  <div class="form-group">
 
                  <h1>Datos Básicos de la Orden</h1>
+                    
                  <div class="form-group">
-                                <a href="gps.php" >Cargar Ubicacion por GPS </a>
+                                <a href="#" data-toggle="modal" data-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
                         
                            </div>
                     <label for="inputName">Servicios:</label>
@@ -128,7 +129,10 @@ $db =  connect();
                                 <label for="inputName">Numero de Casa:</label>
                                 <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
                            </div>
-                      
+                        <div class="form-group">
+                        <input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />";
+                        <input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />";
+                           </div>
                     
                            <script>$(document).ready(function(){
     $('#ciudad').on('change', function(){
@@ -169,8 +173,7 @@ $db =  connect();
 
 <?php if($lat<>0){ ?>
   
-<input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />";
-<input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />";
+
 <?php } ?>
     <button type="button" class="btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
    <button type="submit" name="editar" class="btn-success"><span class="glyphicon glyphicon-check"></span> Aceptar</a>
@@ -190,6 +193,98 @@ $db =  connect();
 	<script src="../../src/plugins/jquery-steps/jquery.steps.js"></script>
 	<script src="../../vendors/scripts/steps-setting.js"></script>
 </body>
+<div class="bs-example">
+    <!-- Extra Large modal -->
+    
+
+    <div id="extraLargeModal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Geolocalizador</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                <title>Geolocalizador web</title>
+<link href="css/reset.css" rel="stylesheet" style="text/css" />
+<link href="css/main.css" rel="stylesheet" style="text/css" media="screen" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="errorjs" style="color:red;font-size:25px;margin-top:30px;"></div>
+		<h1>Geolocalizador </h1>
+		<h2>Haz click en el siguiente bot&oacute;n para localizarte</h2>
+		<button id="btn">¡Local&iacute;zame!</button>
+	</div>
+</body>
+<script type="text/javascript">
+	//funcion autoejecutable para obtener las coordenadas con HTML Geolocation API
+	(function(){
+		//capa para mostrar las coordenadas (definida tambien en el HTML)
+		var errorjs=document.getElementById('errorjs');
+		//verificamos si el navegador soporta Geolocation API de HTML5
+		if(navigator.geolocation){
+			//intentamos obtener las coordenadas del usuario
+			navigator.geolocation.getCurrentPosition(function(objPosicion){
+				//almacenamos en variables la longitud y latitud
+				var iLongitud=objPosicion.coords.longitude, iLatitud=objPosicion.coords.latitude;
+
+
+				//pasamos las variables por ajax
+				$("#btn").on( 'click', function () {
+				    $.ajax({
+				        type: 'post',
+				        url: 'localizado.php',
+				        data: 'long='+iLongitud+'&lat='+iLatitud,
+				        success: function( data ) {
+				            document.write( data );
+				        }
+				    });
+                    
+				    errorjs.innerHTML='<img src="load.gif" />';
+                    
+				});
+			}
+            
+            ,function(objError){
+				//manejamos los errores devueltos por Geolocation API
+				switch(objError.code){
+					//no se pudo obtener la informacion de la ubicacion
+					case objError.POSITION_UNAVAILABLE:
+						errorjs.innerHTML='La informaci&oacute;n de tu posici&oacute;n no es posible';
+					break;
+					//timeout al intentar obtener las coordenadas
+					case objError.TIMEOUT:
+						errorjs.innerHTML="Tiempo de espera agotado";
+					break;
+					//el usuario no desea mostrar la ubicacion
+					case objError.PERMISSION_DENIED:
+						errorjs.innerHTML='Necesitas permitir tu localizaci&oacute;n';
+					break;
+					//errores desconocidos
+					case objError.UNKNOWN_ERROR:
+						errorjs.innerHTML='Error desconocido';
+					break;
+				}
+			});
+		}else{
+			//el navegador del usuario no soporta el API de Geolocalizacion de HTML5
+			errorjs.innerHTML='Tu navegador no soporta la Geolocalizaci&oacute;n en HTML5';
+		}
+	})();
+</script>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
 <?php   
        
 		include('../ppie\ppiemenu.php');	
