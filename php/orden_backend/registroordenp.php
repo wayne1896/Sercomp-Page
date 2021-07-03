@@ -18,13 +18,13 @@
         $sector=$_POST['sector'];
         $calle=$_POST['calle']; 
         $numcasa=$_POST['numcasa'];
+		$lat=$_POST['lat'];
+		$long=$_POST['long'];
 		$fecha=date('y-m-d');
 		
 		$sql="
-		INSERT INTO `orden`( `descripcion_orden`, `servicio_orden`, `ciudad_orden`, `sector_orden`,
-		 `calle_orden`, `numcasa_orden`, `fecha_orden`, `estado_orden`,
-		  `nombre_orden`, `telefono_orden`, `id_cliente`, `id_empleado`,
-		   `id_servicio`) 
+		INSERT INTO `orden`( `descripcion_orden`, `servicio_orden`, `ciudad_orden`, `sector_orden`, `calle_orden`, `numcasa_orden`, 
+		`lat`, `lon`, `fecha_orden`, `estado_orden`, `nombre_orden`, `telefono_orden`, `id_cliente`, `id_empleado`, `id_servicio`) 
 		VALUES (
 	   '$detalle',
 	   '$servicios',
@@ -32,6 +32,8 @@
        '$sector',
        '$calle',
 	   '$numcasa',
+	   '$lat',
+	   '$long',
 	   '$fecha',
 	   'Sin Asignar',
        '$nombre',

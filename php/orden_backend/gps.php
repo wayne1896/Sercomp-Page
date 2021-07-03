@@ -1,92 +1,72 @@
-<html>
-	<head>
-		
-		
-		<!-- Carga API de google maps -->
-		<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
-		
-		<script type="text/javascript">
-			var x=document.getElementById("errores");
-			
-			navigator.geolocation.getCurrentPosition(mostrarPosicion,showError); //Obtiene la posición
-			
-			function mostrarPosicion(position)
-			{
-				lat=position.coords.latitude; //Obtener latitud
-				lon=position.coords.longitude; //Obtener longitud
-				latlon=new google.maps.LatLng(lat, lon); //Crear objeto que representa un punto geográfico
-				divmapa=document.getElementById('mapa');
-				divmapa.style.height='600px'; //Alto
-				divmapa.style.width='800px'; //Ancho
-				
-				<!-- Opciones para el mapa-->
-				var myOptions={
-					center:latlon,zoom:10, //Zoom
-					mapTypeId:google.maps.MapTypeId.ROADMAP, //Tipo de mapa
-					mapTypeControl:false, //Deshabilita el control de tipo de mapa
-					navigationControlOptions:{ style:google.maps.NavigationControlStyle.SMALL } //Aspecto pequeño
-				};
-				var map=new google.maps.Map(document.getElementById("mapa"),myOptions); //Funcion que crea un mapa en la div .
-				var marker=new google.maps.Marker({position:latlon,map:map,title:"Estás aquí!"}); //Constructor para crear marcador de la posición
-			}
-			
-			<!-- Funcion para mostrar errores  -->
-			function showError(error)
-			{
-				switch(error.code) 
-				{
-					case error.PERMISSION_DENIED:
-					x.innerHTML="Denegada la peticion de Geolocalización en el navegador."
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Geolocalizador web</title>
+<link href="css/reset.css" rel="stylesheet" style="text/css" />
+<link href="css/main.css" rel="stylesheet" style="text/css" media="screen" />
+<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="errorjs" style="color:red;font-size:25px;margin-top:30px;"></div>
+		<h1>Geolocalizador </h1>
+		<h2>Haz click en el siguiente bot&oacute;n para localizarte</h2>
+		<button id="btn">¡Local&iacute;zame!</button>
+	</div>
+</body>
+<script type="text/javascript">
+	//funcion autoejecutable para obtener las coordenadas con HTML Geolocation API
+	(function(){
+		//capa para mostrar las coordenadas (definida tambien en el HTML)
+		var errorjs=document.getElementById('errorjs');
+		//verificamos si el navegador soporta Geolocation API de HTML5
+		if(navigator.geolocation){
+			//intentamos obtener las coordenadas del usuario
+			navigator.geolocation.getCurrentPosition(function(objPosicion){
+				//almacenamos en variables la longitud y latitud
+				var iLongitud=objPosicion.coords.longitude, iLatitud=objPosicion.coords.latitude;
+
+
+				//pasamos las variables por ajax
+				$("#btn").on( 'click', function () {
+				    $.ajax({
+				        type: 'post',
+				        url: 'localizado.php',
+				        data: 'long='+iLongitud+'&lat='+iLatitud,
+				        success: function( data ) {
+				            document.write( data );
+				        }
+				    });
+				    errorjs.innerHTML='<img src="load.gif" />';
+				});
+
+
+			},function(objError){
+				//manejamos los errores devueltos por Geolocation API
+				switch(objError.code){
+					//no se pudo obtener la informacion de la ubicacion
+					case objError.POSITION_UNAVAILABLE:
+						errorjs.innerHTML='La informaci&oacute;n de tu posici&oacute;n no es posible';
 					break;
-					case error.POSITION_UNAVAILABLE:
-					x.innerHTML="La información de la localización no esta disponible."
+					//timeout al intentar obtener las coordenadas
+					case objError.TIMEOUT:
+						errorjs.innerHTML="Tiempo de espera agotado";
 					break;
-					case error.TIMEOUT:
-					x.innerHTML="El tiempo de petición ha expirado."
+					//el usuario no desea mostrar la ubicacion
+					case objError.PERMISSION_DENIED:
+						errorjs.innerHTML='Necesitas permitir tu localizaci&oacute;n';
 					break;
-					case error.UNKNOWN_ERROR:
-					x.innerHTML="Ha ocurrido un error desconocido."
+					//errores desconocidos
+					case objError.UNKNOWN_ERROR:
+						errorjs.innerHTML='Error desconocido';
 					break;
 				}
-			}
-		</script>
-	</head>
-	
-	<body>
-		
-		<!-- División o secciona para mostrar errores -->
-		<div id="errores"></div>
-		
-		<!-- División o secciona para mostrar mapa -->
-		<div id="mapa"></div>
-		<button onclick="javascript_to_php()">Confirmar ubicacion</button>
-		
-	</body>
-	<script type="text/javascript">
-function javascript_to_php() {
-   
-}
+			});
+		}else{
+			//el navegador del usuario no soporta el API de Geolocalizacion de HTML5
+			errorjs.innerHTML='Tu navegador no soporta la Geolocalizaci&oacute;n en HTML5';
+		}
+	})();
 </script>
-<script>
-$json = '[{
-    "lat": "lat",
-    "lon": "lon"
-    
-}]';
-
-$datas = json_decode($json, true); // transform json to php array
-
-$db = connect(); // you have to change this with your PDO connection
-
-$dataset = array("lat", "lon");
-foreach($datas as &$data){
-  foreach($dataset as $elem){
-     if(!isset($data[$elem]))
-        $data[$elem] = "";
-  }
-  $req = $db->prepare("INSERT INTO orden (lat, lon) VALUES (:lat, :lon)");
-  $req->execute($data);
-}
-</script>
- 
 </html>
