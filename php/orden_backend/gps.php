@@ -64,7 +64,28 @@
 	</body>
 	<script type="text/javascript">
 function javascript_to_php() {
-    window.location.href = window.location.href + "?lat=" + lat + "&lon=" + lon;
+   
+}
+</script>
+<script>
+$json = '[{
+    "lat": "lat",
+    "lon": "lon"
+    
+}]';
+
+$datas = json_decode($json, true); // transform json to php array
+
+$db = connect(); // you have to change this with your PDO connection
+
+$dataset = array("lat", "lon");
+foreach($datas as &$data){
+  foreach($dataset as $elem){
+     if(!isset($data[$elem]))
+        $data[$elem] = "";
+  }
+  $req = $db->prepare("INSERT INTO orden (lat, lon) VALUES (:lat, :lon)");
+  $req->execute($data);
 }
 </script>
  

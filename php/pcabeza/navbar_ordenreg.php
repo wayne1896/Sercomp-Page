@@ -7,15 +7,34 @@
 			
 					<div class="form-group mb-0">
 						<i class="dw dw-search2 search-icon"></i>
-						
-						<input type="text" name="busqueda" id="busqueda" class="form-control search-input" placeholder="Search Here">
+						<input type="text" id="buscar" class="form-control search-input" placeholder="Search Here">
 						
 					</div>
 
 			</div>
 		</div>
+		<div class="header-right">
+			<div class="dashboard-setting user-notification">
+				<div class="dropdown">
+					<a class="dropdown-toggle no-arrow" href="javascript:;" data-toggle="right-sidebar">
+						<i class="dw dw-settings2"></i>
+					</a>
+				</div>
+			</div>
+			<div class="header">
+		<div class="header-left">
+			<div class="menu-icon dw dw-menu"></div>
+			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+			<div class="header-search">
+			
+					<div class="form-group mb-0">
+						<i class="dw dw-search2 search-icon"></i>
+						<input type="text" name="busqueda" id="busqueda"  class="form-control search-input" placeholder="Search Here">
+						
+					</div>
 
-	
+			</div>
+		</div>
 		<div class="header-right">
 			<div class="dashboard-setting user-notification">
 				<div class="dropdown">
@@ -79,7 +98,7 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="vendors/images/photo1.png" alt="">
+							<img src="../../vendors/images/photo1.png" alt="">
 						</span>
 						<?php 
       
@@ -103,19 +122,61 @@
 			
   
      echo"<span class='user-name'>Usuario ".$fila[0]." ". $fila[1]." </span>";}} ?>
-					
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-						<a class="dropdown-item"  href="#" data-toggle="modal" data-target="#logoutModal"><i class="dw dw-logout"></i> Log Out</a>
-
+						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
 			</div>
 			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
+				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="../../vendors/images/github.svg" alt=""></a>
 			</div>
 		</div>
 	</div>
+	
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="vendors/images/photo1.jpg" alt="">
+						</span>
+						<?php 
+      
+      $id2=$_SESSION['User'];
+	  
+	 
+	  $mysqli = new mysqli("localhost", "root", "", "tesis");
+
+	  /* comprobar la conexión */
+	  if (mysqli_connect_errno()) {
+		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  exit();
+	  }
+	  
+	  $consulta = "SELECT nombre_empleado, apellido_empleado FROM empleado where correo_empleado='$id2'";
+	  
+	  if ($resultado = $mysqli->query($consulta)) {
+	  
+		  /* obtener el array de objetos */
+		  while ($fila = $resultado->fetch_row()) {
+			
+  
+     echo"<span class='user-name'>Usuario ".$fila[0]." ". $fila[1]." </span>";}} ?>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
+						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
+						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
+				</div>
+			</div>
+			<div class="github-link">
+				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="../../vendors/images/github.svg" alt=""></a>
+			</div>
+		</div>
+	</div>
+	

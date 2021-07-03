@@ -4,7 +4,6 @@
 
 <?php 
 
-session_start();
 
 
     $lat = $_POST["lat"];
@@ -26,8 +25,8 @@ $db =  connect();
 
 
 /////// CONEXIÓN A LA BASE DE DATOS /////////
-       include('../pcabeza\navbar_orden.php');	
-      include('../sidebar\sidebar.php');	
+       include('../pcabeza\navbar_ordenreg.php');	
+       include('../sidebar/sidebarreg.php');	
       include('../consultas/consultaorden.php');	
   ?>
 
