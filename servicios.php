@@ -3,12 +3,6 @@
 <head>
 
 	<?php 
-
-  session_start();
-
-
-
-
  		include('php/pcabeza\navbar_servicios.php');	
 		include('php/sidebar\sidebar.php');	
 		include('php/consultas/consultaservicios.php');	

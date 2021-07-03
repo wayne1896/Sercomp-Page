@@ -75,9 +75,9 @@
 
 	<div class="left-side-bar">
 		<div class="brand-logo">
-			<a href="index.html">
-				<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
-				<img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+			<a href="../../menu.php">
+				<img src="../../vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
+				<img src="../../vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
@@ -87,22 +87,22 @@
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
 					<li class="dropdown">
-						<a href="menu.php" class="dropdown-toggle">
+						<a href="../../menu.php" class="dropdown-toggle">
 							<span class="micon dw dw-house-1"></span><span>Inicio</span>
 						</a>
 					</li>
 					<li class="dropdown">
-						<a href="clientes.php" class="dropdown-toggle">
+						<a href="../../clientes.php" class="dropdown-toggle">
 							<span class="micon dw dw-edit2"></span><span class="mtext">Clientes</span>
 						</a>
 					</li>
 					<li class="dropdown">
-						<a href="empleado.php" class="dropdown-toggle">
+						<a href="../../empleado.php" class="dropdown-toggle">
 							<span class="micon dw dw-library"></span><span class="mtext">Empleados</span>
 						</a>
 					</li>
 					<li>
-						<a href="inventario.php" class="dropdown-toggle no-arrow">
+						<a href="../../inventario.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-calendar1"></span><span class="mtext">Inventario</span>
 						</a>
 					</li>
@@ -132,11 +132,11 @@
 							<span class="micon dw dw-paint-brush"></span><span class="mtext">Icons</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="font-awesome.html">FontAwesome Icons</a></li>
-							<li><a href="foundation.html">Foundation Icons</a></li>
-							<li><a href="ionicons.html">Ionicons Icons</a></li>
-							<li><a href="themify.html">Themify Icons</a></li>
-							<li><a href="custom-icon.html">Custom Icons</a></li>
+							<li><a href="../../font-awesome.html">FontAwesome Icons</a></li>
+							<li><a href="../../foundation.html">Foundation Icons</a></li>
+							<li><a href="../../ionicons.html">Ionicons Icons</a></li>
+							<li><a href="../../themify.html">Themify Icons</a></li>
+							<li><a href="../../custom-icon.html">Custom Icons</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -240,12 +240,7 @@
 							<li><a href="third-party-plugins.html">Third Party Plugins</a></li>
 						</ul>
 					</li>
-					<li>
-						<a href="https://dropways.github.io/deskapp-free-single-page-website-template/" target="_blank" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-paper-plane1"></span>
-							<span class="mtext">Landing Page <img src="vendors/images/coming-soon.png" alt="" width="25"></span>
-						</a>
-					</li>
+				
 				</ul>
 			</div>
 		</div>

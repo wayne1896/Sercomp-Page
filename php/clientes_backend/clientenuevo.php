@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <?php 
-  session_start();
+
     // Include the database config file 
     include_once '../../dbConfig.php'; 
      
     // Fetch all the country data 
     $query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC"; 
     $result1 = $db->query($query); 
-    include('../pcabeza\pcabezacliente.php');	
-	include('../sidebar\sidebar.php');	
+    include('../pcabeza\pcabezaclientereg.php');	
+	include('../sidebar/sidebarreg.php');	
 ?>
 
 <head>
@@ -180,12 +180,12 @@
 	</div>
 
 	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/jquery-steps/jquery.steps.js"></script>
-	<script src="vendors/scripts/steps-setting.js"></script>
+	<script src="../../vendors/scripts/core.js"></script>
+	<script src="../../vendors/scripts/script.min.js"></script>
+	<script src="../../vendors/scripts/process.js"></script>
+	<script src="../../vendors/scripts/layout-settings.js"></script>
+	<script src="../../src/plugins/jquery-steps/jquery.steps.js"></script>
+	<script src="../../vendors/scripts/steps-setting.js"></script>
 </body>
 <?php   
        

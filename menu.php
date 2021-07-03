@@ -3,7 +3,7 @@
 <head>
 
 	<?php 
-  session_start();
+ 
 
  		include('php/pcabeza\pcabezamenu.php');	
 		include('php/sidebar\sidebar.php');	

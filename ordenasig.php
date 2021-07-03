@@ -4,7 +4,7 @@
 
 	<?php 
 
-  session_start();
+  
   include_once 'dbConfig.php'; 
 
   // Fetch all the country data 

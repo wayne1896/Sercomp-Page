@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+
 
 
 
@@ -8,7 +8,7 @@ session_start();
        include('php/pcabeza\navbar_adm.php');	
       include('php/sidebar\sidebar.php');	
       include('php/consultas/consultacliente.php');	
-  ?><script src="chart\highcharts.js"></script>
+  ?>
   	<!-- Basic Page Info -->
 	<meta charset="utf-8">
 	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>

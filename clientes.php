@@ -4,7 +4,7 @@
 
 	<?php 
 
-  session_start();
+ 
 
 	
 
