@@ -209,6 +209,7 @@ $db =  connect();
 <link href="css/reset.css" rel="stylesheet" style="text/css" />
 <link href="css/main.css" rel="stylesheet" style="text/css" media="screen" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+
 </head>
 <body>
 	<div id="container">
@@ -219,6 +220,9 @@ $db =  connect();
 	</div>
 </body>
 <script type="text/javascript">
+
+ 
+      
 	//funcion autoejecutable para obtener las coordenadas con HTML Geolocation API
 	(function(){
 		//capa para mostrar las coordenadas (definida tambien en el HTML)
