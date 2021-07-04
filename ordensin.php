@@ -10,10 +10,19 @@
 
   include_once 'dbConfig.php'; 
 
-  // Fetch all the country data 
+  // ciudad
   $query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC"; 
-  $result = $db->query($query); 
+  $result3 = $db->query($query); 
+  // servicio
+  $query1 = "SELECT * FROM servicios ORDER BY nombre_servicio ASC"; 
+  $result2 = $db->query($query1); 
+  // empleado
+  $query3 = "SELECT * FROM empleado ORDER BY nombre_empleado ASC"; 
+  $result4 = $db->query($query3); 
 
+   // cliente
+   $query4 = "SELECT * FROM cliente ORDER BY nombre_cliente ASC"; 
+   $result5 = $db->query($query4); 
 
   include "Conexion.php";
   $db =  connect();
@@ -125,16 +134,18 @@
                                      <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
 									 <td scope='row'>".$row['estado_orden']."</td>
 					 				<td>
-									 <a href='#edit_".$row['id_cliente']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
-									 <a href='#edit_".$row['id_cliente']."'  data-toggle='modal' class='btn btn-secondary'>Asignar</a>
-										 
-									 <a href='#delete_".$row['id_cliente']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='#asig_".$row['id_orden']."'  data-toggle='modal' class='btn btn-secondary'>Asignar</a>
+									
+									 <a href='#delete_".$row['id_orden']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
-							 include('php/clientes_backend/Modals/ActualizarClienteModal.php');
+							 include('php\orden_backend\Modals\ActualizarOrdenModal.php');
+							  include('php\orden_backend\Modals\asignar_ordenModal.php');
+							 include('php\orden_backend\Modals\cambiar_estado_Orden.php');
+							
 		 				}
 			 			?> 
 	  </tbody>
@@ -166,4 +177,5 @@
         include('php\orden_backend\Modals\Modal_Orden.php');	
 		include('php/ppie\ppiemenu.php');	
 	?>
+	
 </html>

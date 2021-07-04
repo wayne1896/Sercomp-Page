@@ -2,64 +2,29 @@
 session_start();
 include_once('../dbconect.php');
 
-if(isset($_POST['agregar'])){
-	$database = new Connection();
-	$db = $database->open();
-	try{
-		
-			//hacer uso de una declaración preparada para prevenir la inyección de sql
-			$stmt = $db->prepare("INSERT INTO `cliente` ( `nombre_cliente`, `apellido_cliente`, `cedula_cliente`, `fechanacimiento_cliente`, 
-			`ciudad_cliente`, `sector_cliente`, `calle_cliente`, `numcasa_cliente`, `telefono_cliente`, `correo_cliente`, 
-			`clave_cliente`, `deuda_cliente`, `estado_cliente`) VALUES (:nombre, :apellido, :cedula, :fechanacimiento, :ciudad, :sector, :calle, :numcasa,
-			 :telefono, :correo, :clave, :deuda ,:estado)");
-			//instrucción if-else en la ejecución de nuestra declaración preparada
-			$_SESSION['message'] = ( $stmt->execute(array(':nombre' => $_POST['nombre'] , ':apellido' => $_POST['apellido'],
-			':cedula' => $_POST['cedula'] , ':fechanacimiento' => $_POST['fechanacimiento'] , ':ciudad' => $_POST['ciudad'] ,
-			':sector' => $_POST['sector'] ,  ':calle' => $_POST['calle'],':numcasa' => $_POST['numcasa'] , 
-			 ':telefono' => $_POST['telefono'], ':correo' => $_POST['correo'], ':clave' => $_POST['clave']
-			 , ':deuda' =>'0', ':estado' =>"Activo")) ) ?
-			  'Cliente guardado correctamente' : 'Algo salió mal. No se puede agregar miembro';	
-		
-		}
-		catch(PDOException $e){
-			$_SESSION['message'] ='Algo salió mal. No se puede agregar el Cliente';
-		}
-	
-		//cerrar la conexion
-		$database->close();
-	}
-	
-	else{
-		$_SESSION['message'] = 'Llene el formulario';
-	}
-	
-	header('location: ../../clientes.php');
-
-	
-
 
 	if(isset($_POST['editar'])){
 		$database = new Connection();
 		$db = $database->open();
 		try{
 			$id = $_GET['id'];
-			$nombre=$_POST['nombre'];
-			$apellido=$_POST['apellido'];
-			$cedula=$_POST['cedula'];
-			$fecha=$_POST['fechanacimiento'];
-			$ciudad=$_POST['ciudad'];
-			$sector=$_POST['sector'];
-			$calle=$_POST['calle']; 
-			$numcasa=$_POST['numcasa'];
-			$telefono=$_POST['telefono'];
-			$correo=$_POST['correo'];
-			$clave=$_POST['clave'];
+			$servicios=$_POST['servicio'];
+		$detalle=$_POST['descripcion'];
+        $nombre=$_POST['nombre'];
+		$telefono=$_POST['telefono'];
+		$ciudad=$_POST['ciudad'];
+        $sector=$_POST['sector'];
+        $calle=$_POST['calle']; 
+        $numcasa=$_POST['numcasa'];
+		$lat=$_POST['lat'];
+		$long=$_POST['long'];
+		$fecha=$_POST['fechaorden'];
 
-			$sql = "UPDATE cliente SET nombre_cliente = '$nombre', apellido_cliente = '$apellido', cedula_cliente = '$cedula',
-			 fechanacimiento_cliente = '$fecha', ciudad_cliente = '$ciudad', sector_cliente = '$sector', calle_cliente = '$calle', numcasa_cliente = '$numcasa'
-			 , telefono_cliente = '$telefono', correo_cliente = '$correo' WHERE id_cliente = '$id'";
+			$sql = "UPDATE orden SET descripcion_orden = '$detalle', servicio_orden = '$servicios', ciudad_orden = '$ciudad',
+			 sector_orden = '$sector', calle_orden = '$calle', numcasa_orden = '$numcasa', lat = '$lat', lon = '$long'
+			 , fecha_orden = '$fecha', nombre_orden = '$nombre', telefono_orden = '$servicios' , id_servicio = '$servicios'  WHERE id_orden = '$id'";
 			//if-else statement in executing our query
-			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Cliente actualizado correctamente' : 'No se puso actualizar Cliente';
+			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Orden actualizada correctamente' : 'No se puso actualizar Orden';
 
 		}
 		catch(PDOException $e){
@@ -73,7 +38,34 @@ if(isset($_POST['agregar'])){
 		$_SESSION['message'] = 'Complete el formulario de edición';
 	}
 
-	header('location: ../../clientes.php');
+	header('location: ../../Ordensin.php');
+
+
+	if(isset($_POST['asignar'])){
+		$database = new Connection();
+		$db = $database->open();
+		try{
+			$id = $_GET['id'];
+		$empleado=$_POST['empleado'];
+
+			$sql = "UPDATE orden SET id_empleado = '$empleado' , estado_orden = 'Asignada'  WHERE id_orden = '$id'";
+			//if-else statement in executing our query
+			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Orden Asignada' : 'No se puso actualizar Orden';
+
+		}
+		catch(PDOException $e){
+			$_SESSION['message'] = $e->getMessage();
+		}
+
+		//Cerrar la conexión
+		$database->close();
+	}
+	else{
+		$_SESSION['message'] = 'Complete el formulario de edición';
+	}
+
+	header('location: ../../Ordensin.php');
+
 
 		
 	?>

@@ -17,6 +17,9 @@ $query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC";
 $query1 = "SELECT * FROM servicios ORDER BY nombre_servicio ASC"; 
 $result1 = $db->query($query); 
 $result2 = $db->query($query1); 
+   // cliente
+   $query2 = "SELECT * FROM cliente ORDER BY nombre_cliente ASC"; 
+   $result3 = $db->query($query2); 
 include "../../Conexion.php";
 $db =  connect();
 
@@ -95,7 +98,16 @@ $db =  connect();
                     <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
                     <div class="form-group">
                         <label for="inputPassword">Nombre del Cliente:</label>
-                        <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre del Cliente"/>
+                        <select class="form-group" title="Nombre cliente" id="nombre" name="nombre">
+                                 <option value="">Seleccione el Cliente</option>
+                                 <?php 
+                    if($result3->num_rows > 0){ 
+                        while($row2 = $result3->fetch_assoc()){  
+                            echo '<option value="'.$row2['id_cliente'].'">'.$row2['nombre_cliente'].' '.$row2['apellido_cliente'].'</option>'; 
+                        } 
+                    }
+                    ?>
+                    </select>
                     </div>
                     <div class="form-group">
                         <label for="inputfistname">Teléfono:</label>
@@ -130,8 +142,8 @@ $db =  connect();
                                 <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
                            </div>
                         <div class="form-group">
-                        <input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />";
-                        <input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />";
+                        <input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
+                        <input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
                            </div>
                     
                            <script>$(document).ready(function(){
