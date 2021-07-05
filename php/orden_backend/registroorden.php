@@ -48,7 +48,7 @@ include_once('../dbconect.php');
 			$id = $_GET['id'];
 		$empleado=$_POST['empleado'];
 
-			$sql = "UPDATE orden SET id_empleado = '$empleado' , estado_orden = 'Asignada'  WHERE id_orden = '$id'";
+			$sql = "UPDATE orden SET id_empleado = '$empleado' , estado_orden = 'Asignada', proceso_orden = 'Sin empezar'  WHERE id_orden = '$id'";
 			//if-else statement in executing our query
 			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Orden Asignada' : 'No se puso actualizar Orden';
 

@@ -103,6 +103,7 @@
 							    <th scope="col">Telefono</th>
 							    <th scope="col">Nombre cliente</th>
 			 				    <th scope="col">Estado de la orden</th> 	
+								 <th scope="col">Proceso de la orden</th>
 								 <th scope="col">Asignada A</th> 			
 			 				<th></th>
 								</tr>
@@ -123,18 +124,20 @@
                                      <td scope='row'>".$row['telefono_cliente']."</td>
                                      <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
 									 <td scope='row'>".$row['estado_orden']."</td>
+									 <td scope='row'>".$row['proceso_orden']."</td>
 									 <td scope='row'>".$row['nombre_empleado']." ".$row['apellido_empleado']."</td>
 					 				<td>
-									 <a href='#edit_".$row['id_cliente']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
 										 
 										 
-									 <a href='#delete_".$row['id_cliente']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#delete_".$row['id_orden']."'  data-toggle='modal' class='btn btn-info' >Actualizar Proceso</a>
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
-							 include('php/clientes_backend/Modals/ActualizarClienteModal.php');
+							 include('php\orden_backend\Modals\ActualizarOrdenModal.php');
+							 include('php\orden_backend\Modals\asignar_ordenModal.php');
+							include('php\orden_backend\Modals\cambiar_estado_Orden.php');
 		 				}
 			 			?> 
 	  </tbody>
