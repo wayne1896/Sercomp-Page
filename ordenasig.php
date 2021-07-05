@@ -91,58 +91,12 @@
 		unset($_SESSION['message']);
 	}
 ?>
-					<div class="table-responsive">
-						<table class="table table-striped">
-							<thead>
-								<tr>   
-                                <th scope="col">ID</th>
-			 				    <th scope="col">Descripcion</th>
-							    <th scope="col">Servicio solicitado</th>
-			 				    <th scope="col">Direccion</th>
-                                <th scope="col">Fecha de Orden</th> 
-							    <th scope="col">Telefono</th>
-							    <th scope="col">Nombre cliente</th>
-			 				    <th scope="col">Estado de la orden</th> 	
-								 <th scope="col">Proceso de la orden</th>
-								 <th scope="col">Asignada A</th> 			
-			 				<th></th>
-								</tr>
-							</thead>
-							<tbody>
-	
-			
-                                    <?php
-			 			$query=lista_orden_asignada();
-		 				while ( $row= $query->fetch_assoc() ) {
-		 					echo" 
-								<tr>
-					 				<td scope='row'>".$row['id_orden']."</td>
-					 				<td scope='row'>".$row['descripcion_orden']."</td>
-					 				<td scope='row'>".$row['nombre_servicio']."</td>
-									 <td scope='row'>".$row['nombre_ciudad']." ".$row['nombre_sector']." ".$row['nombre_calle']." Casa No:".$row['numcasa_cliente']."</td>
-                                     <td scope='row'>".$row['fecha_orden']."</td>
-                                     <td scope='row'>".$row['telefono_cliente']."</td>
-                                     <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
-									 <td scope='row'>".$row['estado_orden']."</td>
-									 <td scope='row'>".$row['proceso_orden']."</td>
-									 <td scope='row'>".$row['nombre_empleado']." ".$row['apellido_empleado']."</td>
-					 				<td>
-									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
-										 
-										 
-									 <a href='#delete_".$row['id_orden']."'  data-toggle='modal' class='btn btn-info' >Actualizar Proceso</a>
-									 
-					 				</td>
-					 			</tr>
-		 					";
-							 include('php\orden_backend\Modals\ActualizarOrdenModal.php');
-							 include('php\orden_backend\Modals\asignar_ordenModal.php');
-							include('php\orden_backend\Modals\cambiar_estado_Orden.php');
-		 				}
-			 			?> 
-	  </tbody>
-	</table>
-</div>
+	<section id="tabla_resultado">
+		<!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
+		
+		</section
+
+		</div>
 							</code></pre>
 						</div>
 					</div>
@@ -151,7 +105,6 @@
 
 				</div>
 		</div>		</div>
-
 
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
@@ -170,3 +123,4 @@
 		include('php/ppie\ppiemenu.php');	
 	?>
 </html>
+<script src="buscadores\peticionorden.js"></script>

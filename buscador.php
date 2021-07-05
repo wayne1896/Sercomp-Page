@@ -3,7 +3,7 @@
 <head>
 
 	<?php 
-	 session_start();
+	
     // Include the database config file 
     include_once 'dbConfig.php'; 
      
@@ -121,5 +121,5 @@
 		include('php/ppie\ppiemenu.php');	
 	?>
 </html>
-<script src="buscadores\peticioninventario.js"></script>
+<script src="buscadores\peticionorden.js"></script>
 
