@@ -1,0 +1,23 @@
+footer{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    align-items: center;
+   
+  }
+
+  .bottom center{
+    padding: 10px;
+    font-size: 0.9375rem;
+    background: #808080;
+  }
+  .bottom center span{
+    color: #ffffff;
+  }
+  .bottom center a{
+    color: #8a18be;
+    text-decoration: none;
+  }
+  .bottom center a:hover{
+    text-decoration: underline;
+  }

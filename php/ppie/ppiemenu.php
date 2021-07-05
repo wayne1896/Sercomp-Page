@@ -1,4 +1,12 @@
 
-<div class="footer-wrap pd-20 mb-20 card-box">
+<footer>
+     
+      <div class="bottom">
+        <center>
+    
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
-			</div>
+			
+        </center>
+      </div>
+      
+    </footer>

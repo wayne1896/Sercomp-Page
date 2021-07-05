@@ -103,6 +103,8 @@
 		var sidebar_dark = jQuery('.sidebar-dark');
 		var sidebar_light = jQuery('.sidebar-light');
 
+		
+
 		sidebar_dark.click(function() {
 			'use strict';
 			jQuery(this).addClass('active');

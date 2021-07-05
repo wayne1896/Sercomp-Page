@@ -324,8 +324,13 @@ window.dataf= <?php echo $number_formated; ?>
      <div id ="mygraph"></div>
     </div>
 </div>
+</div></div>
 </div>
-
+</div>
+</div>
+</div>
+</div>
+</div>
 <script src="assets/js/highcharts.js"></script>
 <script src="assets/js/jquery-1.10.1.min.js"></script>
 	<!-- js -->
@@ -341,4 +346,8 @@ window.dataf= <?php echo $number_formated; ?>
 	<script src="vendors/scripts/dashboard.js"></script>
  
 </body>
+<?php   
+
+		include('php/ppie\ppiemenu.php');	
+	?>
 </html>
