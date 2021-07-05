@@ -7,7 +7,7 @@
 
  		include('php/pcabeza\pcabezamenu.php');	
 		include('php/sidebar\sidebar.php');	
-		include('adm.php');	
+	
 		include('php/ppie\ppiemenu.php');	
 	?>
 

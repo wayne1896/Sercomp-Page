@@ -1,12 +1,6 @@
 <?php 
-
-
-
-
-
-
-       include('php/pcabeza\navbar_adm.php');	
-      include('php/sidebar\sidebar.php');	
+       include('php\pcabeza\navbar_adm.php');	
+      include('php\SideBar\sidebar.php');	
       include('php/consultas/consultacliente.php');	
   ?>
   	<!-- Basic Page Info -->
@@ -334,7 +328,17 @@ window.dataf= <?php echo $number_formated; ?>
 
 <script src="assets/js/highcharts.js"></script>
 <script src="assets/js/jquery-1.10.1.min.js"></script>
-
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+	<script src="vendors/scripts/dashboard.js"></script>
  
 </body>
 </html>

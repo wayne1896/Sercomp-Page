@@ -85,7 +85,7 @@
 							
 						</div>
 						<div class="pull-right">
-                        <a href="php\orden_backend\ordennuevo.php" class="btn btn-primary" ><i class="fa fa-code"></i> Nuevo</a>
+                        <a href="php\orden_backend\ordennuevo.php" class="btn btn-primary" > Nuevo</a>
 						<a href="ordenasig.php" class="btn btn-secondary"><i class="fa fa-code"></i>Ver Orden asignadas</a>
 						</div>
 					</div>

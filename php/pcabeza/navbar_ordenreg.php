@@ -27,7 +27,7 @@
 			<script type="text/javascript">
       function myFunction() {
         $.ajax({
-          url: "php/notificaciones.php",
+          url: "../notificaciones.php",
           type: "POST",
           processData:false,
           success: function(data){
@@ -102,7 +102,7 @@
 		  while ($fila = $resultado->fetch_row()) {
 			
   
-     echo"<span class='user-name'>Usuario ".$fila[0]." ". $fila[1]." </span>";}} ?>
+     echo"<span class='user-name'>Usuario: ".$fila[0]." ". $fila[1]." </span>";}} ?>
 					
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
@@ -114,8 +114,6 @@
 					</div>
 				</div>
 			</div>
-			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="../../vendors/images/github.svg" alt=""></a>
-			</div>
+			
 		</div>
 	</div>

@@ -18,7 +18,7 @@ session_start();
        }
        else
        {
-            $query="select * from empleado where correo_empleado='".$_POST['usuario']."' and clave_empleado='".$_POST['clave']."'";
+            $query="select * from empleado where ocupacion_empleado='Oficina' and correo_empleado='".$_POST['usuario']."' and clave_empleado='".$_POST['clave']."'";
             $result=mysqli_query($con,$query);
 
             if(mysqli_fetch_assoc($result))
@@ -31,6 +31,30 @@ session_start();
                 header("location: ../index.php?Invalid= Por favor introduzca la clave o usuario correcto ");
             }
        }
+       
+    }
+    if($roles =='admin')
+        {
+       if(empty($_POST['usuario']) || empty($_POST['clave']))
+       {
+            header("location: ../index.php?Empty= Por favor no deje en blanco");
+       }
+       else
+       {
+            $query="select * from empleado where ocupacion_empleado='Tecnico' and correo_empleado='".$_POST['usuario']."' and clave_empleado='".$_POST['clave']."'";
+            $result=mysqli_query($con,$query);
+
+            if(mysqli_fetch_assoc($result))
+            {
+                $_SESSION['User']=$_POST['usuario'];
+                header("location: ../menutecnico.php");
+            }
+            else
+            {
+                header("location: ../index.php?Invalid= Por favor introduzca la clave o usuario correcto ");
+            }
+       }
+       
     }
     else
     {
