@@ -124,6 +124,12 @@
 							<span class="micon dw dw-analytics-21"></span><span class="mtext">Servicios</span>
 						</a>
 						
+					</li>		
+					<li class="dropdown">
+						<a href="facturacion.php" class="dropdown-toggle no-arrow">
+							<span class="micon dw dw-analytics-21"></span><span class="mtext">Facturacion</span>
+						</a>
+						
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
