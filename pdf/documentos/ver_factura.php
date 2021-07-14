@@ -1,17 +1,8 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
-	session_start();
-	if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
-        header("location: ../../login.php");
-		exit;
-    }
-	/* Connect To Database*/
-	include("../config/db.php");
-	include("../config/conexion.php");
+	
+
+
+
 	$id_factura= intval($_GET['id_factura']);
 	$sql_count=mysqli_query($con,"select * from factura where id_factura='".$id_factura."'");
 	$count=mysqli_num_rows($sql_count);
@@ -29,6 +20,7 @@
 	$fecha_factura=$rw_factura['fecha_factura'];
 	$condiciones=$rw_factura['tipodepago_factura'];
 	
+	
     // get the HTML
      ob_start();
      include 'res/ver_factura_html.php';
@@ -41,11 +33,16 @@
 			$dompdf = new Dompdf('P', 'LETTER', 'es', true, 'UTF-8', array(0, 0, 0, 0));
 			// display the full page
 			$dompdf->loadHtml(utf8_decode($content));
+
+
 			$dompdf->render();
 			header("Content-type: application/pdf");
 			header("Content-Disposition: inline; filename=documento.pdf");
-		  
-			// lanzamos a render
+		
+		
 		
 		
 			echo $dompdf->output();
+			
+			
+	?>
