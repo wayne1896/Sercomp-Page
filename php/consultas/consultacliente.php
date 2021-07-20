@@ -10,5 +10,13 @@
 		return $result=$mysqli->query($sql); 
 	}
 
+	function perfilcliente($id2){
+        include('..\conexion.php');	
+		$sql="SELECT * FROM  cliente c JOIN ciudad s ON (c.ciudad_cliente=s.id_ciudad) 
+        JOIN sector e ON (c.sector_cliente=e.id_sector) JOIN calle u ON (c.calle_cliente=u.id_calle) where c.correo_cliente='$id2'";
+		return $result=$mysqli->query($sql); 
+	}	
+
+
 
 ?>

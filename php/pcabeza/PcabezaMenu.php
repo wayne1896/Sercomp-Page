@@ -130,13 +130,36 @@
      echo"<span class='user-name'>Usuario: ".$fila[0]." ". $fila[1]." </span>";}} ?>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="php\empleados_backend\perfil.php?id2=<?php echo $id2; ?>"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item"  href="#" data-toggle="modal" data-target="#logoutModal"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
 				</div>
 			</div>
 			
 		</div>
+	</div>
+		<!--  modal logout -->
+		<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+	  <div class="modal-dialog ">
+		<div class="modal-content">
+		  <div class="modal-header">
+			<h1>Cerrar Sesion <i class="fa fa-lock"></i></h1>
+			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+		  </div>
+		  <div class="modal-body">
+			<p><i class="fa fa-question-circle"></i> Esta seguro de cerrar sesion? <br /></p>
+			<div class="actionsBtns">
+				<form action="/logout" method="post">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<a href="logout.php" type="button" class="btn btn-primary" ></span> Logout</a>
+					
+						<button class="btn btn-default" data-dismiss="modal">Cancel</button>
+						
+				</form>
+			</div>
+		  </div>
+		</div>
+	  </div>
 	</div>

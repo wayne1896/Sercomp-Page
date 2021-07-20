@@ -4,7 +4,7 @@
 <?php 
  
 
- 		include('php\pcabeza\navbar_tecnico.php');	
+ 		include('php\pcabeza\navbar_clientemenu.php');	
 		include('php/sidebar\sidebar.php');	
 	
 		
