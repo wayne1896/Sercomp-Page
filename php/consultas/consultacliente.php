@@ -17,6 +17,22 @@
 		return $result=$mysqli->query($sql); 
 	}	
 
+	function perfilfactura($id2){
+        include('..\conexion.php');	
+		$sql="SELECT * FROM  factura f JOIN cliente c ON (f.id_cliente=c.id_cliente) JOIN empleado e ON (f.id_empleado=e.id_empleado)
+         where c.correo_cliente='$id2' and f.estado_factura='Pagado'";
+		return $result=$mysqli->query($sql); 
+	}	
+
+	
+	function perfilfacturapendiente($id2){
+        include('..\conexion.php');	
+		$sql="SELECT * FROM  factura f JOIN cliente c ON (f.id_cliente=c.id_cliente) JOIN empleado e ON (f.id_empleado=e.id_empleado)
+         where c.correo_cliente='$id2' and f.estado_factura='Pendiente'";
+		return $result=$mysqli->query($sql); 
+	}	
+
+
 
 
 ?>
