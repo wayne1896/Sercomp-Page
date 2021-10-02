@@ -79,8 +79,8 @@
 								<tr>   
                                 <th scope="col">ID</th>
 			 				    <th scope="col">Nombre</th>
-							    <th scope="col">Descripcion</th>
-			 				    <th scope="col">Precio</th>
+					
+
                                 <th scope="col">Estado</th> 
 							 				
 			 				<th scope="col">Acciones </th>
@@ -96,19 +96,19 @@
 								<tr>
 					 				<td scope='row'>".$row['id_servicio']."</td>
 					 				<td scope='row'>".$row['nombre_servicio']."</td>
-					 				<td scope='row'>".$row['descripcion_servicio']."</td>
-                                     <td scope='row'>RD $".$row['precio_servicio']."</td>
+					 			
                                      <td scope='row'>".$row['estado_servicio']."</td>
 					 				<td>
 									 <a href='#edit_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
 										 
-										 
+									 <a href='sector.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
 									 <a href='#delete_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>
 		 					";
 							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
+							 
 							 include('php\servicios_backend\Modals\ActualizarServiciosModal.php');
 		 				}
 			 			?> 
