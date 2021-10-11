@@ -88,7 +88,7 @@
 				<ul id="accordion-menu">
 
 					<li >
-						<a href="menucliente.php" class="dropdown-toggle no-arrow">
+						<a href="../../menucliente.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house-1"></span><span>Inicio</span>
 						</a>
 					</li>
@@ -98,15 +98,15 @@
 						<span class="micon dw dw-apartment"></span><span class="mtext"> Facturas </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="php\cliente_use\facturaspendientes.php">Facturas pendientes</a></li>
-							<li><a href="php\cliente_use\facturaspagadas.php">Facturas pagadas</a></li>
+							<li><a href="../../php\cliente_use\facturaspendientes.php">Facturas pendientes</a></li>
+							<li><a href="../../php\cliente_use\facturaspagadas.php">Facturas pagadas</a></li>
 						
 						</ul>
 					</li>
 			
 					
 					<li class="dropdown">
-						<a href="catalogo.php" class="dropdown-toggle no-arrow">
+						<a href="../../catalogo.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-analytics-21"></span><span class="mtext">Catalogo</span>
 						</a>
 						

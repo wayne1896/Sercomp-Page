@@ -141,14 +141,14 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 <?php
 $nums=1;
 $sumador_total=0;
-$sql=mysqli_query($con, "select * from servicios s join detalle_factura d on (s.id_servicio=d.id_producto) join factura f on (d.numero_factura=f.numero_factura)
+$sql=mysqli_query($con, "select * from catservicios s join detalle_factura d on (s.id_catservicio=d.id_producto) join factura f on (d.numero_factura=f.numero_factura)
 where f.id_factura='".$id_factura."'");
 while ($row=mysqli_fetch_array($sql))
 {
 	$id_producto=$row["id_producto"];
 	
 	$cantidad=$row['cantidad'];
-	$nombre_producto=$row['nombre_servicio'];
+	$nombre_producto=$row['nombre_catservicio'];
 	
 	$precio_venta=$row['precio_venta'];
 	$precio_venta_f=number_format($precio_venta,2);//Formateo variables

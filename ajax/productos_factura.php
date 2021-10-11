@@ -11,7 +11,7 @@
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
 		 $aColumns = array('id_servicio', 'nombre_servicio');//Columnas de busqueda
-		 $sTable = "servicios";
+		 $sTable = "catservicios";
 		 $sWhere = "";
 		if ( $_GET['q'] != "" )
 		{
@@ -53,10 +53,10 @@
 				</tr>
 				<?php
 				while ($row=mysqli_fetch_array($query)){
-					$id_producto=$row['id_servicio'];
-					$codigo_producto=$row['id_servicio'];
-					$nombre_producto=$row['nombre_servicio'];
-					$precio_venta=$row["precio_servicio"];
+					$id_producto=$row['id_catservicio'];
+					$codigo_producto=$row['id_catservicio'];
+					$nombre_producto=$row['nombre_catservicio'];
+					$precio_venta=$row["precio_catservicio"];
 					$precio_venta=number_format($precio_venta,2,'.','');
 					?>
 					<tr>

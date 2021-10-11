@@ -11,7 +11,7 @@
 		$active_usuarios="";	
 
  		include('../pcabeza\pcabezafacturacion.php');	
-		include('../sidebar\sidebarcliente.php');	
+		include('../sidebar\sidebarclientereg.php');	
 		include('../consultas/consultacliente.php');	
     ?>
 

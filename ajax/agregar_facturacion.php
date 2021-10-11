@@ -38,13 +38,13 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 </tr>
 <?php
 	$sumador_total=0;
-	$sql=mysqli_query($con, "select * from servicios, tmp where servicios.id_servicio=tmp.id_producto and tmp.session_id='".$session_id."'");
+	$sql=mysqli_query($con, "select * from catservicios, tmp where catservicios.id_catservicio=tmp.id_producto and tmp.session_id='".$session_id."'");
 	while ($row=mysqli_fetch_array($sql))
 	{
 	$id_tmp=$row["id_tmp"];
-	$codigo_producto=$row['id_servicio'];
+	$codigo_producto=$row['id_catservicio'];
 	$cantidad=$row['cantidad_tmp'];
-	$nombre_producto=$row['nombre_servicio'];
+	$nombre_producto=$row['nombre_catservicio'];
 	
 	
 	$precio_venta=$row['precio_tmp'];

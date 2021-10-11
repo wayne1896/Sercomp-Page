@@ -22,6 +22,8 @@
                        <select class="form-group" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
                                     <option value="">Seleccione el Servicio</option>
                                     <?php 
+                                     $query1 = "SELECT * FROM servicios ORDER BY nombre_servicio ASC"; 
+                                     $result2 = $db->query($query1); 
                        if($result2->num_rows > 0){ 
                            while($row1 = $result2->fetch_assoc()){  
                                echo '<option value="'.$row1['id_servicio'].'">'.$row1['nombre_servicio'].'</option>'; 

@@ -142,13 +142,13 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 <?php
 $nums=1;
 $sumador_total=0;
-$sql=mysqli_query($con, "select * from servicios s join tmp t on (s.id_servicio=t.id_producto) where t.session_id='".$session_id."'");
+$sql=mysqli_query($con, "select * from catservicios s join tmp t on (s.id_catservicio=t.id_producto) where t.session_id='".$session_id."'");
 while ($row=mysqli_fetch_array($sql))
 	{
 	$id_tmp=$row["id_tmp"];
 	$id_producto=$row["id_producto"];
 	$cantidad=$row['cantidad_tmp'];
-	$nombre_producto=$row['nombre_servicio'];
+	$nombre_producto=$row['nombre_catservicio'];
 	
 	$precio_venta=$row['precio_tmp'];
 	$precio_venta_f=number_format($precio_venta,2);//Formateo variables

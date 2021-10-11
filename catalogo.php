@@ -3,27 +3,9 @@
 <head>
 
 	<?php 
-
-  
-  include_once 'dbConfig.php'; 
-
-  // Fetch all the country data 
-  $query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC"; 
-  $result = $db->query($query); 
-
- 
-
-  include "Conexion.php";
-  $db =  connect();
-  $query=$db->query("select * from ciudad");
-  $ciudad = array();
-  while($r=$query->fetch_object()){ $ciudad[]=$r; }
-/////// CONEXIÓN A LA BASE DE DATOS /////////
-
-
- 		include('php/pcabeza\navbar_orden.php');	
-		include('php/sidebar\sidebar.php');	
-		include('php/consultas/consultaorden.php');	
+ 		include('php/pcabeza\navbar_servicios.php');	
+		include('php/sidebar\sidebarcliente.php');	
+		include('php/consultas/consultaservicios.php');	
     ?>
 
 	<!-- Basic Page Info -->
@@ -72,12 +54,11 @@
 
 					<div class="clearfix mb-20">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Ordenes asignadas</h4>
+							<h4 class="text-blue h4">Servicios disponibles</h4>
 							
 						</div>
 						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary" data-toggle="modal"><i class="fa fa-code"></i> Nuevo</a>
-                        <a href="ordensin.php" class="btn btn-secondary"><i class="fa fa-code"></i>Ver Orden sin asignar</a>
+                       
 						</div>
 					</div>
 					<?php 
@@ -92,12 +73,46 @@
 		unset($_SESSION['message']);
 	}
 ?>
-	<section id="tabla_resultado">
-		<!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
-		
-		</section
+					<div class="table-responsive">
+						<table class="table table-striped">
+							<thead>
+								<tr>   
+                                <th scope="col">ID</th>
+			 				    <th scope="col">Nombre</th>
+					
 
-		</div>
+                                <th scope="col">Estado</th> 
+							 				
+			 				<th scope="col">Acciones </th>
+								</tr>
+							</thead>
+							<tbody>
+	
+			
+                                    <?php
+			 			$query=lista_servicios();
+		 				while ( $row= $query->fetch_assoc() ) {
+		 					echo" 
+								<tr>
+					 				<td scope='row'>".$row['id_servicio']."</td>
+					 				<td scope='row'>".$row['nombre_servicio']."</td>
+					 			
+                                     <td scope='row'>".$row['estado_servicio']."</td>
+					 				<td>
+									 
+										 
+									 <a href='categorias.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
+									
+									 
+					 				</td>
+					 			</tr>
+		 					";
+							
+		 				}
+			 			?> 
+	  </tbody>
+	</table>
+</div>
 							</code></pre>
 						</div>
 					</div>
@@ -106,6 +121,7 @@
 
 				</div>
 		</div>		</div>
+
 
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
@@ -120,8 +136,7 @@
 	<script src="vendors/scripts/dashboard.js"></script>
 </body>
 <?php   
-        include('php/clientes_backend/Modals/AgregarModal.php');	
+        include('php\servicios_backend\Modals\Modal_Servicios.php');	
 		include('php/ppie\ppiemenu.php');	
 	?>
 </html>
-<script src="buscadores\peticionorden.js"></script>

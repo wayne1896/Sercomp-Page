@@ -35,13 +35,13 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 </tr>
 <?php
 	$sumador_total=0;
-	$sql=mysqli_query($con, "select * from servicios s join detalle_factura d on (s.id_servicio=d.id_producto) join factura f on (d.numero_factura=f.numero_factura)
+	$sql=mysqli_query($con, "select * from catservicios s join detalle_factura d on (s.id_catservicio=d.id_producto) join factura f on (d.numero_factura=f.numero_factura)
 	where f.id_factura='$id_factura'");
 	while ($row=mysqli_fetch_array($sql))
 	{
 	$id_detalle=$row["id_detalle"];
 	$cantidad=$row['cantidad'];
-	$nombre_producto=$row['nombre_servicio'];
+	$nombre_producto=$row['nombre_catservicio'];
 	
 	
 	$precio_venta=$row['precio_venta'];
@@ -68,7 +68,7 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 	$total_iva=($subtotal * $impuesto )/100;
 	$total_iva=number_format($total_iva,2,'.','');
 	$total_factura=$subtotal+$total_iva;
-	$update=mysqli_query($con,"update facturas set total_venta='$total_factura' where id_factura='$id_factura'");
+	$update=mysqli_query($con,"update factura set totalpago='$total_factura' where id_factura='$id_factura'");
 ?>
 <tr>
 	<td class='text-right' colspan=4>SUBTOTAL <?php echo $simbolo_moneda;?></td>

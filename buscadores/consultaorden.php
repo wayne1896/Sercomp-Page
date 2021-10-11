@@ -64,7 +64,7 @@ if ($buscarOrden->num_rows > 0)
 		   <th scope="col">Fecha de Orden</th> 
 		   <th scope="col">Telefono</th>
 		   <th scope="col">Nombre cliente</th>
-			<th scope="col">Estado de la orden</th> 	
+			
 			<th scope="col">Proceso de la orden</th>
 			<th scope="col">Asignada A</th> 				
 		 <th></th>
@@ -83,7 +83,7 @@ if ($buscarOrden->num_rows > 0)
 		<td scope="row">'.$row['fecha_orden'].'</td>
 		<td scope="row">'.$row['telefono_cliente'].'</td>
 		<td scope="row">'.$row['nombre_cliente']." ".$row['apellido_cliente'].'</td>
-		<td scope="row">'.$row['estado_orden'].'</td>
+		
 		<td scope="row">'.$row['proceso_orden'].'</td>
 		<td scope="row">'.$row['nombre_empleado']." ".$row['apellido_empleado'].'</td>
 		<td>
