@@ -17,15 +17,6 @@
                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre del Artículo"/>
                     </div>
 
-                    <div class="form-group">
-                        <label for="inputfistname">Descipción:</label>
-                        <input type="Text" class="form-control" name="Descripcion" id="Descripcion" placeholder="Ingrese la Descripcion"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputfistname">Precio RD$:</label>
-                        <input type="number" class="form-control" name="costo" id="costo" placeholder="Ingrese el valor del Servicio"/>
-                    </div>
-                                
             
                              <div class="modal-footer">
                                     <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>

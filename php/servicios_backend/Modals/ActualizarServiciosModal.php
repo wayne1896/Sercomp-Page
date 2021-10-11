@@ -18,16 +18,7 @@
                         <label for="inputfistname"">Nombre Servicio</label>
                         <input type="text" class="form-control" name="nombre" id="nombre"  value="<?php echo $row['nombre_servicio']; ?>" required="required" placeholder="Ingrese Nombre de la Ciudad"/>
                     </div>
-                   
-                   <div class="form-group">
-                        <label for="inputfistname"">Descripcion</label>
-                        <input type="text" class="form-control" name="Descripcion" id="Descripcion"  value="<?php echo $row['descripcion_servicio']; ?>" required="required" placeholder="Ingrese Nombre de la Ciudad"/>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="inputfistname"">Precio Servicio</label>
-                        <input type="text" class="form-control" name="costo" id="costo"  value="<?php echo $row['precio_servicio']; ?>" required="required" placeholder="Ingrese Nombre de la Ciudad"/>
-                    </div>
+           
                    
                    
                  

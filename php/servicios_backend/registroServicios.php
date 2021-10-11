@@ -8,11 +8,10 @@ if(isset($_POST['agregar'])){
 	try{
 		
 			//hacer uso de una declaración preparada para prevenir la inyección de sql
-			$stmt = $db->prepare("INSERT INTO `servicios` ( `nombre_servicio`,`descripcion_servicio`, `precio_servicio`, 
-			 `estado_servicio`) VALUES (:nombre, :descripcion, :costo ,:estado)");
+			$stmt = $db->prepare("INSERT INTO `servicios` ( `nombre_servicio`, 
+			 `estado_servicio`) VALUES (:nombre, :estado)");
 			//instrucción if-else en la ejecución de nuestra declaración preparada
-			$_SESSION['message'] = ( $stmt->execute(array(':nombre' => $_POST['nombre'] , 'descripcion' => $_POST['Descripcion'],
-			':costo' => $_POST['costo'],  ':estado' =>"Activo")) ) ?
+			$_SESSION['message'] = ( $stmt->execute(array(':nombre' => $_POST['nombre'] , ':estado' =>"Activo")) ) ?
 			  'Cliente guardado correctamente' : 'Algo salió mal. No se puede agregar miembro';	
 		
 		}
@@ -39,10 +38,8 @@ if(isset($_POST['agregar'])){
 		try{
 			$id = $_GET['id'];
 			$nombre=$_POST['nombre'];
-			$descripcion=$_POST['Descripcion'];
-			$costo=$_POST['costo'];
 
-			$sql = "UPDATE servicios SET nombre_servicio = '$nombre', descripcion_servicio = '$descripcion', precio_servicio = '$costo' WHERE id_servicio = '$id'";
+			$sql = "UPDATE servicios SET nombre_servicio = '$nombre' WHERE id_servicio = '$id'";
 			//if-else statement in executing our query
 			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Servicio actualizado correctamente' : 'No se puso actualizar Servicio';
 

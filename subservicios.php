@@ -3,9 +3,21 @@
 <head>
 
 	<?php 
- 		include('php/pcabeza\navbar_servicios.php');	
-		include('php/sidebar\sidebar.php');	
-		include('php/consultas/consultaservicios.php');	
+
+ 
+
+
+
+
+include('php/pcabeza\navbar_servicios.php');	
+include('php/sidebar\sidebar.php');	
+include('php/consultas/consultaservicios.php');	
+        $id= $_GET['id'];
+			if(isset($_GET['id'])){
+				$query=cat_servicios($_GET['id']);
+			 $row=$query->fetch_assoc();
+			}$id;
+   
     ?>
 
 	<!-- Basic Page Info -->
@@ -54,11 +66,11 @@
 
 					<div class="clearfix mb-20">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Servicios</h4>
+							<h4 class="text-blue h4">Sub Servicios </h4>
 							
 						</div>
 						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary" data-toggle="modal"><i class="fa fa-code"></i> Nuevo</a>
+                        <a href="#addnew" class="btn btn-primary" data-toggle="modal"><i class=""></i> Nuevo</a>
 						</div>
 					</div>
 					<?php 
@@ -79,37 +91,36 @@
 								<tr>   
                                 <th scope="col">ID</th>
 			 				    <th scope="col">Nombre</th>
-					
-
-                                <th scope="col">Estado</th> 
-							 				
-			 				<th scope="col">Acciones </th>
+                                 <th scope="col">Descripcion</th> 
+			 				    <th scope="col">Precio</th> 				
+			 				<th></th>
 								</tr>
 							</thead>
 							<tbody>
 	
 			
                                     <?php
-			 			$query=lista_servicios();
+                                $c=1;
+			 			$query=cat_servicios($id);
 		 				while ( $row= $query->fetch_assoc() ) {
 		 					echo" 
 								<tr>
-					 				<td scope='row'>".$row['id_servicio']."</td>
-					 				<td scope='row'>".$row['nombre_servicio']."</td>
-					 			
-                                     <td scope='row'>".$row['estado_servicio']."</td>
+					 				<td scope='row'>".$c."</td>
+					 				<td scope='row'>".$row['nombre_catservicio']."</td>
+                                     <td scope='row'>".$row['descripcion_catservicio']."</td>
+                                     <td scope='row'>".$row['precio_catservicio']."</td>
+
 					 				<td>
-									 <a href='#edit_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
-										 
-									 <a href='subservicios.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
-									 <a href='#delete_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#edit_".$row['id_catservicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+
+									 <a href='#delete_".$row['id_catservicio']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
-							 
-							 include('php\servicios_backend\Modals\ActualizarServiciosModal.php');
+							 include('php\servicios_backend\Subservicio\Modals\cambiar_estado_Servicio.php');
+							 include('php\servicios_backend\Subservicio\Modals\ActualizarServicioModal.php');
+                             $c++;
 		 				}
 			 			?> 
 	  </tbody>
@@ -124,6 +135,61 @@
 				</div>
 		</div>		</div>
 
+<script>
+$( document ).ready(function() {
+  // Asociar un evento al botón que muestra la ventana modal
+  $('#addnew').click(function() {
+    $.ajax({
+        // la URL para la petición
+        url : 'php\direccion_backend\sector\Modals\Modal_Sector.php',
+ 
+        // la información a enviar
+        data : { 'id' : <?php echo $id; ?> },
+ 
+        // especifica si será una petición POST o GET
+        type : 'GET',
+ 
+        // el tipo de información que se espera de respuesta
+        dataType : 'html',
+ 
+        // código a ejecutar si la petición es satisfactoria;
+       
+ 
+        // código a ejecutar si la petición falla;
+        error : function(xhr, status) {
+            alert('Disculpe, existió un problema');
+        },
+    });
+  });
+});
+
+$( document ).ready(function() {
+  // Asociar un evento al botón que muestra la ventana modal
+  $('#edit_').click(function() {
+    $.ajax({
+        // la URL para la petición
+        url : 'php\direccion_backend\sector\Modals\ActualizarSectorsModal.php',
+ 
+        // la información a enviar
+        data : { 'id' : <?php echo $id; ?> },
+ 
+        // especifica si será una petición POST o GET
+        type : 'GET',
+ 
+        // el tipo de información que se espera de respuesta
+        dataType : 'html',
+ 
+        // código a ejecutar si la petición es satisfactoria;
+       
+ 
+        // código a ejecutar si la petición falla;
+        error : function(xhr, status) {
+            alert('Disculpe, existió un problema');
+        },
+    });
+  });
+});
+</script>
 
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
@@ -138,7 +204,7 @@
 	<script src="vendors/scripts/dashboard.js"></script>
 </body>
 <?php   
-        include('php\servicios_backend\Modals\Modal_Servicios.php');	
+        include('php\servicios_backend\Subservicio\Modals\Modal_Servicio.php');	
 		include('php/ppie\ppiemenu.php');	
 	?>
 </html>
