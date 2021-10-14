@@ -24,6 +24,8 @@ session_start();
             if(mysqli_fetch_assoc($result))
             {
                 $_SESSION['User']=$_POST['usuario'];
+                $_SESSION['user_login_status'] = 1;
+ 
                 header("location: ../menu.php");
             }
             else
@@ -34,6 +36,8 @@ session_start();
                  if(mysqli_fetch_assoc($result))
                  {
                      $_SESSION['User']=$_POST['usuario'];
+                     $_SESSION['user_login_status'] = 1;
+ 
                      header("location: ../menutecnico.php");
                  }
                  else

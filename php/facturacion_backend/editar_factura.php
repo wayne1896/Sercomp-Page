@@ -1,6 +1,9 @@
 <?php
-
-	
+session_start();
+if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
+	header("location: index.php");
+	exit;
+	}
 	$active_facturas="active";
 	$active_productos="";
 	$active_clientes="";

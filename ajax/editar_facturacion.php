@@ -1,6 +1,6 @@
 <?php
-session_start();
 
+include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
 $id_factura= $_SESSION['id_factura'];
 $numero_factura= $_SESSION['numero_factura'];
 if (isset($_POST['id'])){$id=intval($_POST['id']);}

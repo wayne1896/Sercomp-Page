@@ -3,8 +3,9 @@
 <head>
 
 	<?php 
-	
-		
+
+
+
 		$active_facturas="active";
 		$active_productos="";
 		$active_clientes="";
