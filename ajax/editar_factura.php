@@ -1,5 +1,5 @@
 <?php
-	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
+session_start();
 	$id_factura= $_SESSION['id_factura'];
 	/*Inicia validacion del lado del servidor*/
 	if (empty($_POST['id_cliente'])) {

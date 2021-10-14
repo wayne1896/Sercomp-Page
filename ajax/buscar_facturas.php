@@ -89,7 +89,7 @@
 						$nombre_vendedor=$row['nombre_empleado']." ".$row['apellido_empleado'];
 						$estado_factura=$row['estado_factura'];
 						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='label-success';}
-						else{$text_estado="Pendiente";$label_class='label-warning';}
+						else{$text_estado="Pendiente";$label_class='label-primary';}
 						if ($estado_factura=='Anulada'){$text_estado="Anulada";$label_class='label-danger';}
 						$pago_factura=$row['tipodepago_factura'];
 						$total_venta=$row['totalpago'];
