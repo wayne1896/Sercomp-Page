@@ -9,7 +9,7 @@
 		$active_usuarios="";	
 
  		include('../pcabeza\pcabezafacturacion.php');	
-		include('../sidebar\sidebarcliente.php');	
+		include('../sidebar\sidebarclientereg.php');	
 		include('../consultas/consultacliente.php');	
     ?>
 
@@ -111,7 +111,9 @@
 								</tr>
 							";
                             $preciofinal=$row['totalpago'] / $tasa;
-                         
+							
+						
+							
 					?>
 					<tr>
 						
@@ -135,6 +137,7 @@
 	<script src="../../src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="../../src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="../../vendors/scripts/dashboard.js"></script>
+
 <script>
 paypal.Button.render({
     env: 'sandbox', // change for production if app is live,
@@ -169,12 +172,23 @@ paypal.Button.render({
 
     onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
+		
     		//sweetalert for successful transaction
     		swal('Thank you!', 'Paypal purchase successful.', 'success');
+			
         });
+		
+		<?php	$sql1 = "UPDATE `factura` SET `estado_factura`='Pagado' WHERE id_factura='".$row['id_factura']."'" ;
+										  $query1 = $conn->query($sql1);
+										 
+									
+			?>
+			
     },
+	
 
 }, '#paypal-button');
+
 </script>
 </body>
 </html>

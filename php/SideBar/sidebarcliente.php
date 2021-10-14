@@ -117,8 +117,8 @@
 							<span class="micon dw dw-right-arrow1"></span><span class="mtext">Ordenes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="ordensin.php">Orden en proceso</a></li>
-							<li><a href="ordenasig.php">Orden finalizadas</a></li>
+							<li><a href="php\cliente_use\ordensin.php">Orden en proceso</a></li>
+							<li><a href="php\cliente_use\ordenasig.php">Orden finalizadas</a></li>
 						
 						</ul>
 					</li>

@@ -98,8 +98,8 @@
 						<span class="micon dw dw-apartment"></span><span class="mtext"> Facturas </span>
 						</a>
 						<ul class="submenu">
-							<li><a href="../../php\cliente_use\facturaspendientes.php">Facturas pendientes</a></li>
-							<li><a href="../../php\cliente_use\facturaspagadas.php">Facturas pagadas</a></li>
+							<li><a href="facturaspendientes.php">Facturas pendientes</a></li>
+							<li><a href="facturaspagadas.php">Facturas pagadas</a></li>
 						
 						</ul>
 					</li>
