@@ -5,7 +5,7 @@
  
 
  		include('php\pcabeza\navbar_tecnico.php');	
-		include('php/sidebar\sidebar.php');	
+		include('php/sidebar\sidebartecnico.php');	
 	
 		
 	?>

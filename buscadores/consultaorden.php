@@ -79,7 +79,7 @@ if ($buscarOrden->num_rows > 0)
 		<td scope="row">'.$row['id_orden'].'</td>
 		<td scope="row">'.$row['descripcion_orden'].'</td>
 		<td scope="row">'.$row['nombre_servicio'].'</td>
-		<td scope="row">'.$row['nombre_ciudad'].' '.$row['nombre_sector'].'Casa No: '.$row['numcasa_cliente'].'</td>
+		<td scope="row">'.$row['nombre_ciudad'].' '.$row['nombre_sector'].' Casa No: '.$row['numcasa_cliente'].'</td>
 		<td scope="row">'.$row['fecha_orden'].'</td>
 		<td scope="row">'.$row['telefono_cliente'].'</td>
 		<td scope="row">'.$row['nombre_cliente']." ".$row['apellido_cliente'].'</td>

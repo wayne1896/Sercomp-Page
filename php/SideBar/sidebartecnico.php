@@ -88,33 +88,8 @@
 				<ul id="accordion-menu">
 
 					<li >
-						<a href="menu.php" class="dropdown-toggle no-arrow">
+						<a href="menutecnico.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house-1"></span><span>Inicio</span>
-						</a>
-					</li>
-					<li>
-						<a href="javascript:;" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-apartment"></span><span class="mtext"> Dashboard </span>
-						</a>
-						<ul class="submenu">
-							<li><a href="adm.php">Dashboard Clientes</a></li>
-							<li><a href="Dash.php">Dashboard Servicios</a></li>
-						
-						</ul>
-					</li>
-					<li >
-						<a href="clientes.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-edit2"></span><span class="mtext">Clientes</span>
-						</a>
-					</li>
-					<li>
-						<a href="empleado.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-library"></span><span class="mtext">Empleados</span>
-						</a>
-					</li>
-					<li>
-						<a href="inventario.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-calendar1"></span><span class="mtext">Inventario</span>
 						</a>
 					</li>
 					
@@ -130,21 +105,12 @@
 						</a>
 						
 					</li>		
+					
 					<li class="dropdown">
-						<a href="facturacion.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-analytics-21"></span><span class="mtext">Facturacion</span>
-						</a>
-						
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
+						<a href="php\tecnico_use\ordenasig.php" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-right-arrow1"></span><span class="mtext">Ordenes</span>
 						</a>
-						<ul class="submenu">
-							<li><a href="ordensin.php">Orden sin Asignar</a></li>
-							<li><a href="ordenasig.php">Orden Asignada</a></li>
-						
-						</ul>
+					
 					</li>
 					
 					
