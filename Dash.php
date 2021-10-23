@@ -8,51 +8,41 @@
 	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
   
 	<link rel="stylesheet" href="assets/css/ilmudetil.css">
-	<script src="assets/js/highcharts.js"></script>
-	
-	<script src="assets/js/jquery-1.10.1.min.js"></script>
-  <script>
-        var chart; 
-        $(document).ready(function() {
-              chart = new Highcharts.Chart(
-              {
-                  
-                 chart: {
-                    renderTo: 'mygraph',
-                    plotBackgroundColor: null,
-                    plotBorderWidth: null,
-                    plotShadow: false
-                 },   
-                 title: {
-                    text: 'Servicios mas solicitados '
-                 },
-                 tooltip: {
-                    formatter: function() {
-                        return '<b>'+
-                        this.point.name +'</b>: '+ Highcharts.numberFormat(this.percentage, 2) +' % ';
-                    }
-                 },
-                 
-                
-                 plotOptions: {
-                    pie: {
-                        allowPointSelect: true,
-                        cursor: 'pointer',
-                        dataLabels: {
-                            enabled: true,
-                            color: '#000000',
-                            connectorColor: 'green',
-                            formatter: function() 
-                            {
-                                return '<b>' + this.point.name + '</b>: ' + Highcharts.numberFormat(this.percentage, 2) +' % ';
-                            }
-                        }
-                    }
-                 },
-       
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
+		<script type="text/javascript" src="https://code.highcharts.com/modules/export-data.js"></script>
+		<script type="text/javascript">
+			$(function () {
+				$('#mygraph').highcharts({
+					chart: {
+						plotBackgroundColor: null,
+						plotBorderWidth: null,
+						plotShadow: false,
+						type: 'pie'
+					},
+					title: {
+						text: 'Servicios mas solicitados'
+					},
+					tooltip: {
+						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+					},
+					plotOptions: {
+						pie: {
+							allowPointSelect: true,
+							cursor: 'pointer',
+							dataLabels: {
+								enabled: true,
+								format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+								style: {
+									color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+								}
+							}
+						}
+					},
                     series: [{
-                    type: 'pie',
-                    name: 'Browser share',
+                   
+                    name: 'Solicitado',
                     data: [
                     <?php
                         include "connection.php";
@@ -327,12 +317,10 @@ window.dataf= <?php echo $number_formated; ?>
 <div class="panel panel-primary">
    
      <div class="panel-body">
-     <div id ="mygraph"></div>
+     <div id ="mygraph" style="min-width: 310px; height: 400px; max-width: 600px; margin:0 auto"></div>
     </div>
 
-     <div class="panel-body">
-     <div id ="mygraph1"></div>
-    </div>
+   
 </div>
 </div></div>
 </div>
@@ -342,10 +330,9 @@ window.dataf= <?php echo $number_formated; ?>
 </div>
 </div>
 
-<script src="assets/js/highcharts.js"></script>
-<script src="assets/js/jquery-1.10.1.min.js"></script>
+
 	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
+
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
