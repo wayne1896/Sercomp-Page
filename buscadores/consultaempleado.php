@@ -91,10 +91,10 @@ if ($buscarEmpleados->num_rows > 0)
 		<td scope="row">'.$row['cargo'].'</td>
 		<td scope="row">'.$row['estado_empleado'].'</td>
 		<td>
-		 <a href="#edit_'.$row['id_empleado'].'"  data-toggle="modal" class="btn btn-primary">Editar</a>
+		 <a href="#edit_'.$row['id_empleado'].'"  data-toggle="modal" class="btn btn-primary-empleado">Editar</a>
 										 
 										 
-		<a href="#delete_'.$row['id_empleado'].'"  data-toggle="modal" class="btn btn-danger" >Cambiar Estado</a>
+		<a href="#delete_'.$row['id_empleado'].'"  data-toggle="modal" class="btn btn-danger-empleado" >Cambiar Estado</a>
 									 
 		</td> 
 		</tr>

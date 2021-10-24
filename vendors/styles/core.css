@@ -95,7 +95,11 @@ p {
     background-color: red;
     margin-left: 213px;
 }
-
+.fondo .png{
+  margin-top: 10px;
+  background-color: #004085;
+  margin-left: 10px;
+}
 
 .container2 .btn-success{
   margin-top: -34px;
@@ -209,7 +213,10 @@ figure {
 
 img {
   vertical-align: middle;
-  border-style: none; }
+  border-style: none; 
+  margin-left: 74px;
+}
+  
 
 svg {
   overflow: hidden;
@@ -2397,6 +2404,21 @@ a.btn.disabled, fieldset:disabled a.btn {
   background-color: #1b00ff;
   border-color: #1b00ff;
 }
+.btn-danger-ciudad{
+  color: #fff;
+  margin-top: 6px;
+  background-color: #dc3545;
+  border-color: #dc3545;
+  margin-bottom: -4px;
+  margin-right: -317
+px
+;
+}
+.btn-primary-ciudad{
+  color: #fff;
+  background-color: #1b00ff;
+  border-color: #1b00ff;
+}
 .btn-primary-empleado{
   color: #fff;
   background-color: #1b00ff;
@@ -2408,6 +2430,10 @@ a.btn.disabled, fieldset:disabled a.btn {
   border-color: #1b00ff;
 }
 .btn-primary-cliente, .btn-danger-cliente{
+  width: 156px;
+  border-radius: 9px;
+}
+.btn-primary-ciudad, .btn-danger-ciudad{
   width: 156px;
   border-radius: 9px;
 }

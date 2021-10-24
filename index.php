@@ -51,7 +51,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7">
-					<img src="vendors/images/login-page-img.png" alt="">
+					<img class="fondo" src="vendors/images/Sercomp.png" alt="">
 				</div>
 				<div class="col-md-6 col-lg-5">
 				<form action="php/validacion.php" method="post">
@@ -110,11 +110,11 @@
 								<div class="col-6">
 									<div class="custom-control custom-checkbox">
 										<input type="checkbox" class="custom-control-input" id="customCheck1">
-										<label class="custom-control-label" for="customCheck1">Remember</label>
+										<label class="custom-control-label" for="customCheck1">Recordar</label>
 									</div>
 								</div>
 								<div class="col-6">
-									<div class="forgot-password"><a href="#" data-toggle="modal" data-target="#Recuperacion">Forgot Password</a></div>
+									<div class="forgot-password"><a href="#" data-toggle="modal" data-target="#Recuperacion">Recuperar contraseña</a></div>
 								</div>
 								
 							</div>
@@ -125,13 +125,13 @@
 											use code for form submit
 											<input class="btn btn-primary btn-lg btn-block" type="submit" value="Sign In">
 										-->
-										<button class="btn btn-success btn-lg btn-block"  name="login">Sign In</a>
+										<button class="btn btn-success btn-lg btn-block"  name="login">Iniciar sesion</a>
 									</div>
 									</form>
-									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">OR</div>
+									<div class="font-16 weight-600 pt-10 pb-10 text-center" data-color="#707373">o</div>
 								 
 									<div class="input-group mb-0">
-										<a class="btn btn-outline-primary btn-lg btn-block" href="register.php">Register To Create Account</a>
+										<a class="btn btn-outline-primary btn-lg btn-block" href="register.php">Registrarte</a>
 									</div>
 								
 								</div>
@@ -153,7 +153,7 @@
 	   <a type="button" class="btn btn-secondary" href="EnviarPasswordCliente.php">Cliente</a>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
        
       </div>
     </div>
