@@ -276,16 +276,16 @@ echo "";
 }
 else
 {
-echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
+echo "Error: " . $sqlll . "<br>" . mysqli_error($conn);
 }
-$result = mysqli_query($conn, $sqll);
+$result = mysqli_query($conn, $sqlll);
 if (mysqli_num_rows($result) > 0)
 {
 // output data of each row
 while($row = mysqli_fetch_assoc($result))
 {
 ?>
-<div class="mr-5"><?php echo $row['Count(id_producto)'];?> Ordenes sin Asignar</div>
+<div class="mr-5"><?php echo $row['Count(id_orden)'];?> Ordenes sin Asignar</div>
 </div>
 <?php
 }
