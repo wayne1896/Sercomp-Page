@@ -62,7 +62,7 @@
 							
 						</div>
 						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary" data-toggle="modal"><i class=""></i> Nuevo</a>
+                        <a href="php\empleados_backend\empleadonuevo.php" class="btn btn-primary" ><i class=""></i> Nuevo</a>
 						</div>
 					</div>
 					<?php 

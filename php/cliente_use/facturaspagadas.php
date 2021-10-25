@@ -116,7 +116,7 @@
 					<td scope='row'>".$row['estado_factura']."</td>
                 	<td scope='row'>".$row['tipodepago_factura']."</td>
 					<td scope='row'>RD $".$row['totalpago']."</td>
-					<td scope='row'>	<button type='button' class='btn btn-default'  onclick='imprimir_factura1( echo $id_factura;)' >
+					<td scope='row'>	 <a href='../../pdf/index1.php?id_factura=".$row['id_factura']."' class='btn btn-default'   >
 					<span class='glyphicon glyphicon-print'></span> Imprimir
 				  </button></td>
 		

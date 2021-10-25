@@ -1,5 +1,9 @@
-<?php 	include('../../ajax/is_logged.php'); ?>
-<link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
+<?php  session_start();
+if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
+	header("location: index.php");
+	exit;
+	} ?>
+<link rel="stylesheet" type="text/css" href="vendors/styles/footer.css">
 <div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
@@ -28,7 +32,7 @@
 			<script type="text/javascript">
       function myFunction() {
         $.ajax({
-          url: "../notificaciones.php",
+          url: "php/notificaciones.php",
           type: "POST",
           processData:false,
           success: function(data){
@@ -68,7 +72,7 @@
 							<p>
 
 							</p><div align=center>
-								<a type="button"  href="../../ordensin.php" class="btn btn-outline-info">Ver ordenes</a>
+								<a type="button"  href="ordensin.php" class="btn btn-outline-info">Ver ordenes</a>
 							</div>
 							
 							</ul>
@@ -80,7 +84,7 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="../../vendors/images/photo1.png" alt="">
+							<img src="vendors/images/photo1.png" alt="">
 						</span>
 						<?php 
       
@@ -95,7 +99,7 @@
 		  exit();
 	  }
 	  
-	  $consulta = "SELECT nombre_empleado, apellido_empleado FROM empleado where correo_empleado='$id2'";
+	  $consulta = "SELECT nombre_cliente, apellido_cliente FROM cliente where correo_cliente='$id2'";
 	  
 	  if ($resultado = $mysqli->query($consulta)) {
 	  
@@ -107,7 +111,7 @@
 					
 					</a>
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="php\empleados_backend\perfil.php?id2=<?php echo $id2; ?>"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="php\clientes_backend\perfil.php?id2=<?php echo $id2; ?>"><i class="dw dw-user1"></i> Profile</a>
 						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
 						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
 						<a class="dropdown-item"  href="#" data-toggle="modal" data-target="#logoutModal"><i class="dw dw-logout"></i> Log Out</a>
@@ -118,8 +122,8 @@
 			
 		</div>
 	</div>
-	<!--  modal logout -->
-	<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+		<!--  modal logout -->
+		<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
 	  <div class="modal-dialog ">
 		<div class="modal-content">
 		  <div class="modal-header">

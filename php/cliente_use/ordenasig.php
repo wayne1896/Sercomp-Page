@@ -85,7 +85,7 @@
 							
 						</div>
 						<div class="pull-right">
-                        <a href="php\orden_backend\ordennuevo.php" class="btn btn-primary" > Nuevo</a>
+                        <a href="ordennuevo.php" class="btn btn-primary" > Nuevo</a>
 						
 						</div>
 					</div>
@@ -112,7 +112,8 @@
                                 <th scope="col">Fecha de Orden</th> 
 							    <th scope="col">Telefono</th>
 							    <th scope="col">Nombre cliente</th>
-			 				    <th scope="col">Estado de la orden</th> 	
+			 				    <th scope="col">Estado de la orden</th> 
+								 <th scope="col">Nombre del Tecnico</th>	
 								 		
 			 				<th></th>
 								</tr>
@@ -133,6 +134,7 @@
                                      <td scope='row'>".$row['telefono_cliente']."</td>
                                      <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
 									 <td scope='row'>".$row['estado_orden']."</td>
+									 <td scope='row'>".$row['nombre_empleado']." ".$row['apellido_empleado']."</td>
 					 				<td>
 									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
 								

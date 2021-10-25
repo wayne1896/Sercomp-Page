@@ -3,7 +3,9 @@
 
 
 <?php 
-
+       include('../pcabeza\navbar_ordenreg.php');	
+       include('../sidebar/sidebarclientereg.php');	
+      include('../consultas/consultaorden.php');
 if ( isset($_POST['lat']) ) {
     $lat = $_POST["lat"];
     $long = $_POST["long"];
@@ -13,12 +15,14 @@ if ( isset($_POST['lat']) ) {
 include_once '../../dbConfig.php'; 
 
 // Fetch all the country data 
-$query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC"; 
+
 $query1 = "SELECT * FROM servicios ORDER BY nombre_servicio ASC"; 
-$result1 = $db->query($query); 
+
 $result2 = $db->query($query1); 
    // cliente
-   $query2 = "SELECT * FROM cliente ORDER BY nombre_cliente ASC"; 
+   $query2 = "SELECT * FROM cliente c join ciudad e on (c.ciudad_cliente=e.id_ciudad)
+   join sector s on (c.sector_cliente=s.id_sector) join calle x on (c.calle_cliente=x.id_calle) 
+    where correo_cliente='$id2' "; 
    $result3 = $db->query($query2); 
 include "../../Conexion.php";
 $db =  connect();
@@ -26,9 +30,7 @@ $db =  connect();
 
 
 /////// CONEXIÓN A LA BASE DE DATOS /////////
-       include('../pcabeza\navbar_ordenreg.php');	
-       include('../sidebar/sidebarreg.php');	
-      include('../consultas/consultaorden.php');	
+	
   ?>
 
 <head>
@@ -104,84 +106,50 @@ $db =  connect();
                     if($result3->num_rows > 0){ 
                         while($row2 = $result3->fetch_assoc()){  
                             echo '<option value="'.$row2['id_cliente'].'">'.$row2['nombre_cliente'].' '.$row2['apellido_cliente'].'</option>'; 
-                        } 
-                    }
                     ?>
                     </select>
                     </div>
                     <div class="form-group">
                         <label for="inputfistname">Teléfono:</label>
-                        <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el Teléfono del Cliente"/>
+                        <input type="text" class="form-control" name="telefono" id="telefono" readonly placeholder="Ingrese el Teléfono del Cliente"/
+                        value="<?php echo $row2['telefono_cliente']?>">
                     </div>
                     <label for="inputName">Ciudad:</label>
-                        <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
-                            <option value="">Seleccione Su Ciudad</option>
-                                <?php 
-                                if($result1->num_rows > 0){ 
-                                    while($row = $result1->fetch_assoc()){  
-                                        echo '<option value="'.$row['id_ciudad'].'">'.$row['nombre_ciudad'].'</option>'; 
-                                    } 
-                                }else{ 
-                                    echo '<option value="">Ciudad no disponible</option>'; 
-                                } 
-                                ?>
-                        </select>
+                    <input type="text" class="form-control"  readonly  id="ciudad1" name="ciudad1"
+                    value="<?php echo $row2['nombre_ciudad']?>">
+                    <input type="text" class="form-control"  readonly hidden  id="ciudad" name="ciudad"
+                    value="<?php echo $row2['ciudad_cliente']?>">
+                            
 
                             <label for="inputName">Sector:</label>
-                            <select class="form-group" title="Seleccione Su Sector" id="sector" name="sector">
-                                  <option value="">Seleccione una ciudad primero</option>
-                           </select>
+                            <input type="text" class="form-control"  readonly  id="sector1" name="sector1"
+                            value="<?php echo $row2['nombre_sector']?>">
+                            <input type="text" class="form-control"  readonly hidden  id="sector" name="sector"
+                            value="<?php echo $row2['sector_cliente']?>">
+                                      
 
                             <label for="inputName">Calle:</label>
-                            <select class="controls" title="Seleccione Su Calle" id="calle" name="calle">
-                                <option value="">Seleccione un sector primero</option>
-                            </select>
+                            <input type="text" class="form-control"  readonly  id="calle1" name="calle1"
+                            value="<?php echo $row2['nombre_calle']?>">
+                            <input type="text" class="form-control" hidden readonly  id="calle" name="calle"
+                            value="<?php echo $row2['calle_cliente']?>">
+
 
                             <div class="form-group">
                                 <label for="inputName">Numero de Casa:</label>
-                                <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
+                                <input type="text" class="form-control" name="numcasa" id="numcasa"  readonly placeholder="Ingrese su Numero de Casa"/
+                                value="<?php echo $row2['numcasa_cliente']?>">
                            </div>
+                           <?php
+                        } 
+                    }
+                    ?>
                         <div class="form-group">
                         <input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
                         <input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
                            </div>
                     
-                           <script>$(document).ready(function(){
-    $('#ciudad').on('change', function(){
-        var ciudadID = $(this).val();
-        var ciudadNombre = $(this).val();
-        if(ciudadID){
-            $.ajax({
-                type:'POST',
-                url:'../../ajaxData.php',
-                data:'id_ciudad='+ciudadID,
-                success:function(html){
-                    $('#sector').html(html);
-                    $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
-                }
-            }); 
-        }else{
-            $('#sector').html('<option value="">Seleccione una ciudad primero</option>');
-            $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
-        }
-    });
-    
-    $('#sector').on('change', function(){
-        var sectorID = $(this).val();
-        if(sectorID){
-            $.ajax({
-                type:'POST',
-                url:'../../ajaxData.php',
-                data:'id_sector='+sectorID,
-                success:function(html){
-                    $('#calle').html(html);
-                }
-            }); 
-        }else{
-            $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
-        }
-    });
-});</script>
+                       
 
 <?php if($lat<>0){ ?>
   
