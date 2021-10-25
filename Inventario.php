@@ -60,7 +60,7 @@
 
 					<div class="clearfix mb-20">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Clientes</h4>
+							<h4 class="text-blue h4">Inventario</h4>
 					</div>
 
 						<div class="pull-right">

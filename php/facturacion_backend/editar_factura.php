@@ -1,12 +1,7 @@
 <?php
 
 
-	$active_facturas="active";
-	$active_productos="";
-	$active_clientes="";
-	$active_usuarios="";	
-	$title="Editar Factura | Simple Invoice";
-	
+
 	/* Connect To Database*/
 	require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("../../config/conexion.php");//Contiene funcion que conecta a la base de datos
@@ -163,9 +158,7 @@
 						<button type="submit" class="btn btn-default">
 						  <span class="glyphicon glyphicon-refresh"></span> Actualizar datos
 						</button>
-						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nuevoProducto">
-						 <span class="glyphicon glyphicon-plus"></span> Nuevo producto
-						</button>
+				
 						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nuevoCliente">
 						 <span class="glyphicon glyphicon-user"></span> Nuevo cliente
 						</button>

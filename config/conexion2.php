@@ -1,9 +1,5 @@
 <?php
-	/*-------------------------
-	Autor: Obed Alvarado
-	Web: obedalvarado.pw
-	Mail: info@obedalvarado.pw
-	---------------------------*/
+
 	# conectare la base de datos
     $con=@mysqli_connect("localhost", "root","", "tesis");
     if(!$con){

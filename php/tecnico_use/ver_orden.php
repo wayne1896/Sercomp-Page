@@ -136,7 +136,7 @@
 									 <td scope='row'>".$row['proceso_orden']."</td>
 									 
 					 				<td>
-									 <a href='../../pdf/index2.php?id_orden=".$row['id_orden']."'  class='btn btn-primary'>Ver Detalles</a>
+									 <a href='ver_orden.php?id=".$row['id_orden']."'  class='btn btn-primary'>Ver Detalles</a>
 									 <a href='#delete_".$row['id_orden']."'  data-toggle='modal' class='btn btn-info' >Actualizar Proceso</a>
 								
 									 

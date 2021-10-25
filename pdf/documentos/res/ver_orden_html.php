@@ -53,7 +53,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
         <tr>
 
             <td style="width: 25%; color: #444444;">
-                <img style="width: 100%;" src="../../img/logo.jpg" alt="Logo"><br>
+			<img src="http://localhost/tesis/logo.png" />
                 
             </td>
 			<td style="width: 50%; color: #34495e;font-size:12px;text-align:center">
@@ -64,7 +64,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
                 
             </td>
 			<td style="width: 25%;text-align:right">
-			FACTURA Nº <?php echo $numero_factura;?>
+			ORDEN Nº <?php echo $numero_factura;?>
 			</td>
 			
         </tr>
@@ -75,21 +75,25 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 	
     <table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td style="width:50%;" class='midnight-blue'>FACTURAR A</td>
+           <td style="width:50%;" class='midnight-blue'>Orden A</td>
         </tr>
 		<tr>
            <td style="width:50%;" >
 			<?php 
-				$sql_cliente=mysqli_query($con,"select * from cliente c JOIN ciudad s ON (c.ciudad_cliente=s.id_ciudad) 
-				JOIN sector e ON (c.sector_cliente=e.id_sector) JOIN calle u ON (c.calle_cliente=u.id_calle) where c.id_cliente='$id_cliente'");
+				$sql_cliente=mysqli_query($con,"SELECT * FROM orden o 
+				join cliente e on (o.id_cliente=e.id_cliente) join servicios g on (o.servicio_orden=g.id_servicio) 
+				join empleado f on (o.id_empleado=f.id_empleado) join ciudad c on (o.ciudad_orden=c.id_ciudad) 
+				
+						join sector s on (o.sector_orden=s.id_sector) JOIN calle b on (o.calle_orden=b.id_calle) where e.id_cliente='$id_cliente'");
 				$rw_cliente=mysqli_fetch_array($sql_cliente);
 				echo $rw_cliente['nombre_cliente'];
 				echo "<br>";
 				echo $rw_cliente['nombre_ciudad']." ".$rw_cliente['nombre_sector']." ".$rw_cliente['nombre_calle']." No Casa: ".$rw_cliente['numcasa_cliente'];
-				echo "<br> Teléfono: ";
+				echo "<br> Telefono: ";
 				echo $rw_cliente['telefono_cliente'];
 				echo "<br> Email: ";
 				echo $rw_cliente['correo_cliente'];
+				echo"<br> <a href='https://www.google.es/maps/place/".$rw_cliente['lat'].",".$rw_cliente['lon']."'>Ver Ubicacion GPS </a>";
 			?>
 			
 		   </td>
@@ -101,9 +105,9 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
        <br>
 		<table cellspacing="0" style="width: 100%; text-align: left; font-size: 11pt;">
         <tr>
-           <td style="width:35%;" class='midnight-blue'>VENDEDOR</td>
+           <td style="width:35%;" class='midnight-blue'>TECNICO</td>
 		  <td style="width:25%;" class='midnight-blue'>FECHA</td>
-		   <td style="width:40%;" class='midnight-blue'>FORMA DE PAGO</td>
+		 =
         </tr>
 		<tr>
            <td style="width:35%;">
@@ -114,14 +118,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 			?>
 		   </td>
 		  <td style="width:25%;"><?php echo date("d/m/Y", strtotime($fecha_factura));?></td>
-		   <td style="width:40%;" >
-				<?php 
-					if ($condiciones=='Efectivo'){echo "Efectivo";}
-					elseif ($condiciones=='Cheque'){echo "Cheque";}
-					elseif ($condiciones=='Transferencia'){echo "Transferencia bancaria";}
-					elseif ($condiciones=='Credito'){echo "Crédito";}
-				?>
-		   </td>
+		
         </tr>
 		
         
@@ -131,44 +128,38 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
   
     <table cellspacing="0" style="width: 100%; text-align: left; font-size: 10pt;">
         <tr>
-            <th style="width: 10%;text-align:center" class='midnight-blue'>CANT.</th>
+            <th style="width: 10%;text-align:center" class='midnight-blue'>ID.</th>
+			<th style="width: 20%;text-align:center" class='midnight-blue'>SERVICIO.</th>
             <th style="width: 60%" class='midnight-blue'>DESCRIPCION</th>
-            <th style="width: 15%;text-align: right" class='midnight-blue'>PRECIO UNIT.</th>
-            <th style="width: 15%;text-align: right" class='midnight-blue'>PRECIO TOTAL</th>
+          
             
         </tr>
 
 <?php
 $nums=1;
 $sumador_total=0;
-$sql=mysqli_query($con, "select * from catservicios s join detalle_factura d on (s.id_catservicio=d.id_producto) join factura f on (d.numero_factura=f.numero_factura)
-where f.id_factura='".$id_factura."'");
+$sql=mysqli_query($con, "select * from orden o 
+join cliente e on (o.id_cliente=e.id_cliente) join servicios g on (o.servicio_orden=g.id_servicio) 
+join empleado f on (o.id_empleado=f.id_empleado) join ciudad c on (o.ciudad_orden=c.id_ciudad) 
+
+		join sector s on (o.sector_orden=s.id_sector) JOIN calle b on (o.calle_orden=b.id_calle) where o.id_orden='".$id_factura."'");
 while ($row=mysqli_fetch_array($sql))
 {
-	$id_producto=$row["id_producto"];
+	$id_producto=$row["id_orden"];
 	
-	$cantidad=$row['cantidad'];
-	$nombre_producto=$row['nombre_catservicio'];
+	$cantidad=$row['id_servicio'];
+	$servicio=$row['nombre_servicio'];
+	$nombre_producto=$row['descripcion_orden'];
 	
-	$precio_venta=$row['precio_venta'];
-	$precio_venta_f=number_format($precio_venta,2);//Formateo variables
-	$precio_venta_r=str_replace(",","",$precio_venta_f);//Reemplazo las comas
-	$precio_total=$precio_venta_r*$cantidad;
-	$precio_total_f=number_format($precio_total,2);//Precio total formateado
-	$precio_total_r=str_replace(",","",$precio_total_f);//Reemplazo las comas
-	$sumador_total+=$precio_total_r;//Sumador
-	if ($nums%2==0){
-		$clase="clouds";
-	} else {
-		$clase="silver";
-	}
+	
+
 	?>
 
         <tr>
             <td class='<?php echo $clase;?>' style="width: 10%; text-align: center"><?php echo $cantidad; ?></td>
-            <td class='<?php echo $clase;?>' style="width: 60%; text-align: left"><?php echo $nombre_producto;?></td>
-            <td class='<?php echo $clase;?>' style="width: 15%; text-align: right"><?php echo $precio_venta_f;?></td>
-            <td class='<?php echo $clase;?>' style="width: 15%; text-align: right"><?php echo $precio_total_f;?></td>
+			<td class='<?php echo $clase;?>' style="width: 10%; text-align: center"><?php echo $servicio; ?></td>
+            <td class='<?php echo $clase;?>' style="width: 60%; text-align: center"><?php echo $nombre_producto;?></td>
+          
             
         </tr>
 
@@ -177,28 +168,14 @@ while ($row=mysqli_fetch_array($sql))
 	
 $nums++;
 }
-$subtotal=number_format($sumador_total,2,'.','');
-$total_iva=($subtotal * TAX )/100;
-$total_iva=number_format($total_iva,2,'.','');
-$total_factura=$subtotal+$total_iva;
+
 
 ?>
   
-	<tr>
-		<td colspan="3" style="widtd: 85%; text-align: right;">SUBTOTAL &#36; </td>
-		<td style="widtd: 15%; text-align: right;"> <?php echo number_format($subtotal,2);?></td>
-	</tr>
-	<tr>
-		<td colspan="3" style="widtd: 85%; text-align: right;">IVA (<?php echo TAX; ?>)% &#36; </td>
-		<td style="widtd: 15%; text-align: right;"> <?php echo number_format($total_iva,2);?></td>
-	</tr><tr>
-		<td colspan="3" style="widtd: 85%; text-align: right;">TOTAL &#36; </td>
-		<td style="widtd: 15%; text-align: right;"> <?php echo number_format($total_factura,2);?></td>
-	</tr>
+
 </table>
 
 
 
 <br>
-<div style="font-size:11pt;text-align:center;font-weight:bold">Gracias por su compra!</div>
 

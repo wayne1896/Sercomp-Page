@@ -10,7 +10,7 @@
 	if($action == 'ajax'){
 		// escaping, additionally removing everything that could be (html/javascript-) code
          $q = mysqli_real_escape_string($con,(strip_tags($_REQUEST['q'], ENT_QUOTES)));
-		 $aColumns = array('id_servicio', 'nombre_servicio');//Columnas de busqueda
+		 $aColumns = array('id_catservicio', 'nombre_catservicio');//Columnas de busqueda
 		 $sTable = "catservicios";
 		 $sWhere = "";
 		if ( $_GET['q'] != "" )
