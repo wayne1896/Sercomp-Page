@@ -52,13 +52,13 @@
 	<div class="login-header box-shadow">
 		<div class="container-fluid d-flex justify-content-between align-items-center">
 			<div class="brand-logo">
-				<a href="login.html">
-					<img src="vendors/images/deskapp-logo.svg" alt="">
+				<a href="index.php">
+					<img src="vendors\images\Sercomp-bar.svg" alt="">
 				</a>
 			</div>
 			<div class="login-menu">
 				<ul>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="index.php">Login</a></li>
 				</ul>
 			</div>
 		</div>
@@ -67,7 +67,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7">
-					<img src="vendors/images/register-page-img.png" alt="">
+					<img src="src\images\register-page-img.png" alt="">
 				</div>
 				<div class="col-md-6 col-lg-5">
 				<form id="regForm" action="php/clientes_backend/registroclientep.php?accion=INS" method="POST">
