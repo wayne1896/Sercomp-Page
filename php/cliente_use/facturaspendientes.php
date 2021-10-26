@@ -10,14 +10,14 @@
 		$active_clientes="";
 		$active_usuarios="";	
 
- 		include('../pcabeza\pcabezafacturacion.php');	
+ 		include('../pcabeza\pcabezafacturacioncliente.php');	
 		include('../sidebar\sidebarclientereg.php');	
 		include('../consultas/consultacliente.php');	
     ?>
 
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SERCOMP - Facturas pendientes</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="../../vendors/images/apple-touch-icon.png">

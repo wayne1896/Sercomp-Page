@@ -47,7 +47,7 @@
 <html>
  <!-- Basic Page Info -->
  <meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SERCOMP - Editar factura</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">

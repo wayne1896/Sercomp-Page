@@ -3,6 +3,8 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 	header("location: index.php");
 	exit;
 	} ?>
+	<link rel="icon" type="image/png" sizes="32x32" href="vendors\images\iconbar.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
 <link rel="stylesheet" type="text/css" href="vendors/styles/footer.css">
 <link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">

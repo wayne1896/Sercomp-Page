@@ -30,14 +30,14 @@
   $ciudad = array();
   while($r=$query->fetch_object()){ $ciudad[]=$r; }
 /////// CONEXIÓN A LA BASE DE DATOS /////////
- 		include('../pcabeza\navbar_orden.php');	
+ 		include('../pcabeza\navbar_ordenreg.php');	
 		include('../sidebar\sidebartecnicoreg.php');	
 		include('../consultas/consultaorden.php');	
     ?>
 
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SERCOMP - Ordenes asignadas</title>
 
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="../../vendors/images/apple-touch-icon.png">

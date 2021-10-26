@@ -1,25 +1,16 @@
-<?php  session_start(); 
+<?php  session_start();
 if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
 	header("location: index.php");
 	exit;
-	}?>
-	<link rel="icon" type="image/png" sizes="32x32" href="../../vendors\images\iconbar.png">
+	} ?>
+		<link rel="icon" type="image/png" sizes="32x32" href="../../vendors\images\iconbar.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="../../vendors\images\iconbar.png">
 <link rel="stylesheet" type="text/css" href="vendors/styles/footer.css">
 <div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
 			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
-			<div class="header-search">
 			
-					<div class="form-group mb-0">
-						<i class="dw dw-search2 search-icon"></i>
-						
-						<input type="text" name="busqueda" id="busqueda" class="form-control search-input" placeholder="Search Here">
-						
-					</div>
-
-			</div>
 		</div>
 
 	
@@ -34,7 +25,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 			<script type="text/javascript">
       function myFunction() {
         $.ajax({
-          url: "../notificaciones.php",
+          url: "php/notificaciones.php",
           type: "POST",
           processData:false,
           success: function(data){
@@ -74,7 +65,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 							<p>
 
 							</p><div align=center>
-								<a type="button"  href="../../ordensin.php" class="btn btn-outline-info">Ver ordenes</a>
+								<a type="button"  href="ordensin.php" class="btn btn-outline-info">Ver ordenes</a>
 							</div>
 							
 							</ul>
@@ -86,7 +77,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="../../vendors/images/photo1.png" alt="">
+							<img src="vendors/images/photo1.png" alt="">
 						</span>
 						<?php 
       
@@ -121,7 +112,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 					</div>
 				</div>
 			</div>
-		
+			
 		</div>
 	</div>
 	<!--  modal logout -->

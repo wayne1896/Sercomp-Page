@@ -3,6 +3,8 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 	header("location: index.php");
 	exit;
 	}?>
+		<link rel="icon" type="image/png" sizes="32x32" href="vendors\images\iconbar.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
 <link rel="stylesheet" type="text/css" href="vendors/styles/footer.css">
 <div class="header">
 		<div class="header-left">
@@ -136,9 +138,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 					</div>
 				</div>
 			</div>
-			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
-			</div>
+			
 		</div>
 	</div>
 	
@@ -179,9 +179,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 					</div>
 				</div>
 			</div>
-			<div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="vendors/images/github.svg" alt=""></a>
-			</div>
+			
 		</div>
 	</div>
 		<!--  modal logout -->

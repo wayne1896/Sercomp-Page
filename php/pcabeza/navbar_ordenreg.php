@@ -1,5 +1,7 @@
 <?php 	include('../../ajax/is_logged.php'); ?>
 <link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
+<link rel="icon" type="image/png" sizes="32x32" href="../../vendors\images\iconbar.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../vendors\images\iconbar.png">
 <div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>

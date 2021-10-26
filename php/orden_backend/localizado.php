@@ -22,7 +22,7 @@ include('../consultas/consultaorden.php');
 <link href="css/main.css" rel="stylesheet" style="text/css" media="screen" />
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SERCOMP - Orden nueva</title>
  
 	<!-- Site favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="../../vendors/images/apple-touch-icon.png">
