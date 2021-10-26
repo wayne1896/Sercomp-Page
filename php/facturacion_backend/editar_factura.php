@@ -1,5 +1,6 @@
 <?php
-
+	include('../pcabeza\navbar_ordenreg.php');	
+	include('../sidebar/sidebarreg.php');
 
 
 	/* Connect To Database*/
@@ -40,8 +41,7 @@
 		header("location: facturas.php");
 		exit;
 	}
-	include('../pcabeza\navbar_ordenreg.php');	
-	include('../sidebar/sidebarreg.php');
+
 ?>
 <!DOCTYPE html>
 <html>

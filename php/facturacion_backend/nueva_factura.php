@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 	<?php
-	
+	include('../pcabeza\pcabezafacturacion.php');	
+	include('../sidebar/sidebarreg.php');	
 	
 	$active_facturas="active";
 	$active_productos="";
@@ -13,8 +14,7 @@
 	require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
 	require_once ("../../config/conexion.php");//Contiene funcion que conecta a la base de datos
 
-	include('../pcabeza\navbar_ordenreg.php');	
-	include('../sidebar/sidebarreg.php');	
+	
     ?>
 
 	<!-- Basic Page Info -->
