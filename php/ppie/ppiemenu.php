@@ -1,8 +1,12 @@
 
 <footer>
+  
      
       <div class="bottom">
-        <center>
+      
+        
+        <center style="color:white;">
+        
     
 				Sercomp - Todos los derechos reservados 2021 
 			

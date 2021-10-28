@@ -5,10 +5,8 @@
 	<?php 
  
 
- 		include('php/pcabeza\pcabezamenu.php');	
-		include('php/sidebar\sidebar.php');	
-	
-		include('php/ppie\ppiemenu.php');	
+ include('php/sidebar2\sidebar.php');	
+		
 	?>
 
 	<!-- Basic Page Info -->
@@ -25,12 +23,16 @@
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="vendors/styles/styles.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+    <link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
+
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -42,9 +44,13 @@
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
+
 <body>
+	
 			
 	<!-- js -->
+	<script src="php\sidebar2\app.js"></script>
+	<script src="vendors/scripts/app.js"></script>
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
@@ -56,4 +62,9 @@
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="vendors/scripts/dashboard.js"></script>
 </body>
+<?php   
+ 
+		include('php/ppie\ppiemenu.php');	
+	?>
+	
 </html>

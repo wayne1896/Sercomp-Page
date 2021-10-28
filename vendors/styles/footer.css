@@ -9,7 +9,7 @@ footer{
   .bottom center{
     padding: 10px;
     font-size: 0.9375rem;
-    background: #808080;
+    background:  #3d5af1;
   }
   .bottom center span{
     color: #ffffff;
@@ -19,5 +19,21 @@ footer{
     text-decoration: none;
   }
   .bottom center a:hover{
+    text-decoration: underline;
+  }
+
+  .bottom :left{
+    padding: 10px;
+    font-size: 0.9375rem;
+    background:  #3d5af1;
+  }
+  .bottom :left span{
+    color: #ffffff;
+  }
+  .bottom :left a{
+    color: #8a18be;
+    text-decoration: none;
+  }
+  .bottom :left a:hover{
     text-decoration: underline;
   }

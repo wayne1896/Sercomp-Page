@@ -5,12 +5,7 @@
 	<?php 
 
 
-
-
-
-
- 		include('php/pcabeza\navbar_direccion.php');	
-		include('php/sidebar\sidebar.php');	
+		include('php/sidebar2\sidebar-direcciones.php');	
 		include('php/consultas/consultadireccion.php');	
     ?>
 
@@ -26,25 +21,29 @@
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-    <link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
+	
+		<!-- Google Font -->
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="vendors/styles/styles.css">
+<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
+<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
+<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+<link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
 
-		gtag('config', 'UA-119386393-1');
-	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'UA-119386393-1');
+</script>
 </head>
 <body>
 
@@ -128,6 +127,7 @@
 
 
 	<!-- js -->
+	<script src="vendors/scripts/app.js"></script>
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
