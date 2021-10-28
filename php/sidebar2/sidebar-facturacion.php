@@ -157,6 +157,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 			?>
         
         <li class="tooltip-element" data-tooltip="4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </ul>
         <div class="dropdown">
           <a  data-active="9" id="notification-icon" onclick="myFunction()" href="#" role="button" data-toggle="dropdown">
           <span id="notification-count" class="badge badge-pill badge-warning notification"><?php if($count>0) { echo $count; } ?></span> 
@@ -174,6 +175,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 					</a>
 					<div class="dropdown-menu dropdown-menu-right">
 						<div class="notification-list mx-h-350 customscroll">
+              
 							<ul>
 							<div id="notification-latest"></div>
 							<p>
@@ -183,6 +185,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 							</div>
 							
 							</ul>
+              <ul>
 						</div>
 					</div>
 				</div>
