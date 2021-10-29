@@ -253,18 +253,18 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
     
   </nav>
 =
-  <main >
+  <main>
   <ul class="nav nav-tabs justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" href="adm.php">Dashboard Clientes</a>
+    <a class="nav-link" href="adm.php">Dashboard Clientes</a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="dash.php">Dashboard Servicios</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="dashciudad.php">Dashboard ciudad especifica</a>
+    <a class="nav-link active" href="dashciudad.php">Dashboard ciudad especifica</a>
   </li>
-  
+
 </ul>
    
   </main>

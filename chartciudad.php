@@ -1,15 +1,15 @@
 <?php 
-      include('php/sidebar2\sidebar-dash2.php');	
+
+include('php/sidebar2\sidebar-dash3.php');	
       include('php/consultas/consultacliente.php');	
-  ?>
+?>
   	<!-- Basic Page Info -->
 	<meta charset="utf-8">
 	<title>SERCOMP - Dashboard</title>
 	<script src="vendors/scripts/core.js"></script>
-	
   
 	<link rel="stylesheet" href="assets/css/ilmudetil.css">
-	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 		<script type="text/javascript" src="https://code.highcharts.com/highcharts.js"></script>
 		<script type="text/javascript" src="https://code.highcharts.com/modules/exporting.js"></script>
 		<script type="text/javascript" src="https://code.highcharts.com/modules/export-data.js"></script>
@@ -23,7 +23,7 @@
 						type: 'pie'
 					},
 					title: {
-						text: 'Servicios mas solicitados'
+						text: 'Servicios mas solicitados '
 					},
 					tooltip: {
 						pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -41,11 +41,14 @@
 							}
 						}
 					},
+       
                     series: [{
-                   
-                    name: 'Solicitado',
+                    type: 'pie',
+                    name: 'Hay un',
                     data: [
                     <?php
+						  $id= $_GET['id'];
+					 
                         include "connection.php";
                         $query = mysqli_query($con,"SELECT * from `ciudad` c join cliente s on  (c.id_ciudad=s.ciudad_cliente) 
                         join orden o on (o.id_cliente=s.id_cliente) JOIN servicios e on (o.servicio_orden=e.id_servicio)
@@ -56,7 +59,8 @@
                             $browsername = $row['nombre_servicio'];
                          
                             $data = mysqli_fetch_array(mysqli_query($con,"SELECT count(nombre_ciudad) from ciudad s join cliente c on  (c.ciudad_cliente=s.id_ciudad)
-                            join orden o on (o.id_cliente=c.id_cliente) JOIN servicios e on (o.servicio_orden=e.id_servicio) where o.servicio_orden='$idx'"));
+                            join orden o on (o.id_cliente=c.id_cliente) JOIN servicios e on (o.servicio_orden=e.id_servicio) where o.servicio_orden='$idx'
+							and o.ciudad_orden='$id'"));
                             $jumlah = $data['count(nombre_ciudad)'];
                             ?>
                             [ 
@@ -73,10 +77,6 @@
     </script>
 
   
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -91,6 +91,7 @@
 	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
     <link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
+
 
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -314,16 +315,34 @@ window.dataf= <?php echo $number_formated; ?>
 <!-- Area Chart Example-->
 <div class="card mb-3">
 <div class="card-header">
-<i class="fa fa-area-chart"></i> Dashboard </div>
+ <?php	
+$id= $_GET['id'];
+	  $mysqli = new mysqli("localhost", "root", "", "tesis");
+
+	  /* comprobar la conexión */
+	  if (mysqli_connect_errno()) {
+		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  exit();
+	  }
+	  
+	  $consulta = "SELECT  nombre_ciudad FROM ciudad where id_ciudad='$id'";
+	  
+	  if ($resultado = $mysqli->query($consulta)) {
+	  
+		  /* obtener el array de objetos */
+		  while ($fila = $resultado->fetch_row()) {
+        echo'
+           
+<i class="fa fa-area-chart"></i> Dashboard de la ciudad  '.$fila[0] ;}}?></div>
 
 <div class="card-body">
 <div class="panel panel-primary">
    
-     <div class="panel-body">
+<div class="panel-body">
      <div id ="mygraph" style="min-width: 310px; height: 400px; max-width: 600px; margin:0 auto"></div>
     </div>
 
-   
+  
 </div>
 </div></div>
 </div>
@@ -332,6 +351,7 @@ window.dataf= <?php echo $number_formated; ?>
 </div>
 </div>
 </div>
+
 
 	<!-- js -->
 	<script src="vendors/scripts/app.js"></script>
@@ -344,6 +364,7 @@ window.dataf= <?php echo $number_formated; ?>
 	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
 	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
 	<script src="vendors/scripts/dashboard.js"></script>
+ 
 </body>
 <?php   
 
