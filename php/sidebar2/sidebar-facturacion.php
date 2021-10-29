@@ -256,7 +256,16 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 
 
   <main>
- 
+  <ul class="nav nav-tabs justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" href="facturacion.php">Filtrar por nombre</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="facturacionfecha.php">Filtrar por fecha</a>
+  </li>
+  
+</ul>
+   
    
   </main>
 

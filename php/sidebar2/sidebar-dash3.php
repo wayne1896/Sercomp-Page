@@ -252,7 +252,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
     </div>
     
   </nav>
-=
+
   <main>
   <ul class="nav nav-tabs justify-content-center">
   <li class="nav-item">

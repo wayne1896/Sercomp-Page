@@ -44,7 +44,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </a>
         </li>
         <li class="tooltip-element" data-tooltip="1">
-          <a href="adm.php" class="active" data-active="1">
+          <a href="adm.php"  data-active="1">
             <div class="icon">
               <i class='bx bx-pie-chart-alt-2'></i>
               <i class='bx bxs-pie-chart-alt-2' ></i>
@@ -70,7 +70,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
             <span class="link hide">Empleados</span>
           </a>
           <li class="tooltip-element" data-tooltip="4">
-          <a href="inventario.php" data-active="4">
+          <a href="inventario.php"  data-active="4">
             <div class="icon">
             <i class='bx bx-package' ></i>
               <i class='bx bxs-package' ></i>
@@ -99,7 +99,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </a>
         </li>
         <li class="tooltip-element" data-tooltip="1">
-          <a href="servicios.php" data-active="6">
+          <a href="servicios.php"data-active="6">
             <div class="icon">
               <i class='bx bx-category'></i>
               <i class='bx bxs-category' ></i>
@@ -108,7 +108,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </a>
         </li>
         <li class="tooltip-element" data-tooltip="2">
-          <a href="facturacion.php" data-active="7">
+          <a href="facturacion.php" class="active"  data-active="7">
             <div class="icon">
               <i class='bx bx-cart'></i>
               <i class='bx bxs-cart'></i>
@@ -190,6 +190,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 					</div>
 				</div>
 			</div>
+              
           </a>
           
           
@@ -253,19 +254,15 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
     
   </nav>
 
-  <main >
+
+  <main>
   <ul class="nav nav-tabs justify-content-center">
   <li class="nav-item">
-    <a class="nav-link active" href="adm.php">Dashboard Clientes</a>
+    <a class="nav-link " href="facturacion.php">Filtrar por nombre</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" href="dash.php">Dashboard Servicios</a>
+    <a class="nav-link active" href="facturacionfecha.php">Filtrar por fecha</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="dashciudad.php">Dashboard ciudad especifica</a>
-  </li>
-  
-</ul>
    
   </main>
 
