@@ -61,19 +61,22 @@
 			echo mysqli_error($con);
 			?>
 			<div class="table-responsive">
-			  <table class="table">
-				<tr  class="info">
-					<th>#</th>
+	<table class="table table-striped">
+	<thead>
+				<tr >
+					<th scope="col">#</th>
 					
-					<th>Fecha</th>
-					<th>Cliente</th>
-					<th>Vendedor</th>
-					<th>Estado</th>
-					<th>Metodo de Pago</th>
+					<th scope="col">Fecha</th>
+					<th scope="col">Cliente</th>
+					<th scope="col">Vendedor</th>
+					<th scope="col">Estado</th>
+					<th scope="col">Metodo de Pago</th>
 					<th class='text-right'>Total</th>
 					<th class='text-right'>Acciones</th>
 					
 				</tr>
+		</thead>
+		<tbody>
 				<?php
 				while ($row=mysqli_fetch_array($query)){
 						$id_factura=$row['id_factura'];
@@ -84,25 +87,25 @@
 						$email_cliente=$row['correo_cliente'];
 						$nombre_vendedor=$row['nombre_empleado']." ".$row['apellido_empleado'];
 						$estado_factura=$row['estado_factura'];
-						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='label-success';}
-						else{$text_estado="Pendiente";$label_class='label-primary';}
-						if ($estado_factura=='Anulada'){$text_estado="Anulada";$label_class='label-danger';}
+						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='badge badge-pill badge-success';}
+						else{$text_estado="Pendiente";$label_class='badge badge-pill badge-primary';}
+						if ($estado_factura=='Anulada'){$text_estado="Anulada";$label_class='badge badge-pill badge-danger';}
 						$pago_factura=$row['tipodepago_factura'];
 						$total_venta=$row['totalpago'];
 					?>
 					<tr>
 				
-						<td><?php echo $numero_factura; ?></td>
-						<td><?php echo $fecha; ?></td>
-						<td><a href="#" data-toggle="tooltip" data-placement="top" title="<i class='glyphicon glyphicon-phone'></i> <?php echo $telefono_cliente;?><br><i class='glyphicon glyphicon-envelope'></i>  <?php echo $email_cliente;?>" ><?php echo $nombre_cliente;?></a></td>
-						<td><?php echo $nombre_vendedor; ?></td>
-						<td><span class="label <?php echo $label_class;?>"><?php echo $text_estado; ?></span></td>
-						<td><?php echo $pago_factura; ?></td>
-						<td class='text-right'><?php echo number_format ($total_venta,2); ?></td>					
+						<td scope="row"><?php echo $numero_factura; ?></td>
+						<td scope="row"><?php echo $fecha; ?></td>
+						<td scope="row"><a href="#" data-toggle="tooltip" data-placement="top" title="<i class='glyphicon glyphicon-phone'></i> <?php echo $telefono_cliente;?><br><i class='glyphicon glyphicon-envelope'></i>  <?php echo $email_cliente;?>" ><?php echo $nombre_cliente;?></a></td>
+						<td scope="row"><?php echo $nombre_vendedor; ?></td>
+						<td scope="row"><span class="label <?php echo $label_class;?>"><?php echo $text_estado; ?></span></td>
+						<td scope="row"><?php echo $pago_factura; ?></td>
+						<td scope="row" class='text-right'><?php echo number_format ($total_venta,2); ?></td>					
 					<td class="text-right">
-						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class='btn btn-default' title='Editar factura' ><i class="glyphicon glyphicon-edit"></i></a> 
-						<a href="#" class='btn btn-default' title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class="glyphicon glyphicon-download"></i></a> 
-						<a href="#" class='btn btn-default' title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class="glyphicon glyphicon-trash"></i> </a>
+						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class='btn btn-default' title='Editar factura' ><i class='bx bxs-edit bx-sm'></i></a> 
+						<a href="#" class='btn btn-default' title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class='bx bxs-download bx-sm'></i></a> 
+						<a href="#" class='btn btn-default' title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class='bx bxs-trash bx-sm' ></i></a>
 					</td>
 						
 					</tr>
@@ -114,6 +117,7 @@
 					 echo paginate($reload, $page, $total_pages, $adjacents);
 					?></span></td>
 				</tr>
+				</tbody>
 			  </table>
 			</div>
 			<?php
