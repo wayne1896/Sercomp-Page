@@ -248,7 +248,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
               <i data-feather="settings" aria-hidden="true"></i>
               <span>Account settings</span>
             </a></li>
-          <li><a class="log-out" href="#"  data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <li><a class="log-out" href="#"  data-bs-toggle="modal" data-bs-target="#logoutModal">
               <i data-feather="log-out" aria-hidden="true" ></i>
               <span>Log out</span>
             </a></li>
