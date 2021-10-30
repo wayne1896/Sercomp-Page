@@ -53,10 +53,10 @@ $buscarOrden=$conexion->query($query);
 if ($buscarOrden->num_rows > 0)
 {
 	$tabla.= 
-	'<div class="table-responsive">
-	<table class="table table-striped">
-		<thead>
-			<tr>   
+	'<div class="users-table table-wrapper">
+	<table class="posts-table">
+	  <thead>
+		<tr class="users-table-info">
 			<th scope="col">ID</th>
 			<th scope="col">Descripcion</th>
 		   <th scope="col">Servicio solicitado</th>
@@ -87,10 +87,10 @@ if ($buscarOrden->num_rows > 0)
 		<td scope="row">'.$row['proceso_orden'].'</td>
 		<td scope="row">'.$row['nombre_empleado']." ".$row['apellido_empleado'].'</td>
 		<td>
-		 <a href="#edit_'.$row['id_orden'].'"  data-toggle="modal" class="btn btn-primary">Editar</a>
+		 <a href="#edit_'.$row['id_orden'].'"   data-bs-toggle="modal" class="btn btn-primary">Editar</a>
 										 
 										 
-		<a href="#delete_'.$row['id_orden'].'"  data-toggle="modal" class="btn btn-info" >Actualizar Proceso</a>
+		<a href="#delete_'.$row['id_orden'].'"  data-bs-toggle="modal" class="btn btn-info" >Actualizar Proceso</a>
 									 
 		</td> 
 		</tr>

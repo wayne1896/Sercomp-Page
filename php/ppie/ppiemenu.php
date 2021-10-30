@@ -1,16 +1,14 @@
-
-<footer>
-  
-     
-      <div class="bottom">
-      
-        
-        <center style="color:white;">
-        
+<!-- ! Footer -->
+<footer class="footer">
+  <div class="container footer--flex">
+    <div class="footer-start">
     
-				Sercomp - Todos los derechos reservados 2021 
+    <p>Sercomp - Todos los derechos reservados 2021  </p>
 			
-        </center>
-      </div>
-      
-    </footer>
+    </div>
+    <ul class="footer-end">
+      <li><a href="##">About</a></li>
+      <li><a href="##">Support</a></li>
+    </ul>
+  </div>
+</footer>

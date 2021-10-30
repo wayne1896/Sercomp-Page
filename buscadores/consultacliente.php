@@ -1,3 +1,4 @@
+
 <?php
   include_once '../dbConfig.php'; 
 
@@ -52,10 +53,10 @@ $buscarClientes=$conexion->query($query);
 if ($buscarClientes->num_rows > 0)
 {
 	$tabla.= 
-	'<div class="table-responsive">
-	<table class="table table-striped">
-		<thead>
-			<tr>   
+	'	<div class="users-table table-wrapper">
+	<table class="posts-table">
+	  <thead>
+		<tr class="users-table-info">
 			<th scope="col">ID</th>
 			 <th scope="col">Nombre</th>
 			<th scope="col">Apellido</th>
@@ -86,10 +87,10 @@ if ($buscarClientes->num_rows > 0)
 		<td scope="row">'.$row['deuda_cliente'].'</td>
 		<td scope="row">'.$row['estado_cliente'].'</td>
 		<td>
-		 <a href="#edit_'.$row['id_cliente'].'"  data-toggle="modal" class="btn btn-primary-cliente">Editar</a>
+		 <a href="#edit_'.$row['id_cliente'].'"   data-bs-toggle="modal"  class="btn btn-primary">Editar</a>
 										 
 										 
-		<a href="#delete_'.$row['id_cliente'].'"  data-toggle="modal" class="btn btn-danger-cliente" >Cambiar Estado</a>
+		<a href="#delete_'.$row['id_cliente'].'"   data-bs-toggle="modal"  class="btn btn-danger" >Cambiar Estado</a>
 									 
 		</td> 
 		</tr>

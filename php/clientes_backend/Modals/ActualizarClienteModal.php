@@ -1,10 +1,10 @@
 <!-- Ventana Editar Registros CRUD -->
 <div class="modal fade" id="edit_<?php echo $row['id_cliente']; ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
+<div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
                 <center><h4 class="modal-title" id="myModalLabel">Editar Cliente</h4></center>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 
             </div>
             <div class="modal-body">
@@ -14,6 +14,8 @@
                         <label for="inputEmail">E-Mail</label>
                         <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $row['correo_cliente']; ?>" required="required" placeholder="Ingrese su email"/>
                     </div>
+                    
+                    
 
                     <h1>Datos Personales</h1> 
                     <div class="form-group">
@@ -32,13 +34,14 @@
                         <label for="inputName">Cedula</label>
                         <input type="number" class="form-control" name="cedula" id="cedula"  value="<?php echo $row['cedula_cliente']; ?>" required="required" placeholder="Ingrese su Cedula"/>
                     </div>
+                 
                     <div class="form-group">
                         <label for="inputName">Fecha de nacimiento</label>
-                        <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento"  value="<?php echo $row['fechanacimiento_cliente']; ?>" required="required" placeholder="Fecha de Nacimiento"/>
+                        <input type='text' class='dateFilter' class="form-control" name="fechanacimiento" id="fechanacimiento"  value="<?php echo $row['fechanacimiento_cliente']; ?>" required="required" placeholder="Fecha de Nacimiento"/>
                     </div>
                        <h1>Dirección</h1>
 
-                                    <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
+                                    <select class="form-select"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
                         <option value="">Seleccione Su Ciudad</option>
                     <?php 
                     if($result->num_rows > 0){ 
@@ -51,11 +54,11 @@
                     ?>
                     </select>
 
-                        <select class="form-group" title="Seleccione Su Sector" id="sector" required="required" name="sector">
+                        <select class="form-select" title="Seleccione Su Sector" id="sector" required="required" name="sector">
                         <option value="">Seleccione una ciudad primero</option>
                         
                         </select>
-                        <select class="controls" title="Seleccione Su Calle" id="calle" required="required" name="calle">
+                        <select class="form-select"  title="Seleccione Su Calle" id="calle" required="required" name="calle">
                         <option value="">Seleccione un sector primero</option>
                         </select>
                         <div class="form-group">
@@ -63,6 +66,7 @@
                         <input type="number" class="form-control" name="numcasa" id="numcasa" value="<?php echo $row['numcasa_cliente']; ?>" required="required" placeholder="Ingrese su Numero de Casa"/>
                     </div>
                     </div>
+
                     
                     
             </div>
@@ -103,7 +107,7 @@
     });
 });</script>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="button" class="btn btn-default" data-bs-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                 <button type="submit" name="editar" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Actualizar Ahora</a>
 			</form>
             </div>

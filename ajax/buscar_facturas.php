@@ -60,10 +60,10 @@
 		if ($numrows>0){
 			echo mysqli_error($con);
 			?>
-			<div class="table-responsive">
-	<table class="table table-striped">
-	<thead>
-				<tr >
+			<div class="users-table table-wrapper">
+              <table class="posts-table">
+                <thead>
+                  <tr class="users-table-info">
 					<th scope="col">#</th>
 					
 					<th scope="col">Fecha</th>
@@ -87,9 +87,9 @@
 						$email_cliente=$row['correo_cliente'];
 						$nombre_vendedor=$row['nombre_empleado']." ".$row['apellido_empleado'];
 						$estado_factura=$row['estado_factura'];
-						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='badge badge-pill badge-success';}
-						else{$text_estado="Pendiente";$label_class='badge badge-pill badge-primary';}
-						if ($estado_factura=='Anulada'){$text_estado="Anulada";$label_class='badge badge-pill badge-danger';}
+						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='badge-active';}
+						else{$text_estado="Pendiente";$label_class='badge-pending';}
+						if ($estado_factura=='Anulada'){$text_estado="Anulada";$label_class='badge-trashed';}
 						$pago_factura=$row['tipodepago_factura'];
 						$total_venta=$row['totalpago'];
 					?>

@@ -1,3 +1,4 @@
+
 <?php
 $conn = new mysqli("localhost","root","","tesis");
 
@@ -13,9 +14,10 @@ while($row=mysqli_fetch_array($result)) {
 	$fechaOriginal = $row["fecha_orden"];
 	$fechaFormateada = date("d-m-Y", strtotime($fechaOriginal));
 
-	$response = $response . "<div class='notification-item'>" .
-	"<div class='notification-subject'>". $c . "- ". $row["nombre_cliente"] . " ". $row["apellido_cliente"] . "- <span>". $fechaFormateada . "</span> </div>" . 
-	"<div class='notification-comment'>" . $row["descripcion_orden"]  ."</div>" .
+	$response = $response . 
+	"<div class='notification-dropdown-text'>" .
+	"<span class='notification-dropdown__title'>". $c . "- ". $row["nombre_cliente"] . " ". $row["apellido_cliente"] . "- ". $fechaFormateada . " </span>" . 
+	"<span class='notification-dropdown__subtitle'>" . $row["descripcion_orden"]  ."</span>" .
 	"</div>";
 	$c++;
 }

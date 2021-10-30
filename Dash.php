@@ -73,24 +73,16 @@
     </script>
 
   
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
+	
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/styles.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-    <link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
+ 
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="./css/style.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -107,7 +99,7 @@
    
 <div class="mobile-menu-overlay"></div>
 
-<div class="main-container">
+<div class="container">
     <div class="pd-ltr-20">
         <div class="card-box pd-20 height-100-p mb-30">
             <div class="row align-items-center">
@@ -116,9 +108,9 @@
                              <!-- Breadcrumbs-->
 <ol class="breadcrumb">
 <li class="breadcrumb-item">
-<a href="#">Dashboard</a>
+<h4 class="main-title">Dashboard</h4>
 </li>
-<li class="breadcrumb-item active">My Dashboard</li>
+
 </ol>
 <!-- Icon Cards-->
 <?php
@@ -144,29 +136,30 @@ if (mysqli_num_rows($result) > 0)
 while($row = mysqli_fetch_assoc($result))
 {
 ?>
-<div class="row">
-<div class="col-xl-3 col-sm-6 mb-3">
-<div class="card text-white bg-primary o-hidden h-100">
-<div class="card-body">
-<div class="card-body-icon">
-<i class="fa fa-fw fa-comments"></i>
-</div>
-<div class="mr-5"><?php echo $row['Count(id_cliente)']; ?> Registrados</div>
-</div>
-<a class="card-footer text-white clearfix small z-1" href="clientes.php">
-<span class="float-left">View Details</span>
-<span class="float-right">
-<i class="fa fa-angle-right"></i>
-</span>
-</a>
-</div>
-</div>
-<div class="col-xl-3 col-sm-6 mb-3">
-<div class="card text-white bg-warning o-hidden h-100">
-<div class="card-body">
-<div class="card-body-icon">
-<i class="fa fa-fw fa-list"></i>
-</div>
+<div class="row stat-cards">
+          <div class="col-md-6 col-xl-3">
+        <a href="clientes.php">
+		<article class="stat-cards-item">
+              <div class="stat-cards-icon primary">
+                <i class='bx bxs-group bx-md' aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
+                
+						  <p class="stat-cards-info__title">Clientes</p>
+						  <p class="stat-cards-info__num"><?php echo $row['Count(id_cliente)']; ?></p>
+						  </div>
+            </article>
+		</a>
+          </div>
+			
+		  <div class="col-md-6 col-xl-3">
+		  <a href="empleado.php">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon warning">
+                <i class='bx bxs-id-card bx-md' aria-hidden="true"></i>
+              </div>
+			  <div class="stat-cards-info">
+
 <?php
 }
 }
@@ -192,8 +185,10 @@ if (mysqli_num_rows($result) > 0)
 while($row = mysqli_fetch_assoc($result))
 {
 ?>
-<div class="mr-5"><?php echo $row['Count(id_empleado)'];?>  Empleados</div>
-</div>
+ <p class="stat-cards-info__title">Empleados</p>
+ <p class="stat-cards-info__num"><?php echo $row['Count(id_empleado)'];?> </p>
+
+
 <?php
 }
 }
@@ -202,20 +197,18 @@ else
 echo '0 results';
 }
 ?>
-<a class="card-footer text-white clearfix small z-1" href="empleado.php">
-<span class="float-left">View Details</span>
-<span class="float-right">
-<i class="fa fa-angle-right"></i>
-</span>
-</a>
+
 </div>
-</div>
-<div class="col-xl-3 col-sm-6 mb-3">
-<div class="card text-white bg-success o-hidden h-100">
-<div class="card-body">
-<div class="card-body-icon">
-<i class="fa fa-fw fa-shopping-cart"></i>
-</div>
+            </article>
+			</a>
+          </div>
+		  <div class="col-md-6 col-xl-3">
+		  <a  href="inventario.php">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon purple">
+                <i  class='bx bxs-package bx-md' aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
 <?php
 
 $servername = "localhost";
@@ -240,8 +233,9 @@ if (mysqli_num_rows($result) > 0)
 while($row = mysqli_fetch_assoc($result))
 {
 ?>
-<div class="mr-5"><?php echo $row['Count(id_producto)'];?> Inventario</div>
-</div>
+ <p class="stat-cards-info__title">Inventario</p>
+<p class="stat-cards-info__num"><?php echo $row['Count(id_producto)'];?></p>
+
 <?php
 }
 }
@@ -250,21 +244,19 @@ else
 echo '0 results';
 }
 ?>
-<a class="card-footer text-white clearfix small z-1" href="inventario.php">
-<span class="float-left">View Details</span>
-<span class="float-right">
-<i class="fa fa-angle-right"></i>
-</span>
-</a>
 </div>
-</div>
-<div class="col-xl-3 col-sm-6 mb-3">
-<div class="card text-white bg-danger o-hidden h-100">
-<div class="card-body">
-<div class="card-body-icon">
-<i class="fa fa-fw fa-support"></i>
-</div>
+</article>
+			</a>
+          </div>
+		  <div class="col-md-6 col-xl-3">
+		  <a href="ordensin.php">
+            <article class="stat-cards-item">
+              <div class="stat-cards-icon success">
+                <i class='bx bxs-receipt bx-md' aria-hidden="true"></i>
+              </div>
+              <div class="stat-cards-info">
 <?php
+
 
 $servername = "localhost";
 $username = "root";
@@ -288,7 +280,9 @@ if (mysqli_num_rows($result) > 0)
 while($row = mysqli_fetch_assoc($result))
 {
 ?>
-<div class="mr-5"><?php echo $row['Count(id_orden)'];?> Ordenes sin Asignar</div>
+ <p class="stat-cards-info__title"> Ordenes </p>
+ <p class="stat-cards-info__title"> sin Asignar</p>
+<p class="stat-cards-info__num"><?php echo $row['Count(id_orden)'];?></p>
 </div>
 <?php
 }
@@ -298,21 +292,14 @@ else
 echo '0 results';
 }
 ?>
-<a class="card-footer text-white clearfix small z-1" href="ordensin.php">
-<span class="float-left">View Details</span>
-<span class="float-right">
-<i class="fa fa-angle-right"></i>
-</span>
-</a>
 </div>
-</div>
-</div>
+</article>
+			</a>
+          </div>
 
-<script type="text/javascript">
-window.dataf= <?php echo $number_formated; ?>
-</script>
+
 <!-- Area Chart Example-->
-<div class="card mb-3">
+<div class="card mb-4">
 <div class="card-header">
 <i class="fa fa-area-chart"></i> Dashboard </div>
 
@@ -331,19 +318,27 @@ window.dataf= <?php echo $number_formated; ?>
 </div>
 </div>
 </div>
-</div>
+
 
 	<!-- js -->
-	<script src="vendors/scripts/app.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="vendors/scripts/dashboard.js"></script>
+	<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Light Switch -->
+   <!-- Chart library -->
+<script src="./plugins/chart.min.js"></script>
+<!-- Icons library -->
+<script src="plugins/feather.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="js/script.js"></script>
+
+
+
+ 
 </body>
 <?php   
 
