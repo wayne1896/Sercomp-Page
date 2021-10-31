@@ -85,11 +85,14 @@
                                     <?php
 			 			$query=lista_ciudad();
 		 				while ( $row= $query->fetch_assoc() ) {
+							$estado_cliente=$row["estado_ciudad"];
+							if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
+							else{$text_estado="Desactivado";$label_class="badge-trashed";}
 		 					echo" 
 								<tr>
 					 				<td scope='row'>".$row['id_ciudad']."</td>
 					 				<td scope='row'>".$row['nombre_ciudad']."</td>
-                                     <td scope='row'>".$row['estado_ciudad']."</td>
+									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
 									 <a href='#edit_".$row['id_ciudad']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
 									 <a href='sector.php?id=".$row['id_ciudad']."' class='btn btn-info'>Ver Sectores</a>	 

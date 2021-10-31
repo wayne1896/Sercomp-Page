@@ -107,7 +107,7 @@ include('php/sidebar2\sidebar-orden.php');
 							    <th scope="col">Nombre cliente</th>
 			 				    <th scope="col">Estado de la orden</th> 	
 								 		
-			 				<th></th>
+			 				<th scope="col">Acciones</th>
 								</tr>
 							</thead>
 							<tbody>
@@ -116,6 +116,9 @@ include('php/sidebar2\sidebar-orden.php');
                                     <?php
 			 			$query=lista_orden_sinasignar();
 		 				while ( $row= $query->fetch_assoc() ) {
+							$estado_cliente=$row["estado_orden"];
+							if ($estado_cliente=="Asignada"){$text_estado="Activo";$label_class="badge-active";}
+							else{$text_estado="Sin Asignar";$label_class="badge-trashed";}
 		 					echo" 
 								<tr>
 					 				<td scope='row'>".$row['id_orden']."</td>
@@ -125,7 +128,7 @@ include('php/sidebar2\sidebar-orden.php');
                                      <td scope='row'>".$row['fecha_orden']."</td>
                                      <td scope='row'>".$row['telefono_cliente']."</td>
                                      <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
-									 <td scope='row'>".$row['estado_orden']."</td>
+									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
 									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
 									 <a href='#asig_".$row['id_orden']."'  data-toggle='modal' class='btn btn-secondary'>Asignar</a>

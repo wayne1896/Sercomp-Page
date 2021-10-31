@@ -55,5 +55,43 @@
 		}
 		header("Location: ../../empleado.php?s=".$msj);
 	}
+
+	
+	if ($i=='UDT') {
+		$msj='';
+		$codigo=$_POST['codigo'];
+		$nombre=$_POST['nombre'];
+		$apellido=$_POST['apellido'];
+        $cedula=$_POST['cedula'];
+        $fecha=$_POST['fechanacimiento'];
+		$ciudad=$_POST['ciudad'];
+        $sector=$_POST['sector'];
+        $calle=$_POST['calle']; 
+        $numcasa=$_POST['numcasa'];
+		$telefono=$_POST['telefono'];
+        $correo=$_POST['correo'];
+		
+		$sql="UPDATE `empleado` SET 
+		`nombre_empleado`='$nombre',
+		`apellido_empleado`='$apellido',
+		`cedula_empleado`='$cedula',
+		`fechanacimiento_empleado`='$fecha',
+		`ciudad_empleado`='$ciudad',
+		`sector_empleado`='$sector',
+		`calle_empleado`='$calle',
+		`numcasa_empleado`='$numcasa',
+		`telefono_empleado`='$telefono',
+		`correo_empleado`='$correo'
+		 WHERE id_empleado ='$codigo' ";
+		
+		if ($mysqli->query($sql)){
+			$msj='successudt';
+		}
+		else{
+			$msj='errorudt';
+			echo "error:".mysqli_error($mysqli);
+		}
+		header("Location: ../../menu.php?s=".$msj);
+	}
 	
 ?>

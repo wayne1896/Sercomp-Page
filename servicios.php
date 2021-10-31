@@ -88,12 +88,15 @@
                                     <?php
 			 			$query=lista_servicios();
 		 				while ( $row= $query->fetch_assoc() ) {
+							$estado_cliente=$row["estado_servicio"];
+							if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
+							else{$text_estado="Desactivado";$label_class="badge-trashed";}
 		 					echo" 
 								<tr>
 					 				<td scope='row'>".$row['id_servicio']."</td>
 					 				<td scope='row'>".$row['nombre_servicio']."</td>
 					 			
-                                     <td scope='row'>".$row['estado_servicio']."</td>
+									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
 									 <a href='#edit_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
 										 

@@ -53,9 +53,7 @@
 				<div class="pull-right">
 					<a href="php\facturacion_backend\nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>
 				</div>
-				
-					</div>
-				</div>
+			
 				<div id="resultados">
 
 				</div><!-- Carga los datos ajax -->

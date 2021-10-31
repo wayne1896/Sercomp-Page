@@ -52,6 +52,7 @@ if(isset($_POST['orden']))
 $buscarOrden=$conexion->query($query);
 if ($buscarOrden->num_rows > 0)
 {
+	
 	$tabla.= 
 	'<div class="users-table table-wrapper">
 	<table class="posts-table">
@@ -73,7 +74,10 @@ if ($buscarOrden->num_rows > 0)
 		<tbody>';
 
 	while($row= $buscarOrden->fetch_assoc())
-	{
+	{	$estado_cliente=$row["proceso_orden"];
+		if ($estado_cliente=="Finalizada"){$text_estado="Finalizada";$label_class="badge-active";}
+		else{$text_estado="En proceso";$label_class="badge-pending";}
+		if ($estado_cliente=='Sin empezar'){$text_estado="Sin empezar";$label_class='badge-trashed';}
 		$tabla.=
 		'<tr>
 		<td scope="row">'.$row['id_orden'].'</td>
@@ -84,7 +88,7 @@ if ($buscarOrden->num_rows > 0)
 		<td scope="row">'.$row['telefono_cliente'].'</td>
 		<td scope="row">'.$row['nombre_cliente']." ".$row['apellido_cliente'].'</td>
 		
-		<td scope="row">'.$row['proceso_orden'].'</td>
+		<td scope="row"><span class="label '.$label_class.'">'.$text_estado.'</span></td>
 		<td scope="row">'.$row['nombre_empleado']." ".$row['apellido_empleado'].'</td>
 		<td>
 		 <a href="#edit_'.$row['id_orden'].'"   data-bs-toggle="modal" class="btn btn-primary">Editar</a>

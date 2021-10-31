@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="menu.php"><span class="bx bxs-home bx-sm" aria-hidden="true"></span>  Inicio</a>
+                    <a href="menu.php"><span class="bx bxs-home bx-sm" aria-hidden="true"></span>  Inicio</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -67,7 +67,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                   
                 </li>
                 <li>
-                    <a  href="inventario.php">
+                    <a class="active" href="inventario.php">
                         <span class="bx bx-package bx-sm" aria-hidden="true"> </span>  Inventario</a>
                   
                 </li>
@@ -240,7 +240,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
-          <li><a href="##">
+          <li><a href="perfil.php?id2=<?php echo $id2;?>">
               <i data-feather="user" aria-hidden="true"></i>
               <span>Profile</span>
             </a></li>
@@ -248,7 +248,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
               <i data-feather="settings" aria-hidden="true"></i>
               <span>Account settings</span>
             </a></li>
-          <li><a class="log-out" href="#"  data-bs-toggle="modal" data-bs-target="#logoutModal">
+            <li><a class="log-out" href="#"  data-bs-toggle="modal" data-bs-target="#logoutModal">
               <i data-feather="log-out" aria-hidden="true" ></i>
               <span>Log out</span>
             </a></li>

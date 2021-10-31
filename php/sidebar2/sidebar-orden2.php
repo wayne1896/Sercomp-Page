@@ -109,10 +109,10 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a class="active" href="ordensin.php">Ordenes sin asignar</a>
+                            <a  href="ordensin.php">Ordenes sin asignar</a>
                         </li>
                         <li>
-                            <a href="ordenasig.php">Ordenes asignadas</a>
+                            <a class="active" href="ordenasig.php">Ordenes asignadas</a>
                         </li>
                     </ul>
                 </li>

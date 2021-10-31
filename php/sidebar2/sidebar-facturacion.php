@@ -34,7 +34,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
         <div class="sidebar-body">
             <ul class="sidebar-body-menu">
                 <li>
-                    <a class="active" href="menu.php"><span class="bx bxs-home bx-sm" aria-hidden="true"></span>  Inicio</a>
+                    <a  href="menu.php"><span class="bx bxs-home bx-sm" aria-hidden="true"></span>  Inicio</a>
                 </li>
                 <li>
                     <a class="show-cat-btn" href="##">
@@ -83,7 +83,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                   
                 </li>
                 <li>
-                    <a class="show-cat-btn" href="##">
+                    <a class="show-cat-btn active" href="##">
                         <span class="bx bx-cart bx-sm" aria-hidden="true"></span>  Facturacion
                         <span class="category__btn transparent-btn" title="Open list">
                             <span class="sr-only">Open list</span>
@@ -92,7 +92,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="facturacion.php">Facturas por nombre</a>
+                            <a class="active" href="facturacion.php">Facturas por nombre</a>
                         </li>
                         <li>
                             <a href="facturacionfecha.php">Facturas por fecha</a>
@@ -240,7 +240,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
-          <li><a href="##">
+        <li><a href="perfil.php?id2=<?php echo $id2;?>">
               <i data-feather="user" aria-hidden="true"></i>
               <span>Profile</span>
             </a></li>

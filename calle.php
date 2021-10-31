@@ -84,8 +84,9 @@ include('php/consultas/consultadireccion.php');
                   <tr class="users-table-info">
                                 <th scope="col">ID</th>
 			 				    <th scope="col">Calle</th>
-			 				    <th scope="col">Estado</th> 				
-			 				<th></th>
+			 				    <th scope="col">Estado</th> 	
+                  <th scope="col">Acciones</th> 			
+			 				
 								</tr>
 							</thead>
 							<tbody>
@@ -95,11 +96,14 @@ include('php/consultas/consultadireccion.php');
                                      $c=1;
 			 			$query=lista_calle($id);
 		 				while ( $row= $query->fetch_assoc() ) {
+              $estado_cliente=$row["estado_calle"];
+							if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
+							else{$text_estado="Desactivado";$label_class="badge-trashed";}
 		 					echo" 
 								<tr>
 					 				<td scope='row'>".$c."</td>
 					 				<td scope='row'>".$row['nombre_calle']."</td>
-                                     <td scope='row'>".$row['estado_calle']."</td>
+                   <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
 									 <a href='#edit_".$row['id_calle']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>		 
 									 <a href='#delete_".$row['id_calle']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>

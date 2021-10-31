@@ -51,7 +51,9 @@ if ($buscarProducto->num_rows > 0)
         <tbody>';
 
 	while($row= $buscarProducto->fetch_assoc())
-	{
+	{ $estado_cliente=$row["estado_producto"];
+		if ($estado_cliente=="Stock"){$text_estado="Stock";$label_class="badge-active";}
+		else{$text_estado="Agotado";$label_class="badge-trashed";}
 		$tabla.=
 		'<tr>
 		<td scope="row">'.$row['id_producto'].'</td>
@@ -59,7 +61,7 @@ if ($buscarProducto->num_rows > 0)
 		<td scope="row">'.$row['descripcion_producto'].'</td>
 		<td scope="row">'.$row['cantidad_producto'].'</td>
 		<td scope="row">$'.$row['costo_producto'].'</td>
-		<td scope="row">'.$row['estado_producto'].'</td>
+		<td scope="row"><span class="label '.$label_class.'">'.$text_estado.'</span></td>
 		<td>
 		 <a href="#edit_'.$row['id_producto'].'"  data-bs-toggle="modal" class="btn btn-primary">Editar</a>
 										 

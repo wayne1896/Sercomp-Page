@@ -22,7 +22,7 @@
 
 
  		
-		include('php/sidebar2\sidebar-orden.php');	
+		include('php/sidebar2\sidebar-orden2.php');	
 		include('php/consultas/consultaorden.php');	
     ?>
 

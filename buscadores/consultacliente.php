@@ -29,9 +29,10 @@ if ($conexion -> connect_errno)
 $tabla="";
 $query="SELECT c.id_cliente, c.nombre_cliente, c.apellido_cliente, c.cedula_cliente, 
 c.fechanacimiento_cliente, s.nombre_ciudad, e.nombre_sector, u.nombre_calle , c.numcasa_cliente, 
-c.telefono_cliente, c.correo_cliente, c.deuda_cliente, 
-c.estado_cliente  FROM cliente c JOIN ciudad s ON (c.ciudad_cliente=s.id_ciudad) 
-JOIN sector e ON (c.sector_cliente=e.id_sector) JOIN calle u ON (c.calle_cliente=u.id_calle) ORDER BY id_cliente";
+c.telefono_cliente, c.correo_cliente, 
+c.estado_cliente FROM cliente c JOIN ciudad s ON (c.ciudad_cliente=s.id_ciudad) 
+JOIN sector e ON (c.sector_cliente=e.id_sector) JOIN calle u ON (c.calle_cliente=u.id_calle) 
+ ORDER BY id_cliente";
 
 ///////// LO QUE OCURRE AL TECLEAR SOBRE EL INPUT DE BUSQUEDA ////////////
 if(isset($_POST['clientes']))
@@ -39,9 +40,10 @@ if(isset($_POST['clientes']))
 	$q=$conexion->real_escape_string($_POST['clientes']);
 	$query="SELECT c.id_cliente, c.nombre_cliente, c.apellido_cliente, c.cedula_cliente, 
     c.fechanacimiento_cliente, s.nombre_ciudad, e.nombre_sector, u.nombre_calle , c.numcasa_cliente, 
-    c.telefono_cliente, c.correo_cliente, c.deuda_cliente, 
+    c.telefono_cliente, c.correo_cliente, 
     c.estado_cliente  FROM cliente c JOIN ciudad s ON (c.ciudad_cliente=s.id_ciudad) 
-    JOIN sector e ON (c.sector_cliente=e.id_sector) JOIN calle u ON (c.calle_cliente=u.id_calle) WHERE 
+    JOIN sector e ON (c.sector_cliente=e.id_sector) JOIN calle u ON (c.calle_cliente=u.id_calle)
+	 WHERE 
 		id_cliente LIKE '%".$q."%' OR
 		nombre_cliente LIKE '%".$q."%' OR
 		apellido_cliente LIKE '%".$q."%' OR
@@ -65,15 +67,19 @@ if ($buscarClientes->num_rows > 0)
 			<th scope="col">Telefono</th>
 			<th scope="col">Direccion</th>
 			<th scope="col">Correo</th>
-			<th scope="col">Deuda</th>
-			 <th scope="col">Estado</th> 				
-		 <th></th>
+			
+			 <th scope="col"></th> 	
+			 			 <th scope="col">Estado</th> 	
+			 <th scope="col">Acciones</th> 		
 			</tr>
 		</thead>
 		<tbody>';
 
 	while($row= $buscarClientes->fetch_assoc())
-	{
+	{ $estado_cliente=$row["estado_cliente"];
+		if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
+		else{$text_estado="Desactivado";$label_class="badge-trashed";}
+	
 		$tabla.=
 		'<tr>
 		<td scope="row">'.$row['id_cliente'].'</td>
@@ -84,8 +90,9 @@ if ($buscarClientes->num_rows > 0)
 		<td scope="row">'.$row['telefono_cliente'].'</td>
 		<td scope="row">'.$row['nombre_ciudad'].' '.$row['nombre_sector'].'Casa No: '.$row['numcasa_cliente'].'</td>
 		<td scope="row">'.$row['correo_cliente'].'</td>
-		<td scope="row">'.$row['deuda_cliente'].'</td>
-		<td scope="row">'.$row['estado_cliente'].'</td>
+		<td scope="row"></td>
+		
+		<td scope="row"><span class="label '.$label_class.'">'.$text_estado.'</span></td>
 		<td>
 		 <a href="#edit_'.$row['id_cliente'].'"   data-bs-toggle="modal"  class="btn btn-primary">Editar</a>
 										 

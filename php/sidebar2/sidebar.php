@@ -240,7 +240,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
-          <li><a href="##">
+          <li><a href="perfil.php?id2=<?php echo $id2;?>">
               <i data-feather="user" aria-hidden="true"></i>
               <span>Profile</span>
             </a></li>

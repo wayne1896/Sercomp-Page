@@ -77,7 +77,9 @@ if ($buscarEmpleados->num_rows > 0)
         <tbody>';
 
 	while($row= $buscarEmpleados->fetch_assoc())
-	{
+	{	$estado_cliente=$row["estado_empleado"];
+		if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
+		else{$text_estado="Desactivado";$label_class="badge-trashed";}
 		$tabla.=
 		'<tr>
 		<td scope="row">'.$row['id_empleado'].'</td>
@@ -89,7 +91,7 @@ if ($buscarEmpleados->num_rows > 0)
 		<td scope="row">'.$row['nombre_ciudad'].' '.$row['nombre_sector'].'Casa No: '.$row['numcasa_empleado'].'</td>
 		<td scope="row">'.$row['correo_empleado'].'</td>
 		<td scope="row">'.$row['cargo'].'</td>
-		<td scope="row">'.$row['estado_empleado'].'</td>
+		<td scope="row"><span class="label '.$label_class.'">'.$text_estado.'</span></td>
 		<td>
 		 <a href="#edit_'.$row['id_empleado'].'"  data-bs-toggle="modal" class="btn btn-primary">Editar</a>
 										 
