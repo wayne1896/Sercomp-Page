@@ -3,7 +3,7 @@
 <head>
 
 	<?php 
- 		include('php/pcabeza\navbar_servicios.php');	
+ 			
 		include('php/sidebar\sidebarcliente.php');	
 		include('php/consultas/consultaservicios.php');	
     ?>
@@ -12,24 +12,24 @@
 	<meta charset="utf-8">
 	<title>SERCOMP - Catalogo de servicios</title>
 
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
-
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-    <link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
-
+	<meta charset="UTF-8">
+	  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>SERCOMP - Inicio</title>
+	
+		<!-- Site favicon -->
+		<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
+		<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+		<!-- Mobile Specific Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	  
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <!-- Custom styles -->
+	  <link rel="stylesheet" href="./css/style.min.css">
+	  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
@@ -44,7 +44,7 @@
 
 <div class="mobile-menu-overlay"></div>
 
-<div class="main-container">
+<div class="container">
     <div class="pd-ltr-20">
         
        
@@ -54,7 +54,7 @@
 
 					<div class="clearfix mb-20">
 						<div class="pull-left">
-							<h4 class="text-blue h4">Servicios disponibles</h4>
+						<h4 class="main-title">Servicios disponibles</h4>
 							
 						</div>
 						<div class="pull-right">
@@ -73,10 +73,10 @@
 		unset($_SESSION['message']);
 	}
 ?>
-					<div class="table-responsive">
-						<table class="table table-striped">
-							<thead>
-								<tr>   
+						<div class="users-table table-wrapper">
+              <table class="posts-table">
+                <thead>
+                  <tr class="users-table-info">
                                 <th scope="col">ID</th>
 			 				    <th scope="col">Nombre</th>
 					
@@ -92,12 +92,15 @@
                                     <?php
 			 			$query=lista_servicios();
 		 				while ( $row= $query->fetch_assoc() ) {
+							$estado_cliente=$row["estado_servicio"];
+							if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
+							else{$text_estado="Desactivado";$label_class="badge-trashed";}
 		 					echo" 
 								<tr>
 					 				<td scope='row'>".$row['id_servicio']."</td>
 					 				<td scope='row'>".$row['nombre_servicio']."</td>
 					 			
-                                     <td scope='row'>".$row['estado_servicio']."</td>
+                                     <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
 									 
 										 
@@ -111,29 +114,29 @@
 		 				}
 			 			?> 
 	  </tbody>
-	</table>
+	  </table>
+		</div>
+	</div>
 </div>
-							</code></pre>
-						</div>
-					</div>
-				</div>
-				<!-- Responsive tables End -->
-
-				</div>
-		</div>		</div>
-
-
+			
 	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
-	<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
-	<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
-	<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
-	<script src="vendors/scripts/dashboard.js"></script>
+	<script
+		  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		  crossorigin="anonymous"
+		></script>
+	
+		<!-- Light Switch -->
+	   <!-- Chart library -->
+	<script src="./plugins/chart.min.js"></script>
+	<!-- Icons library -->
+	<script src="plugins/feather.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script src="js/script.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
 </body>
 <?php   
         include('php\servicios_backend\Modals\Modal_Servicios.php');	

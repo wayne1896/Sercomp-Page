@@ -1,14 +1,9 @@
 <!DOCTYPE html>
 <html>
 	<?php
-	include('../pcabeza\pcabezafacturacion.php');	
+	
 	include('../sidebar/sidebarreg.php');	
 	
-	$active_facturas="active";
-	$active_productos="";
-	$active_clientes="";
-	$active_usuarios="";	
-	$title="Nueva Factura | Simple Invoice";
 	
 	/* Connect To Database*/
 	require_once ("../../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
@@ -21,25 +16,17 @@
 	<meta charset="utf-8">
 	<title>SERCOMP - Factura nueva</title>
 
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
-	<link rel="stylesheet" href="css/custom.css">
 	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="../../src\bootstrap\css\bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="../../src/plugins/datatables/css/dataTables.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="../../src/plugins/datatables/css/responsive.bootstrap4.min.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/style.css">
-    <link rel="stylesheet" type="text/css" href="../../src/styles/style_form_out.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <!-- Custom styles -->
+	  <link rel="stylesheet" href="../../css/style.min.css">
+	  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	
+	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
@@ -48,6 +35,7 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-119386393-1');
+
 	</script>
 </head>
   <body>
@@ -123,7 +111,7 @@
 						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nuevoCliente">
 						 <span class="glyphicon glyphicon-user"></span> Nuevo cliente
 						</button>
-						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+						<button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">
 						 <span class="glyphicon glyphicon-search"></span> Agregar productos
 						</button>
 						<button type="submit" class="btn btn-default">
@@ -150,7 +138,24 @@
 
 
 
-
+<!-- js -->
+<script
+		  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		  crossorigin="anonymous"
+		></script>
+	
+		<!-- Light Switch -->
+	   <!-- Chart library -->
+	<script src="../../plugins/chart.min.js"></script>
+	<!-- Icons library -->
+	<script src="../../plugins/feather.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script src="../../js/script.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
 	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -199,4 +204,10 @@
 	
 
   </body>
+  <?php   
+       
+		include('../ppie\ppiemenu.php');	
+	?>
+    
+
 </html>

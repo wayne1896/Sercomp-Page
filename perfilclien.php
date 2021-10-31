@@ -6,12 +6,12 @@
 <?php 
  
 
- include('php/sidebar\sidebartecnico.php');	
+ include('php/sidebar\sidebarcliente.php');	
  include('php/consultas/consultaperfil.php');	
 
 $id2;
  if(isset($_GET['id2'])){
-	$query= extraerempleadoperfil($_GET['id2']);
+	$query= extraerclienteperfil($_GET['id2']);
  $row=$query->fetch_assoc();}
 
  include_once 'dbConfig.php'; 
@@ -104,20 +104,20 @@ if ($conexion -> connect_errno)
                 <h5 class="card-title">Editar Perfil</h5>
               </div>
               <div class="card-body">
-                <form method="POST" action="php\empleados_backend\registroempleadopp.php?accion=UDT">
+                <form method="POST" action="php\clientes_backend\registroclientep.php?accion=UDT">
 		
                   <div class="row">
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>ID </label>
-                        <input type="text" class="form-control" readonly="" id="codigo" name="codigo" placeholder="Company" value="<?php echo $row['id_empleado'] ?>">
+                        <input type="text" class="form-control" readonly="" id="codigo" name="codigo" placeholder="Company" value="<?php echo $row['id_cliente'] ?>">
                       </div>
                     </div>
                    
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label for="exampleInputEmail1">Correo electronico</label>
-                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" value="<?php echo $row['correo_empleado'] ?>">
+                        <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" value="<?php echo $row['correo_cliente'] ?>">
                       </div>
                     </div>
                   </div>
@@ -125,13 +125,13 @@ if ($conexion -> connect_errno)
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Company" value="<?php echo $row['nombre_empleado'] ?>">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Company" value="<?php echo $row['nombre_cliente'] ?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Apellido</label>
-                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Last Name" value="<?php echo $row['apellido_empleado'] ?>">
+                        <input type="text" class="form-control" id="apellido" name="apellido" placeholder="Last Name" value="<?php echo $row['apellido_cliente'] ?>">
                       </div>
                     </div>
                   </div>
@@ -139,13 +139,13 @@ if ($conexion -> connect_errno)
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Company" value="<?php echo $row['telefono_empleado'] ?>">
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Company" value="<?php echo $row['telefono_cliente'] ?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Cedula</label>
-                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="" value="<?php echo $row['cedula_empleado'] ?>">
+                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="" value="<?php echo $row['cedula_cliente'] ?>">
                       </div>
                     </div>
                   </div>
@@ -191,21 +191,16 @@ if ($conexion -> connect_errno)
 				  <div class="col-md-4">
                       <div class="form-group">
                         <label>Numero de casa</label>
-                        <input type="text" class="form-control" id="numcasa" name="numcasa" value="<?php echo $row['numcasa_empleado'] ?>">
+                        <input type="text" class="form-control" id="numcasa" name="numcasa" value="<?php echo $row['numcasa_cliente'] ?>">
                       </div>
                     </div>
                     <div class="col-md-4">
                       <div class="form-group">
                         <label>Fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="fechanacimiento" name="fechanacimiento" value="<?php echo $row['fechanacimiento_empleado'] ?>">
+                        <input type="date" class="form-control" id="fechanacimiento" name="fechanacimiento" value="<?php echo $row['fechanacimiento_cliente'] ?>">
                       </div>
                     </div>
-					<div class="col-md-4 pl-1">
-                      <div class="form-group">
-                        <label>Cargo</label>
-                        <input type="text" class="form-control" disabled=""  placeholder="ZIP Code" value="<?php echo $row['cargo'] ?>">
-                      </div>
-                    </div>
+	
                   </div>
 
 				  

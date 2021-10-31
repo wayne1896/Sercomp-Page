@@ -8,4 +8,13 @@ function extraerempleadoperfil($id2){
      where correo_empleado='$id2'";
     return $result=$mysqli->query($sql); 
 }	
+
+function extraerclienteperfil($id2){
+    include('php\conexion.php');	
+    $sql="SELECT * FROM cliente e JOIN ciudad c ON (e.ciudad_cliente=c.id_ciudad)
+    JOIN sector s ON (e.sector_cliente=s.id_sector) JOIN calle k ON (e.calle_cliente=k.id_calle)
+   
+     where correo_cliente='$id2'";
+    return $result=$mysqli->query($sql); 
+}	
 ?>

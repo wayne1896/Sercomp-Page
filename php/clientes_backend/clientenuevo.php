@@ -8,7 +8,7 @@
     // Fetch all the country data 
     $query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC"; 
     $result1 = $db->query($query); 
-    include('../pcabeza\pcabezaclientereg.php');	
+   
 	include('../sidebar/sidebarreg.php');	
 ?>
 
@@ -17,22 +17,19 @@
 	<meta charset="utf-8">
 	<title>SERCOMP - Cliente nuevo</title>
  
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="../../vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../../vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../../vendors/images/favicon-16x16.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <!-- Custom styles -->
+	  <link rel="stylesheet" href="../../css/style.min.css">
+	  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	
+	
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="../../src/plugins/jquery-steps/jquery.steps.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/style.css">
-  <link rel="stylesheet" type="text/css" href="../../src/styles/style_form_out.css">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -95,7 +92,7 @@
                     <div class="form-group">
                         <h1>Dirección</h1>
                         <label for="inputName">Ciudad</label>
-                        <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
+                        <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
                             <option value="">Seleccione Su Ciudad</option>
                         <?php 
                         
@@ -109,12 +106,12 @@
                         ?>
                         </select>
                             <label for="inputName">Sector</label>
-                            <select class="form-group" title="Seleccione Su Sector" id="sector" required="required" name="sector">
+                            <select class="form-control" title="Seleccione Su Sector" id="sector" required="required" name="sector">
                             <option value="">Seleccione una ciudad primero</option>
                             
                             </select>
                             <label for="inputName">Calle</label>
-                            <select class="controls" title="Seleccione Su Calle" id="calle" required="required" name="calle">
+                            <select class="form-control" title="Seleccione Su Calle" id="calle" required="required" name="calle">
                             <option value="">Seleccione un sector primero</option>
                             </select>
                             
@@ -131,10 +128,9 @@
                           
                     </div>
                     
-                    </div>
+                  
                     
-                    
-            </div>
+            
             
         
                     
@@ -179,13 +175,24 @@
 		</div>
 	</div>
 
-	<!-- js -->
-	<script src="../../vendors/scripts/core.js"></script>
-	<script src="../../vendors/scripts/script.min.js"></script>
-	<script src="../../vendors/scripts/process.js"></script>
-	<script src="../../vendors/scripts/layout-settings.js"></script>
-	<script src="../../src/plugins/jquery-steps/jquery.steps.js"></script>
-	<script src="../../vendors/scripts/steps-setting.js"></script>
+<!-- js -->
+<script
+		  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		  crossorigin="anonymous"
+		></script>
+	
+		<!-- Light Switch -->
+	   <!-- Chart library -->
+	<script src="../../plugins/chart.min.js"></script>
+	<!-- Icons library -->
+	<script src="../../plugins/feather.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script src="../../js/script.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
 </body>
 <?php   
        

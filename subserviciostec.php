@@ -98,6 +98,7 @@ include('php/consultas/consultaservicios.php');
                                 $c=1;
 			 			$query=cat_servicios($id);
 		 				while ( $row= $query->fetch_assoc() ) {
+							 
 		 					echo" 
 								<tr>
 					 				<td scope='row'>".$c."</td>

@@ -26,7 +26,7 @@ $db =  connect();
 
 
 /////// CONEXIÓN A LA BASE DE DATOS /////////
-       include('../pcabeza\navbar_ordenreg.php');	
+  
        include('../sidebar/sidebarreg.php');	
       include('../consultas/consultaorden.php');	
   ?>
@@ -36,23 +36,18 @@ $db =  connect();
 	<meta charset="utf-8">
 	<title>SERCOMP - Orden nueva</title>
  
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="../../vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../../vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../../vendors/images/favicon-16x16.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	
 	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="../../src/plugins/jquery-steps/jquery.steps.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/style.css">
-  <link rel="stylesheet" type="text/css" href="../../src/styles/style_form_out.css">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <!-- Custom styles -->
+	  <link rel="stylesheet" href="../../css/style.min.css">
+	  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	
+	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
@@ -78,13 +73,12 @@ $db =  connect();
                  <div class="form-group">
 
                  <h1>Datos Básicos de la Orden</h1>
-                    
-                 <div class="form-group">
-                                <a href="#" data-toggle="modal" data-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
+                                <a href="#"  data-bs-toggle="modal" data-bs-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
                         
                            </div>
+                    <div class="form-group">
                     <label for="inputName">Servicios:</label>
-                    <select class="form-group" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
+                    <select class="form-control" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
                                  <option value="">Seleccione el Servicio</option>
                                  <?php 
                     if($result2->num_rows > 0){ 
@@ -94,11 +88,12 @@ $db =  connect();
                     }
                     ?>
                     </select>
+                </div>
                     <label for="inputfistname">Ingrese el detalle del problema:</label>
                     <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
                     <div class="form-group">
                         <label for="inputPassword">Nombre del Cliente:</label>
-                        <select class="form-group" title="Nombre cliente" id="nombre" name="nombre">
+                        <select class="form-control" title="Nombre cliente" id="nombre" name="nombre">
                                  <option value="">Seleccione el Cliente</option>
                                  <?php 
                     if($result3->num_rows > 0){ 
@@ -114,7 +109,7 @@ $db =  connect();
                         <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el Teléfono del Cliente"/>
                     </div>
                     <label for="inputName">Ciudad:</label>
-                        <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
+                        <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
                             <option value="">Seleccione Su Ciudad</option>
                                 <?php 
                                 if($result1->num_rows > 0){ 
@@ -128,12 +123,12 @@ $db =  connect();
                         </select>
 
                             <label for="inputName">Sector:</label>
-                            <select class="form-group" title="Seleccione Su Sector" id="sector" name="sector">
+                            <select class="form-control" title="Seleccione Su Sector" id="sector" name="sector">
                                   <option value="">Seleccione una ciudad primero</option>
                            </select>
 
                             <label for="inputName">Calle:</label>
-                            <select class="controls" title="Seleccione Su Calle" id="calle" name="calle">
+                            <select class="form-control" title="Seleccione Su Calle" id="calle" name="calle">
                                 <option value="">Seleccione un sector primero</option>
                             </select>
 
@@ -183,7 +178,7 @@ $db =  connect();
     });
 });</script>
 
-<?php if($lat<>0){ ?>
+<?php if($lat=null){ ?>
   
 
 <?php } ?>
@@ -197,13 +192,24 @@ $db =  connect();
 		</div>
 	</div>
 
-	<!-- js -->
-	<script src="../../vendors/scripts/core.js"></script>
-	<script src="../../vendors/scripts/script.min.js"></script>
-	<script src="../../vendors/scripts/process.js"></script>
-	<script src="../../vendors/scripts/layout-settings.js"></script>
-	<script src="../../src/plugins/jquery-steps/jquery.steps.js"></script>
-	<script src="../../vendors/scripts/steps-setting.js"></script>
+<!-- js -->
+<script
+		  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		  crossorigin="anonymous"
+		></script>
+	
+		<!-- Light Switch -->
+	   <!-- Chart library -->
+	<script src="../../plugins/chart.min.js"></script>
+	<!-- Icons library -->
+	<script src="../../plugins/feather.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script src="../../js/script.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
 </body>
 <div class="bs-example">
     <!-- Extra Large modal -->

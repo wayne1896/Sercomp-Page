@@ -38,9 +38,7 @@
 	<meta charset="utf-8">
 	<title>SERCOMP - Ordenes asignadas</title>
 
-		<!-- Site favicon -->
-		<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-		<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+		
 		<!-- Mobile Specific Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	  

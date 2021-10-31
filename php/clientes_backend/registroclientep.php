@@ -50,4 +50,41 @@ if ($i=='INS') {
 		header("Location: ../../index.php?s=".$msj);
 	}
 	
+	if ($i=='UDT') {
+		$msj='';
+		$codigo=$_POST['codigo'];
+		$nombre=$_POST['nombre'];
+		$apellido=$_POST['apellido'];
+        $cedula=$_POST['cedula'];
+        $fecha=$_POST['fechanacimiento'];
+		$ciudad=$_POST['ciudad'];
+        $sector=$_POST['sector'];
+        $calle=$_POST['calle']; 
+        $numcasa=$_POST['numcasa'];
+		$telefono=$_POST['telefono'];
+        $correo=$_POST['correo'];
+		
+		$sql="UPDATE `cliente` SET 
+		`nombre_cliente`='$nombre',
+		`apellido_cliente`='$apellido',
+		`cedula_cliente`='$cedula',
+		`fechanacimiento_cliente`='$fecha',
+		`ciudad_cliente`='$ciudad',
+		`sector_cliente`='$sector',
+		`calle_cliente`='$calle',
+		`numcasa_cliente`='$numcasa',
+		`telefono_cliente`='$telefono',
+		`correo_cliente`='$correo'
+		 WHERE id_cliente ='$codigo' ";
+		
+		if ($mysqli->query($sql)){
+			$msj='successudt';
+		}
+		else{
+			$msj='errorudt';
+			echo "error:".mysqli_error($mysqli);
+		}
+		header("Location: ../../menucliente.php?s=".$msj);
+	}
+	
 ?>

@@ -163,9 +163,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
          
           <li>
            <a href="php/tecnico_use/ordenasig.php">
-           <div class="notification-dropdown-icon danger">
-              <i data-feather="info" aria-hidden="true"></i>
-            </div>
+          
             <div  id="notification-latest"> 
             </div>
            </a>

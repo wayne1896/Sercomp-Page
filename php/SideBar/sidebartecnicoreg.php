@@ -4,8 +4,8 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 	exit;
 	} ?>
 <!-- Site favicon -->
-<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+<link rel="icon" type="image/png" href="../../vendors\images\iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="../../vendors\images\iconbar.png">
 
   <link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
 
