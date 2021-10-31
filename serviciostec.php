@@ -3,15 +3,15 @@
 <head>
 
 	<?php 
-
-	
-		include('php/sidebar2\sidebar-direcciones.php');	
-		include('php/consultas/consultadireccion.php');	
+ 		
+		include('php/sidebar\sidebartecnico.php');	
+		include('php/consultas/consultaservicios.php');	
     ?>
 
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>SERCOMP - Ciudades</title>
+	<title>SERCOMP - Servicios</title>
+
 
 
 	<!-- Mobile Specific Metas -->
@@ -50,11 +50,11 @@
 
 					<div class="clearfix mb-20">
 						<div class="pull-left">
-						<h4 class="main-title">Ciudad</h4>
+						<h4 class="main-title">Servicios</h4>
 							
 						</div>
 						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary"  data-bs-toggle="modal"><i class=""></i> Nuevo</a>
+                        <a href="#addnew" class="btn btn-primary"  data-bs-toggle="modal"><i class="fa fa-code"></i> Nuevo</a>
 						</div>
 					</div>
 					<?php 
@@ -69,41 +69,45 @@
 		unset($_SESSION['message']);
 	}
 ?>
-					<div class="users-table table-wrapper">
+						<div class="users-table table-wrapper">
               <table class="posts-table">
                 <thead>
                   <tr class="users-table-info">
                                 <th scope="col">ID</th>
-			 				    <th scope="col">Ciudad</th>
-			 				    <th scope="col">Estado</th> 				
-			 				<th></th>
+			 				    <th scope="col">Nombre</th>
+					
+
+                                <th scope="col">Estado</th> 
+							 				
+			 				<th scope="col">Acciones </th>
 								</tr>
 							</thead>
 							<tbody>
 	
 			
                                     <?php
-			 			$query=lista_ciudad();
+			 			$query=lista_servicios();
 		 				while ( $row= $query->fetch_assoc() ) {
-							$estado_cliente=$row["estado_ciudad"];
+							$estado_cliente=$row["estado_servicio"];
 							if ($estado_cliente=="Activo"){$text_estado="Activo";$label_class="badge-active";}
 							else{$text_estado="Desactivado";$label_class="badge-trashed";}
 		 					echo" 
 								<tr>
-					 				<td scope='row'>".$row['id_ciudad']."</td>
-					 				<td scope='row'>".$row['nombre_ciudad']."</td>
+					 				<td scope='row'>".$row['id_servicio']."</td>
+					 				<td scope='row'>".$row['nombre_servicio']."</td>
+					 			
 									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_ciudad']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
-									 <a href='sector.php?id=".$row['id_ciudad']."' class='btn btn-info'>Ver Sectores</a>	 
 										 
-									 <a href='#delete_".$row['id_ciudad']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='subserviciostec.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
+									 
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\direccion_backend\ciudad\Modals\cambiar_estado_Ciudad.php');
-							 include('php\direccion_backend\ciudad\Modals\ActualizarCiudadModal.php');
+							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
+							 
+							 include('php\servicios_backend\Modals\ActualizarServiciosModal.php');
 		 				}
 			 			?> 
 	  </tbody>
@@ -113,9 +117,7 @@
 </div>
 
 
-
-
-<!-- js -->
+	<!-- js -->
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
@@ -136,7 +138,7 @@
 
 </body>
 <?php   
-        include('php\direccion_backend\ciudad\Modals\Modal_Ciudad.php');	
+        include('php\servicios_backend\Modals\Modal_Servicios.php');	
 		include('php/ppie\ppiemenu.php');	
 	?>
 </html>

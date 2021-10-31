@@ -1,120 +1,227 @@
-<div class="right-sidebar">
-		<div class="sidebar-title">
-			<h3 class="weight-600 font-16 text-blue">
-				Layout Settings
-				<span class="btn-block font-weight-400 font-12">User Interface Settings</span>
-			</h3>
-			<div class="close-sidebar" data-toggle="right-sidebar-close">
-				<i class="icon-copy ion-close-round"></i>
-			</div>
-		</div>
-		<div class="right-sidebar-body customscroll">
-			<div class="right-sidebar-body-content">
-				<h4 class="weight-600 font-18 pb-10">Header Background</h4>
-				<div class="sidebar-btn-group pb-30 mb-10">
-					<a href="javascript:void(0);" class="btn btn-outline-primary header-white active">White</a>
-					<a href="javascript:void(0);" class="btn btn-outline-primary header-dark">Dark</a>
-				</div>
+<?php  session_start();
+if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
+	header("location: index.php");
+	exit;
+	} ?>
+<!-- Site favicon -->
+<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
 
-				<h4 class="weight-600 font-18 pb-10">Sidebar Background</h4>
-				<div class="sidebar-btn-group pb-30 mb-10">
-					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-light ">White</a>
-					<a href="javascript:void(0);" class="btn btn-outline-primary sidebar-dark active">Dark</a>
-				</div>
+  <link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
 
-				<h4 class="weight-600 font-18 pb-10">Menu Dropdown Icon</h4>
-				<div class="sidebar-radio-group pb-10 mb-10">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebaricon-1" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-1" checked="">
-						<label class="custom-control-label" for="sidebaricon-1"><i class="fa fa-angle-down"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebaricon-2" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-2">
-						<label class="custom-control-label" for="sidebaricon-2"><i class="ion-plus-round"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebaricon-3" name="menu-dropdown-icon" class="custom-control-input" value="icon-style-3">
-						<label class="custom-control-label" for="sidebaricon-3"><i class="fa fa-angle-double-right"></i></label>
-					</div>
-				</div>
+<div class="layer"></div>
+<!-- ! Body -->
+<a class="skip-link sr-only" href="#skip-target">Skip to content</a>
+<div class="page-flex">
+  <!-- ! Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-start">
+        <div class="sidebar-head">
+            <a href="menutecnico.php" class="logo-wrapper" title="Home">
+                <span class="sr-only">Home</span>
+                <span class="icon logo" aria-hidden="true"></span>
+                <div class="logo-text">
+                    <span class="logo-title">Sercomp</span>
+                    <span class="logo-subtitle">V1</span>
+                </div>
 
-				<h4 class="weight-600 font-18 pb-10">Menu List Icon</h4>
-				<div class="sidebar-radio-group pb-30 mb-10">
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebariconlist-1" name="menu-list-icon" class="custom-control-input" value="icon-list-style-1" checked="">
-						<label class="custom-control-label" for="sidebariconlist-1"><i class="ion-minus-round"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebariconlist-2" name="menu-list-icon" class="custom-control-input" value="icon-list-style-2">
-						<label class="custom-control-label" for="sidebariconlist-2"><i class="fa fa-circle-o" aria-hidden="true"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebariconlist-3" name="menu-list-icon" class="custom-control-input" value="icon-list-style-3">
-						<label class="custom-control-label" for="sidebariconlist-3"><i class="dw dw-check"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebariconlist-4" name="menu-list-icon" class="custom-control-input" value="icon-list-style-4" checked="">
-						<label class="custom-control-label" for="sidebariconlist-4"><i class="icon-copy dw dw-next-2"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebariconlist-5" name="menu-list-icon" class="custom-control-input" value="icon-list-style-5">
-						<label class="custom-control-label" for="sidebariconlist-5"><i class="dw dw-fast-forward-1"></i></label>
-					</div>
-					<div class="custom-control custom-radio custom-control-inline">
-						<input type="radio" id="sidebariconlist-6" name="menu-list-icon" class="custom-control-input" value="icon-list-style-6">
-						<label class="custom-control-label" for="sidebariconlist-6"><i class="dw dw-next"></i></label>
-					</div>
-				</div>
+            </a>
+            <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+                <span class="sr-only">Toggle menu</span>
+                <span class="icon menu-toggle" aria-hidden="true"></span>
+            </button>
+        </div>
+        <div class="sidebar-body">
+            <ul class="sidebar-body-menu">
+                <li>
+                    <a class="active" href="menutecnico.php"><span class="bx bxs-home bx-sm" aria-hidden="true"></span>  Inicio</a>
+                </li>
 
-				<div class="reset-options pt-30 text-center">
-					<button class="btn btn-danger" id="reset-settings">Reset Settings</button>
-				</div>
-			</div>
-		</div>
-	</div>
+                <li>
+                    <a  href="ciudadtec.php">
+                        <span class="bx bx-map-pin bx-sm" aria-hidden="true"> </span>  Direcciones</a>
+                  
+                </li>
+            
+                 <li>
+                    <a  href="serviciostec.php">
+                        <span class="bx bx-category bx-sm" aria-hidden="true"> </span>  Servicios</a>
+                  
+                </li>
 
-	<div class="left-side-bar">
-		<div class="brand-logo">
-			<a href="menu.php">
-				<img src="vendors/images/Sercomp-bar.svg" alt="" class="dark-logo">
-				<img src="vendors/images/Sercomp-bar.svg" alt="" class="light-logo">
-			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
-				<i class="ion-close-round"></i>
-			</div>
-		</div>
-		<div class="menu-block customscroll">
-			<div class="sidebar-menu">
-				<ul id="accordion-menu">
+                <li>
+                    <a  href="php\tecnico_use\ordenasig.php">
+                        <span class="bx bx-receipt bx-sm" aria-hidden="true"></span>  Ordenes
+                       
+                           
+                    </a>
+                    <ul class="cat-sub-menu">
+                     
+                    </ul>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+    <div class="sidebar-footer">
+        <a href="##" class="sidebar-user">
+            <span class="sidebar-user-img">
+                <picture><source srcset="./img/photo1.png" type="image/png"><img src="./img/avatar/avatar-illustrated-01.png" alt="User name"></picture>
+            </span>
+            <div class="sidebar-user-info">
+            <?php 
+      
+      $id2=$_SESSION['User'];
+	  
+	 
+	  $mysqli = new mysqli("localhost", "root", "", "tesis");
 
-					<li >
-						<a href="menutecnico.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-house-1"></span><span>Inicio</span>
-						</a>
-					</li>
+	  /* comprobar la conexión */
+	  if (mysqli_connect_errno()) {
+		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  exit();
+	  }
+	  
+	  $consulta = "SELECT nombre_empleado, apellido_empleado, cargo FROM empleado e join nomina n on (e.id_nomina=n.id_nomina) where e.correo_empleado='$id2'";
+	  
+	  if ($resultado = $mysqli->query($consulta)) {
+	  
+		  /* obtener el array de objetos */
+		  while ($fila = $resultado->fetch_row()) {
+        echo"<span class='sidebar-user__title'>".$fila[0]." ". $fila[1].".</span>
+                <span class='sidebar-user__subtitle'>".$fila[2]."</span>"
+                ;}}?>
+            </div>
+        </a>
+    </div>
+</aside>
+  <div class="main-wrapper">
+    <!-- ! Main nav -->
+    <nav class="main-nav--bg">
+  <div class="container main-nav">
+    <div class="main-nav-start">
+      <div class="search-wrapper">
+        <i data-feather="search" aria-hidden="true"></i>
+        <input type="text" name="busqueda" id="busqueda" placeholder="Palabra a buscar ..." required>
+      </div>
+    </div>
+    <div class="main-nav-end">
+      <button class="sidebar-toggle transparent-btn" title="Menu" type="button">
+        <span class="sr-only">Toggle menu</span>
+        <span class="icon menu-toggle--gray" aria-hidden="true"></span>
+      </button>
+      
+      <button class="theme-switcher gray-circle-btn" type="button" title="Switch theme">
+        <span class="sr-only">Switch theme</span>
+        <i class="sun-icon" data-feather="sun" aria-hidden="true"></i>
+        <i class="moon-icon" data-feather="moon" aria-hidden="true"></i>
+      </button>
+      <script type="text/javascript">
+      function myFunction() {
+        $.ajax({
+          url: "php/notificaciones2.php",
+          type: "POST",
+          processData:false,
+          success: function(data){
+            $("#notification-count").remove();                  
+            $("#notification-latest").show();$("#notification-latest").html(data);
+          },
+          error: function(){}           
+        });
+      }
+                                 
+      $(document).ready(function() {
+        $('body').click(function(e){
+          if ( e.target.id != 'notification-icon'){
+            $("#notification-latest").hide();
+          }
+        });
+      });                                     
+    </script>
+     	<?php
+    $conn = new mysqli("localhost","root","","tesis");
+    $count = 0;
+    $sql2 = "SELECT * FROM orden o join cliente c on (o.id_cliente=c.id_cliente) join empleado e on (o.id_empleado=e.id_empleado) where o.proceso_orden='Sin empezar'
+	and e.correo_empleado='$id2'";
+    $result = mysqli_query($conn, $sql2);
+    $count = mysqli_num_rows($result);
+			?>
+      <div class="notification-wrapper">
+        <button class="gray-circle-btn dropdown-btn" id="notification-icon" onclick="myFunction()" href="#" role="button" data-toggle="dropdown" title="Ver ordenes nuevas"  type="button">
+          <span class="sr-only">Ver ordenes nuevas</span>
+          <?php if($count>0) {
+         echo  '<span id="notification-count" class="icon notification active" aria-hidden="true"> </span>';
+         } 
+         else echo  '<span id="notification-count" class="icon notification" aria-hidden="true"> </span>';
+         ?>
+          
+        </button>
+        
+        <ul class="users-item-dropdown notification-dropdown dropdown">
+          
+     
+         
+          <li>
+           <a href="php/tecnico_use/ordenasig.php">
+           <div class="notification-dropdown-icon danger">
+              <i data-feather="info" aria-hidden="true"></i>
+            </div>
+            <div  id="notification-latest"> 
+            </div>
+           </a>
+          </li>
+         
+          <li>
+            <a class="link-to-page" href="php/tecnico_use/ordenasig.php">Ver ordenes</a>
+          </li>
+        </ul>
+      </div>
+      <div class="nav-user-wrapper">
+        <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
+          <span class="sr-only">My profile</span>
+          <span class="nav-user-img">
+            <picture><source srcset="./img/photo1.png" type="image/png"><img src="./img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+          </span>
+        </button>
+        <ul class="users-item-dropdown nav-user-dropdown dropdown">
+          <li><a href="perfiltec.php?id2=<?php echo $id2;?>">
+              <i data-feather="user" aria-hidden="true"></i>
+              <span>Profile</span>
+            </a></li>
+          <li><a href="##">
+              <i data-feather="settings" aria-hidden="true"></i>
+              <span>Account settings</span>
+            </a></li>
+            <li><a class="log-out" href="#"  data-bs-toggle="modal" data-bs-target="#logoutModal">
+              <i data-feather="log-out" aria-hidden="true" ></i>
+              <span>Log out</span>
+            </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<!--  modal logout -->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog">
+    <div class="modal-content">
+		  <div class="modal-header">
+      <h5 class="modal-title" id="logoutmodalLabel">Cerrar sesion</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		  </div>
+		  <div class="modal-body">
+			<p><i class="fa fa-question-circle"></i> Esta seguro de cerrar sesion? <br /></p>
+      </div>
+			<div class="modal-footer">
+				<form action="/logout" method="post">
+					<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+					<a href="logout.php" type="button" class="btn btn-primary" ></span> Logout</a>
 					
-					<li >
-						<a href="ciudad.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-paint-brush"></span><span class="mtext">Direcciones</span>
-						</a>
-					
-					</li>
-					<li class="dropdown">
-						<a href="servicios.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-analytics-21"></span><span class="mtext">Servicios</span>
-						</a>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" aria-label="Cancelar">Cancelar</button>
 						
-					</li>		
-					
-					<li class="dropdown">
-						<a href="php\tecnico_use\ordenasig.php" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-right-arrow1"></span><span class="mtext">Ordenes</span>
-						</a>
-					
-					</li>
-					
-					
-				</ul>
-			</div>
+				</form>
+			
+		  </div>
 		</div>
+	  </div>
 	</div>
