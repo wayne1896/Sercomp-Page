@@ -17,4 +17,9 @@ function extraerclienteperfil($id2){
      where correo_cliente='$id2'";
     return $result=$mysqli->query($sql); 
 }	
+function extraerempresaperfil(){
+    include('php\conexion.php');	
+    $sql="SELECT * FROM perfil where id_perfil='1'";
+    return $result=$mysqli->query($sql); 
+}	
 ?>

@@ -242,7 +242,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
               <i data-feather="user" aria-hidden="true"></i>
               <span>Profile</span>
             </a></li>
-          <li><a href="##">
+          <li><a href="perfilempresa.php">
               <i data-feather="settings" aria-hidden="true"></i>
               <span>Account settings</span>
             </a></li>
