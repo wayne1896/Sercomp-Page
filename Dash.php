@@ -301,7 +301,7 @@ echo '0 results';
 <!-- Area Chart Example-->
 
 <div class="card-header">
-<i class="fa fa-area-chart"></i> Grafica </div>
+<i class="fa fa-area-chart"></i><h3 class="main-title" >  Grafica </h3></div>
 
 <div class="row">
     <div class="col-lg-9">
@@ -380,7 +380,7 @@ while($row = mysqli_fetch_assoc($result))
 ?>
                     <div class="top-cat-list__title">
                       Pagadas <div class="top-cat-list__subtitle">
-                     <span class="purple"><?php echo $row['Count(id_factura)'];?></span>
+                     <span class="success"><?php echo $row['Count(id_factura)'];?></span>
                      <?php
 }
 }

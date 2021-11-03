@@ -325,7 +325,7 @@ $id= $_GET['id'];
 		  while ($fila = $resultado->fetch_row()) {
         echo'
            
-<i class="fa fa-area-chart"></i> Grafica de la ciudad  '.$fila[0] ;}}?></div>
+<i class="fa fa-area-chart"></i> <h3 class="main-title" >  Grafica de la ciudad  '.$fila[0] ;}}?></h3></div>
 
 <div class="row">
     <div class="col-lg-9">
@@ -404,7 +404,7 @@ while($row = mysqli_fetch_assoc($result))
 ?>
                     <div class="top-cat-list__title">
                       Pagadas <div class="top-cat-list__subtitle">
-                     <span class="purple"><?php echo $row['Count(id_factura)'];?></span>
+                     <span class="success"><?php echo $row['Count(id_factura)'];?></span>
                      <?php
 }
 }
