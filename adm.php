@@ -297,20 +297,190 @@ echo '0 results';
 
 
 <!-- Area Chart Example-->
-<div class="card mb-4">
-<div class="card-header">
-<i class="fa fa-area-chart"></i> Dashboard </div>
 
-<div class="card-body">
-<div class="panel panel-primary">
-   
-<div class="panel-body">
-     <div id ="mygraph" style="min-width: 310px; height: 400px; max-width: 600px; margin:0 auto"></div>
-    </div>
+  <div class="card-header">
+    <i class="fa fa-area-chart"></i> Grafica
+  </div>
+  <div class="row">
+    <div class="col-lg-9">
+       <div class="chart">
+         <div id ="mygraph">
 
-  
+         </div>
+        </div>
+      </div>
+      <div class="col-lg-3">
+            
+            <article class="white-block">
+              <div class="top-cat-title">
+                <h3>Facturas</h3>
+                <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tesis";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+$sqll = "SELECT Count(id_factura) from factura  ";
+if (mysqli_query($conn, $sqll))
+{
+echo "";
+}
+else
+{
+echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
+}
+$result = mysqli_query($conn, $sqll);
+if (mysqli_num_rows($result) > 0)
+{
+// output data of each row
+while($row = mysqli_fetch_assoc($result))
+{
+?>
+                <p>Total de facturas <?php echo $row['Count(id_factura)'];?></p>
+                <?php
+}
+}
+else
+{
+echo '0 results';
+}
+?>
+              </div>
+              
+              <ul class="top-cat-list">
+                <li>
+                  <a href="facturacion.php">
+                  <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tesis";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+$sqll = "SELECT Count(id_factura) from factura where estado_factura= 'Pagado'  ";
+if (mysqli_query($conn, $sqll))
+{
+echo "";
+}
+else
+{
+echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
+}
+$result = mysqli_query($conn, $sqll);
+if (mysqli_num_rows($result) > 0)
+{
+// output data of each row
+while($row = mysqli_fetch_assoc($result))
+{
+?>
+                    <div class="top-cat-list__title">
+                      Pagadas <div class="top-cat-list__subtitle">
+                     <span class="purple"><?php echo $row['Count(id_factura)'];?></span>
+                     <?php
+}
+}
+else
+{
+echo '0 results';
+}
+?>
+                    </div>
+                    </div>
+                    
+                  </a>
+                </li>
+                <li>
+                  <a href="facturacion.php">
+                  <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tesis";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+$sqll = "SELECT Count(id_factura) from factura where estado_factura= 'Pendiente'  ";
+if (mysqli_query($conn, $sqll))
+{
+echo "";
+}
+else
+{
+echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
+}
+$result = mysqli_query($conn, $sqll);
+if (mysqli_num_rows($result) > 0)
+{
+// output data of each row
+while($row = mysqli_fetch_assoc($result))
+{
+?>
+                    <div class="top-cat-list__title">
+                     Pendientes<div class="top-cat-list__subtitle">
+                     <span class="warning"><?php echo $row['Count(id_factura)'];?></span>
+                     <?php
+}
+}
+else
+{
+echo '0 results';
+}
+?>
+                    
+                    
+                    </div> </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="facturacion.php">
+                  <?php
+
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "tesis";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+$sqll = "SELECT Count(id_factura) from factura where estado_factura= 'Anulada'  ";
+if (mysqli_query($conn, $sqll))
+{
+echo "";
+}
+else
+{
+echo "Error: " . $sqll . "<br>" . mysqli_error($conn);
+}
+$result = mysqli_query($conn, $sqll);
+if (mysqli_num_rows($result) > 0)
+{
+// output data of each row
+while($row = mysqli_fetch_assoc($result))
+{
+?>
+                    <div class="top-cat-list__title">
+                      Anuladas <div class="top-cat-list__subtitle">
+                     <span class="danger"><?php echo $row['Count(id_factura)'];?></span>
+                     <?php
+}
+}
+else
+{
+echo '0 results';
+}
+?>
+                    
+                    
+                    </div> </div>
+                  </a>
+                </li>
+                
+              </ul>
+            </article>
+          </div>
 </div>
-</div></div>
 </div>
 </div>
 </div>
