@@ -107,6 +107,7 @@
                     <select class="form-control" title="Su asignacion" id="rol" name="rol">
                            <option value="Tecnico"> Tecnico </option>
                            <option value="Oficina"> Oficina </option>
+                           <option value="Normal"> Normal </option>
                     
                     </select>
                     <div class="form-group">

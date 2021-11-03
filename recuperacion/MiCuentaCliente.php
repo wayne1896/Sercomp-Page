@@ -66,7 +66,7 @@ $mail = new PHPMailer(true);
                     //get user detail
                     
                     //send reset password email
-                    $mail->setFrom($correo, 'tesis');
+                    $mail->setFrom($correo, $nombre);
                     $mail->addAddress($correocliente, $nombrecompleto);
                     $mail->Subject = "Solicitud de actualización de contraseña";
                     $mail->Body = 'Estimado '.$nombrecompleto.',
@@ -131,6 +131,7 @@ $mail = new PHPMailer(true);
 					$sessData['estado']['type'] = 'success';
 
                     $sessData['estado']['msg'] = 'La contraseña de su cuenta se ha restablecido con éxito. Por favor inicie sesión con su nueva contraseña.';
+
 				}else{
 					$sessData['estado']['type'] = 'error';
 					$sessData['estado']['msg'] = 'Ha ocurrido algún problema, por favor intente de nuevo.';
