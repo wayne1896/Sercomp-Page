@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
+  	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>SERCOMP - Registro</title>
 <?php 
+include ("php/sidebar2/regcabe.php");
+
     // Include the database config file 
     include_once 'dbConfig.php'; 
      
@@ -10,9 +15,7 @@
 ?>
 
 <head>
-	<!-- Basic Page Info -->
-	<meta charset="utf-8">
-	<title>SERCOMP - Registro</title>
+
  
 	
 	<!-- Site favicon -->
@@ -26,11 +29,18 @@
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
+
 	<link rel="stylesheet" type="text/css" href="src/plugins/jquery-steps/jquery.steps.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
   <link rel="stylesheet" type="text/css" href="src/styles/style_form_out.css">
+  
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<!-- Custom styles -->
+<link rel="stylesheet" href="./css/style.min.css">
+<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+  <link rel="stylesheet" type="text/css" href="vendors/styles/footer.css">
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -50,20 +60,7 @@
 
 
 <body class="login-page">
-	<div class="login-header box-shadow">
-		<div class="container-fluid d-flex justify-content-between align-items-center">
-			<div class="brand-logo">
-				<a href="index.php">
-					<img src="vendors\images\Sercomp-bar.svg" alt="">
-				</a>
-			</div>
-			<div class="login-menu">
-				<ul>
-					<li><a href="index.php">Login</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
+	
 	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
@@ -75,26 +72,36 @@
   <h1>Registro de Usuario:</h1>
   <!-- One "tab" for each step in the form: -->
       
-      <div class="tab">Datos Basicos:
+      <div class="tab"><div class="main-title-wrapper">
+    <p>Datos Básicos</p>
+    </div>
         
-       
-        <p><input placeholder="E-mail..." type="email"  oninput="this.className = ''" name="correo"></p>
-        <p><input placeholder="Contraseña..." oninput="this.className = ''" name="clave" type="password"></p>
-        <p><input placeholder="Repite la contraseña" oninput="this.className = ''" name="clave" type="password"></p>
+      <label for="inputEmail">E-Mail</label>
+        <p><input class="form-control" placeholder="E-mail..." type="email"  oninput="this.className = ''" name="correo"></p>
+      <label for="inputEmail">Contraseña</label>
+        <p><input class="form-control" placeholder="Contraseña..." oninput="this.className = ''" name="clave" type="password"></p>
+      <label for="inputEmail">Contraseña</label>
+        <p><input class="form-control" placeholder="Repite la contraseña" oninput="this.className = ''" name="clave" type="password"></p>
    
       </div>
-      <div class="tab">Datos personales:
-        <p><input placeholder="Nombre..." oninput="this.className = ''" name="nombre"></p>
-        <p><input placeholder="Apellido..." oninput="this.className = ''" name="apellido"></p>
-        <p><input placeholder="Telelfono..." type="number" oninput="this.className = ''" name="telefono"></p>
-        <p><input placeholder="Cedula..." type="number" oninput="this.className = ''" name="cedula"></p>
-        <p>fecha de nacimiento</p>
-        <p><input placeholder="Fecha de Nacimiento" type="date"oninput="this.className = ''" name="fechanacimiento"></p>
+      <div class="tab">
+      <p> Datos personales:</p>
+      <label for="inputEmail">Nombre</label>
+        <p><input class="form-control" placeholder="Nombre..." oninput="this.className = ''" name="nombre"></p>
+        <label for="inputEmail">Apellido</label> 
+        <p><input class="form-control" placeholder="Apellido..." oninput="this.className = ''" name="apellido"></p>
+        <label for="inputEmail">Telefono</label>
+        <p><input class="form-control" placeholder="Telefono..." type="number" oninput="this.className = ''" name="telefono"></p>
+        <label for="inputEmail">Cedula</label>
+        <p><input class="form-control" placeholder="Cedula..." type="number" oninput="this.className = ''" name="cedula"></p>
+        <label for="inputEmail">Fecha de nacimiento</label>
+        <p><input class="form-control" placeholder="Fecha de Nacimiento" type="date"oninput="this.className = ''" name="fechanacimiento"></p>
         
        
       </div>
-      <div class="tab">Dirección:
-
+      <div class="tab">
+      <p>Dirección:</p>
+      <label for="inputEmail">Ciudad</label>
       <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
 <option value="">Seleccione Su Ciudad</option>
     <?php 
@@ -107,20 +114,22 @@
     } 
     ?>
       </select>
-
+      <label for="inputEmail">Sector</label>
         <select class="controls" title="Seleccione Su Sector" id="sector"  name="sector">
         <option value="">Seleccione una ciudad primero</option>
           
         </select>
+        <label for="inputEmail">Calle</label>
         <select class="controls" title="Seleccione Su Calle" id="calle" name="calle">
           <option value="">Seleccione un sector primero</option>
         </select>
+        <label for="inputEmail">Numero de casa</label>
         <p><input placeholder="Numero de casa..." type="number" oninput="this.className = ''" name="numcasa"></p>
       </div>
       <div style="overflow:auto;">
-        <div style="float:right;">
-          <button type="button" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
-          <button type="button" name id="nextBtn"  onclick="nextPrev(1)">Siguiente</button>
+      <div class="main-btns-wrapper">
+          <button type="button" class="secondary-default-btn" id="prevBtn" onclick="nextPrev(-1)">Anterior</button>
+          <button type="button"  class="primary-default-btn" name id="nextBtn"  onclick="nextPrev(1)">Siguiente</button>
           
         </div>
       </div>
@@ -254,7 +263,20 @@ $(document).ready(function(){
 			</div>
 		</div>
 	</div>
+	<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
 
+    <!-- Light Switch -->
+   <!-- Chart library -->
+<script src="./plugins/chart.min.js"></script>
+<!-- Icons library -->
+<script src="plugins/feather.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="js/script.js"></script>
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>

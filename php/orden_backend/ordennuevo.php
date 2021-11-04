@@ -37,6 +37,7 @@ $db =  connect();
 	<title>SERCOMP - Orden nueva</title>
  
 	
+ 
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -48,6 +49,9 @@ $db =  connect();
 	
 	
 	
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
@@ -57,27 +61,31 @@ $db =  connect();
 
 		gtag('config', 'UA-119386393-1');
 
-    
 	</script>
-	<style>
-
-</style>
+	
 </head>
 
 
 <body>
 	
-	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
-		<div class="container2">
+<main class="main" id="skip-target">
+    <div class="container" >
     <form method="POST"  action="registroordenp.php?accion=INS">
-                 <div class="form-group">
+    <div class="main-title-wrapper">
+    <h1 class="sign-up__title">Datos Básicos de la orden</h1>
+    </div>
 
-                 <h1>Datos Básicos de la Orden</h1>
-                                <a href="#"  data-bs-toggle="modal" data-bs-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
-                        
-                           </div>
-                    <div class="form-group">
-                    <label for="inputName">Servicios:</label>
+    <div class="row new-page__row">
+            <div class="mx-auto" >
+              <div class="main-content new-page-content" >
+                  <div>
+                  <a href="#" class="secondary-default-btn"  data-bs-toggle="modal" data-bs-target="#extraLargeModal"><FONT SIZE=5>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  aria-hidden="true"></svg> 
+                                Cargar Ubicacion por GPS </font></a>
+                  </div>
+         
+                    <label class="form-label" for="inputName">Servicios:</label>
                     <select class="form-control" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
                                  <option value="">Seleccione el Servicio</option>
                                  <?php 
@@ -88,11 +96,11 @@ $db =  connect();
                     }
                     ?>
                     </select>
-                </div>
-                    <label for="inputfistname">Ingrese el detalle del problema:</label>
+                
+                    <label class="form-label" for="inputfistname">Ingrese el detalle del problema:</label>
                     <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
-                    <div class="form-group">
-                        <label for="inputPassword">Nombre del Cliente:</label>
+                    
+                        <label class="form-label" for="inputPassword">Nombre del Cliente:</label>
                         <select class="form-control" title="Nombre cliente" id="nombre" name="nombre">
                                  <option value="">Seleccione el Cliente</option>
                                  <?php 
@@ -103,12 +111,11 @@ $db =  connect();
                     }
                     ?>
                     </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputfistname">Teléfono:</label>
+                    
+                        <label class="form-label" for="inputfistname">Teléfono:</label>
                         <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el Teléfono del Cliente"/>
-                    </div>
-                    <label for="inputName">Ciudad:</label>
+                    
+                    <label class="form-label" for="inputName">Ciudad:</label>
                         <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
                             <option value="">Seleccione Su Ciudad</option>
                                 <?php 
@@ -122,23 +129,22 @@ $db =  connect();
                                 ?>
                         </select>
 
-                            <label for="inputName">Sector:</label>
+                            <label class="form-label" for="inputName">Sector:</label>
                             <select class="form-control" title="Seleccione Su Sector" id="sector" name="sector">
                                   <option value="">Seleccione una ciudad primero</option>
                            </select>
 
-                            <label for="inputName">Calle:</label>
+                            <label class="form-label" class="form-label" for="inputName">Calle:</label>
                             <select class="form-control" title="Seleccione Su Calle" id="calle" name="calle">
                                 <option value="">Seleccione un sector primero</option>
                             </select>
 
-                            <div class="form-group">
-                                <label for="inputName">Numero de Casa:</label>
+                            
+                                <label class="form-label" for="inputName">Numero de Casa:</label>
                                 <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
-                           </div>
-                        <div class="form-group">
-                        <input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
-                        <input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
+                          
+                        <input type="number" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
+                        <input type="number" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
                            </div>
                     
                            <script>$(document).ready(function(){
@@ -182,15 +188,20 @@ $db =  connect();
   
 
 <?php } ?>
-    <button type="button" class="btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-   <button type="submit" name="editar" class="btn-success"><span class="glyphicon glyphicon-check"></span> Aceptar</a>
-		
-                    
+   
+<div class="main-btns-wrapper">
+<a type="button" class="secondary-default-btn" href="../../ordensin.php"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancel</a>
+                                <button type="submit" name="editar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Guardar</a>
+                                </div>
             </form>
         
 
 		</div>
 	</div>
+    </div>
+
+
+</main>
 
 <!-- js -->
 <script

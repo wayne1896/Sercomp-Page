@@ -23,8 +23,10 @@ $delete=mysqli_query($con, "DELETE FROM tmp WHERE id_tmp='".$id_tmp."'");
 }
 $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 ?>
-<table class="table">
-<tr>
+<div class="users-table table-wrapper">
+ <table class="posts-table">
+                <thead>
+                  <tr class="users-table-info">
 	<th class='text-center'>CODIGO</th>
 	<th class='text-center'>CANT.</th>
 	<th>DESCRIPCION</th>
@@ -58,7 +60,7 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 			<td><?php echo $nombre_producto;?></td>
 			<td class='text-right'><?php echo $precio_venta_f;?></td>
 			<td class='text-right'><?php echo $precio_total_f;?></td>
-			<td class='text-center'><a href="#" onclick="eliminar('<?php echo $id_tmp ?>')"><i class="glyphicon glyphicon-trash"></i></a></td>
+			<td class='text-center'><a href="#" onclick="eliminar('<?php echo $id_tmp ?>')"><i class='bx bxs-trash bx-sm'></i></a></td>
 		</tr>		
 		<?php
 	}
@@ -86,3 +88,4 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 </tr>
 
 </table>
+</div>

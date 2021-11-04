@@ -69,7 +69,7 @@
 						<td class='col-xs-2'><div class="pull-right">
 						<input type="text" class="form-control" style="text-align:right" id="precio_venta_<?php echo $id_producto; ?>"  value="<?php echo $precio_venta;?>" >
 						</div></td>
-						<td class='text-center'><a class='btn btn-info'href="#" onclick="agregar('<?php echo $id_producto ?>')"><i class="glyphicon glyphicon-plus"></i></a></td>
+						<td class='text-center'><a  class="btn btn-info" href="#" onclick="agregar('<?php echo $id_producto ?>')"><i class='bx bx-plus-circle' ></i></a></td>
 					</tr>
 					<?php
 				}

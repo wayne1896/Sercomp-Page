@@ -48,7 +48,7 @@
 		<div class="pd-20 card-box mb-30">
 			<div class="clearfix mb-20">
 				<div class="pull-left">
-					<h4 class="text-blue h4">Facturas</h4>
+					<h4 class="main-title">Facturas</h4>
 				</div>
 				<div class="pull-right">
 					<a href="php\facturacion_backend\nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>

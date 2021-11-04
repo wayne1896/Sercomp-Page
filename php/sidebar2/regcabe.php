@@ -13,11 +13,7 @@
 
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-    	<!-- Mobile Specific Metas -->
+
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <!-- CSS only -->
@@ -41,7 +37,7 @@
 		gtag('config', 'UA-119386393-1');
 	</script>
 </head>
-
+<body class="login-page">
 <div class="layer"></div>
 <!-- ! Body -->
 <a class="skip-link sr-only" href="#skip-target">Skip to content</a>
@@ -71,8 +67,8 @@
      
       <div class="nav-user-wrapper">
       <ul>
-					<li><a href="register.php">
-                        <h1 class="main-title"> Registro</h1>
+					<li><a href="index.php">
+                        <h1 class="main-title"> Login</h1>
                     </a></li>
 				</ul>
       </div>

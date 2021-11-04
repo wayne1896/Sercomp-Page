@@ -4,10 +4,10 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 	exit;
 	} ?>
 <!-- Site favicon -->
-<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+<link rel="icon" type="image/png" href="../../vendors\images\iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="../../vendors\images\iconbar.png">
 
-  <link rel="stylesheet" type="text/css" href="vendors/styles/footer.css">
+  <link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
 
 <div class="layer"></div>
 <!-- ! Body -->
@@ -218,7 +218,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
      
          
           <li>
-           <a href="ordensin.php">
+           <a href="../../ordensin.php">
            
             <div  id="notification-latest"> 
             </div>
@@ -226,7 +226,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </li>
          
           <li>
-            <a class="link-to-page" href="ordensin.php">Ver ordenes</a>
+            <a class="link-to-page" href="../../ordensin.php">Ver ordenes</a>
           </li>
         </ul>
       </div>
@@ -234,7 +234,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
         <button href="##" class="nav-user-btn dropdown-btn" title="My profile" type="button">
           <span class="sr-only">My profile</span>
           <span class="nav-user-img">
-            <picture><source srcset="../../img/photo1.png" type="image/png"><img src="./img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
+            <picture><source srcset="../../img/photo1.png" type="image/png"><img src="../../img/avatar/avatar-illustrated-02.png" alt="User name"></picture>
           </span>
         </button>
         <ul class="users-item-dropdown nav-user-dropdown dropdown">

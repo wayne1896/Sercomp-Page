@@ -103,9 +103,9 @@
 						<td scope="row"><?php echo $pago_factura; ?></td>
 						<td scope="row" class='text-right'><?php echo number_format ($total_venta,2); ?></td>					
 					<td class="text-right">
-						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class='btn btn-default' title='Editar factura' ><i class='bx bxs-edit bx-sm'></i></a> 
-						<a href="#" class='btn btn-default' title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class='bx bxs-download bx-sm'></i></a> 
-						<a href="#" class='btn btn-default' title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class='bx bxs-trash bx-sm' ></i></a>
+						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class="btn btn-outline-primary" title='Editar factura' ><i class='bx bxs-edit bx'></i></a> 
+						<a href="#" class="btn btn-outline-primary" title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class='bx bxs-download bx'></i></a> 
+						<a href="#" class="btn btn-outline-primary" title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class='bx bxs-trash bx' ></i></a>
 					</td>
 						
 					</tr>
@@ -113,7 +113,8 @@
 				}
 				?>
 				<tr>
-					<td colspan=7><span class="pull-right"><?php
+					<td colspan=7><span class="pull-right">
+						<?php
 					 echo paginate($reload, $page, $total_pages, $adjacents);
 					?></span></td>
 				</tr>

@@ -48,50 +48,53 @@
 </head>
 
 
-<body>
-	
-	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
-		<div class="container2">
-    <form method="POST"  action="registrocliente.php?accion=INS">
-                 <div class="form-group">
+<body >
+    
+<main class="main" id="skip-target">
+    <div class="container" >
 
-                        <h1>Datos Básicos</h1>
-                        <label for="inputEmail">E-Mail</label>
+    <form  method="POST"  action="registrocliente.php?accion=INS" >
+    <div class="main-title-wrapper">
+    <h1 class="sign-up__title">Datos Básicos</h1>
+    </div>
+
+    <div class="row new-page__row">
+            <div class="mx-auto" >
+              <div class="main-content new-page-content" >
+                        <label class="form-label" for="inputEmail">E-Mail</label>
                         <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su email"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputpassword">Contraseña</label>
-                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingrese su Contraseña"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputPassword">Repetir contraseña</label>
-                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Re-ingrese su Contraseña"/>
-                    </div>
                     
-                    <h1>Datos Personales</h1> 
-                    <div class="form-group">
-                        <label for="inputfistname">Nombre</label>
+                  
+                        <label class="form-label" for="inputpassword">Contraseña</label>
+                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingrese su Contraseña"/>
+                   
+               
+                        <label class="form-label" for="inputPassword">Repetir contraseña</label>
+                        <input type="password" class="form-control" name="clave" id="clave" placeholder="Re-ingrese su Contraseña"/>
+                   
+                    
+                        <p class="white-block__title">Datos Personales</p> 
+                    
+                        <label class="form-label" for="inputfistname">Nombre</label>
                         <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese su Nombre"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputlastname">Apellido</label>
+                   
+                        <label class="form-label" for="inputlastname">Apellido</label>
                         <input type="text" class="form-control" name="apellido" id="apellido" placeholder="Ingrese su Apellido"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Telefono</label>
+                    
+                        <label class="form-label" for="inputName">Telefono</label>
                         <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese su Telefono"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Cedula</label>
+                
+                        <label class="form-label" for="inputName">Cedula</label>
                         <input type="number" class="form-control" name="cedula" id="cedula" placeholder="Ingrese su Cedula"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputName">Fecha de nacimiento</label>
+                  
+                        <label class="form-label" for="inputName">Fecha de nacimiento</label>
                         <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento" placeholder="Fecha de Nacimiento"/>
-                    </div>
-                    <div class="form-group">
-                        <h1>Dirección</h1>
-                        <label for="inputName">Ciudad</label>
+
+              
+                        
+              <p class="white-block__title">Dirección</p>
+              
+                        <label class="form-label" for="inputName">Ciudad</label>
                         <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
                             <option value="">Seleccione Su Ciudad</option>
                         <?php 
@@ -105,28 +108,29 @@
                         } 
                         ?>
                         </select>
-                            <label for="inputName">Sector</label>
+                            <label class="form-label" for="inputName">Sector</label>
                             <select class="form-control" title="Seleccione Su Sector" id="sector" required="required" name="sector">
                             <option value="">Seleccione una ciudad primero</option>
                             
                             </select>
-                            <label for="inputName">Calle</label>
+                            <label class="form-label" for="inputName">Calle</label>
                             <select class="form-control" title="Seleccione Su Calle" id="calle" required="required" name="calle">
                             <option value="">Seleccione un sector primero</option>
                             </select>
                             
-                            <label for="inputName">Numero de Casa</label>
+                            <label class="form-label" for="inputName">Numero de Casa</label>
                             <input type="number" class="form-control" name="numcasa" id="numcasa"  required="required" placeholder="Ingrese su Numero de Casa"/>
                             
                             
-                           
-                                <button type="button" class="btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-                                <button type="submit" name="editar" class="btn-success"><span class="glyphicon glyphicon-check"></span> Aceptar</a>
-		
+                            <div class="main-btns-wrapper">
+                                <a type="button" class="secondary-default-btn"  href="../../clientes.php"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancel</a>
+                                <button type="submit" name="editar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Guardar</a>
+                                </div>
                           
 					
                           
-                    </div>
+            </div>
+          </div>
                     
                   
                     
@@ -173,8 +177,9 @@
 });</script>
 
 		</div>
-	</div>
 
+
+</main>
 <!-- js -->
 <script
 		  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"

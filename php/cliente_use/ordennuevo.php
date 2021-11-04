@@ -3,7 +3,7 @@
 
 
 <?php 
-       include('../pcabeza\navbar_ordenreg.php');	
+       
        include('../sidebar/sidebarclientereg.php');	
       include('../consultas/consultaorden.php');
 if ( isset($_POST['lat']) ) {
@@ -38,22 +38,21 @@ $db =  connect();
 	<meta charset="utf-8">
 	<title>SERCOMP - Orden nueva</title>
  
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="../../vendors/images/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../../vendors/images/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../../vendors/images/favicon-16x16.png">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="../../src/plugins/jquery-steps/jquery.steps.css">
-	<link rel="stylesheet" type="text/css" href="../../vendors/styles/style.css">
-  <link rel="stylesheet" type="text/css" href="../../src/styles/style_form_out.css">
+ 
+	<!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- CSS only -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	  <!-- Custom styles -->
+	  <link rel="stylesheet" href="../../css/style.min.css">
+	  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	
+	
+	
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
@@ -64,29 +63,32 @@ $db =  connect();
 
 		gtag('config', 'UA-119386393-1');
 
-    
 	</script>
-	<style>
-
-</style>
+	
 </head>
 
 
 <body>
 	
-	<div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
-		<div class="container2">
+<main class="main" id="skip-target">
+    <div class="container" >
     <form method="POST"  action="registroordenp.php?accion=INS">
-                 <div class="form-group">
+    <div class="main-title-wrapper">
+    <h1 class="sign-up__title">Datos Básicos de la orden</h1>
+    </div>
 
-                 <h1>Datos Básicos de la Orden</h1>
-                    
-                 <div class="form-group">
-                                <a href="#" data-toggle="modal" data-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
-                        
-                           </div>
-                    <label for="inputName">Servicios:</label>
-                    <select class="form-group" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
+    <div class="row new-page__row">
+            <div class="mx-auto" >
+              <div class="main-content new-page-content" >
+                  <div>
+                  <a href="#" class="secondary-default-btn"  data-bs-toggle="modal" data-bs-target="#extraLargeModal"><FONT SIZE=5>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  aria-hidden="true"></svg> 
+                                Cargar Ubicacion por GPS </font></a>
+                  </div>
+         
+                    <label class="form-label" for="inputName">Servicios:</label>
+                    <select class="form-control" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
                                  <option value="">Seleccione el Servicio</option>
                                  <?php 
                     if($result2->num_rows > 0){ 
@@ -96,82 +98,131 @@ $db =  connect();
                     }
                     ?>
                     </select>
-                    <label for="inputfistname">Ingrese el detalle del problema:</label>
+                
+                    <label class="form-label" for="inputfistname">Ingrese el detalle del problema:</label>
                     <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
-                    <div class="form-group">
-                        <label for="inputPassword">Nombre del Cliente:</label>
-                        <select class="form-group" title="Nombre cliente" id="nombre" name="nombre">
+                    
+                        <label class="form-label" for="inputPassword">Nombre del Cliente:</label>
+                        <select class="form-control" title="Nombre cliente" id="nombre" name="nombre">
                                  <option value="">Seleccione el Cliente</option>
                                  <?php 
                     if($result3->num_rows > 0){ 
                         while($row2 = $result3->fetch_assoc()){  
                             echo '<option value="'.$row2['id_cliente'].'">'.$row2['nombre_cliente'].' '.$row2['apellido_cliente'].'</option>'; 
-                    ?>
-                    </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="inputfistname">Teléfono:</label>
-                        <input type="text" class="form-control" name="telefono" id="telefono" readonly placeholder="Ingrese el Teléfono del Cliente"/
-                        value="<?php echo $row2['telefono_cliente']?>">
-                    </div>
-                    <label for="inputName">Ciudad:</label>
-                    <input type="text" class="form-control"  readonly  id="ciudad1" name="ciudad1"
-                    value="<?php echo $row2['nombre_ciudad']?>">
-                    <input type="text" class="form-control"  readonly hidden  id="ciudad" name="ciudad"
-                    value="<?php echo $row2['ciudad_cliente']?>">
-                            
-
-                            <label for="inputName">Sector:</label>
-                            <input type="text" class="form-control"  readonly  id="sector1" name="sector1"
-                            value="<?php echo $row2['nombre_sector']?>">
-                            <input type="text" class="form-control"  readonly hidden  id="sector" name="sector"
-                            value="<?php echo $row2['sector_cliente']?>">
-                                      
-
-                            <label for="inputName">Calle:</label>
-                            <input type="text" class="form-control"  readonly  id="calle1" name="calle1"
-                            value="<?php echo $row2['nombre_calle']?>">
-                            <input type="text" class="form-control" hidden readonly  id="calle" name="calle"
-                            value="<?php echo $row2['calle_cliente']?>">
-
-
-                            <div class="form-group">
-                                <label for="inputName">Numero de Casa:</label>
-                                <input type="text" class="form-control" name="numcasa" id="numcasa"  readonly placeholder="Ingrese su Numero de Casa"/
-                                value="<?php echo $row2['numcasa_cliente']?>">
-                           </div>
-                           <?php
                         } 
                     }
                     ?>
-                        <div class="form-group">
-                        <input type="number" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
-                        <input type="number" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
+                    </select>
+                    
+                        <label class="form-label" for="inputfistname">Teléfono:</label>
+                        <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el Teléfono del Cliente"/>
+                    
+                    <label class="form-label" for="inputName">Ciudad:</label>
+                        <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
+                            <option value="">Seleccione Su Ciudad</option>
+                                <?php 
+                                if($result1->num_rows > 0){ 
+                                    while($row = $result1->fetch_assoc()){  
+                                        echo '<option value="'.$row['id_ciudad'].'">'.$row['nombre_ciudad'].'</option>'; 
+                                    } 
+                                }else{ 
+                                    echo '<option value="">Ciudad no disponible</option>'; 
+                                } 
+                                ?>
+                        </select>
+
+                            <label class="form-label" for="inputName">Sector:</label>
+                            <select class="form-control" title="Seleccione Su Sector" id="sector" name="sector">
+                                  <option value="">Seleccione una ciudad primero</option>
+                           </select>
+
+                            <label class="form-label" class="form-label" for="inputName">Calle:</label>
+                            <select class="form-control" title="Seleccione Su Calle" id="calle" name="calle">
+                                <option value="">Seleccione un sector primero</option>
+                            </select>
+
+                            
+                                <label class="form-label" for="inputName">Numero de Casa:</label>
+                                <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
+                          
+                        <input type="number" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
+                        <input type="number" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
                            </div>
                     
-                       
+                           <script>$(document).ready(function(){
+    $('#ciudad').on('change', function(){
+        var ciudadID = $(this).val();
+        var ciudadNombre = $(this).val();
+        if(ciudadID){
+            $.ajax({
+                type:'POST',
+                url:'../../ajaxData.php',
+                data:'id_ciudad='+ciudadID,
+                success:function(html){
+                    $('#sector').html(html);
+                    $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
+                }
+            }); 
+        }else{
+            $('#sector').html('<option value="">Seleccione una ciudad primero</option>');
+            $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
+        }
+    });
+    
+    $('#sector').on('change', function(){
+        var sectorID = $(this).val();
+        if(sectorID){
+            $.ajax({
+                type:'POST',
+                url:'../../ajaxData.php',
+                data:'id_sector='+sectorID,
+                success:function(html){
+                    $('#calle').html(html);
+                }
+            }); 
+        }else{
+            $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
+        }
+    });
+});</script>
 
-<?php if($lat<>0){ ?>
+<?php if($lat=null){ ?>
   
 
 <?php } ?>
-    <button type="button" class="btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
-   <button type="submit" name="editar" class="btn-success"><span class="glyphicon glyphicon-check"></span> Aceptar</a>
-		
-                    
+   
+<div class="main-btns-wrapper">
+                                <a type="button" class="secondary-default-btn" href="ordensin.php"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancel</a>
+                                <button type="submit" name="editar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Guardar</a>
+                                </div>
             </form>
         
 
 		</div>
 	</div>
+    </div>
 
-	<!-- js -->
-	<script src="../../vendors/scripts/core.js"></script>
-	<script src="../../vendors/scripts/script.min.js"></script>
-	<script src="../../vendors/scripts/process.js"></script>
-	<script src="../../vendors/scripts/layout-settings.js"></script>
-	<script src="../../src/plugins/jquery-steps/jquery.steps.js"></script>
-	<script src="../../vendors/scripts/steps-setting.js"></script>
+
+</main>
+
+<!-- js -->
+<script
+		  src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+		  integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+		  crossorigin="anonymous"
+		></script>
+	
+		<!-- Light Switch -->
+	   <!-- Chart library -->
+	<script src="../../plugins/chart.min.js"></script>
+	<!-- Icons library -->
+	<script src="../../plugins/feather.min.js"></script>
+	
+	<!-- Custom scripts -->
+	<script src="../../js/script.js"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	
 </body>
 <div class="bs-example">
     <!-- Extra Large modal -->

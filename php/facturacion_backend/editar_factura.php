@@ -77,7 +77,7 @@
   <div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
 	<div class="panel panel-info">
 		<div class="panel-heading">
-			<h4><i class='glyphicon glyphicon-edit'></i> Editar Factura</h4>
+			<h4 class='main-title'><i class='bx bxs-edit'></i> Editar Factura</h4>
 		</div>
 		<div class="panel-body">
 		<?php 
@@ -87,22 +87,22 @@
 		?>
 			<form class="form-horizontal" role="form" id="datos_factura">
 				<div class="form-group row">
-				  <label for="nombre_cliente" class="col-md-1 control-label">Cliente</label>
+				  <label class="form-label" for="nombre_cliente" class="col-md-1 control-label">Cliente</label>
 				  <div class="col-md-3">
 					  <input type="text" class="form-control input-sm" id="nombre_cliente" placeholder="Selecciona un cliente" required value="<?php echo $nombre_cliente;?>">
 					  <input id="id_cliente" name="id_cliente" type='hidden' value="<?php echo $id_cliente;?>">	
 				  </div>
-				  <label for="tel1" class="col-md-1 control-label">Teléfono</label>
+				  <label class="form-label" for="tel1" class="col-md-1 control-label">Teléfono</label>
 							<div class="col-md-2">
 								<input type="text" class="form-control input-sm" id="tel1" placeholder="Teléfono" value="<?php echo $telefono_cliente;?>" readonly>
 							</div>
-					<label for="mail" class="col-md-1 control-label">Email</label>
+					<label class="form-label" for="mail" class="col-md-1 control-label">Email</label>
 							<div class="col-md-3">
 								<input type="text" class="form-control input-sm" id="mail" placeholder="Email" readonly value="<?php echo $email_cliente;?>">
 							</div>
 				 </div>
 						<div class="form-group row">
-							<label for="empresa" class="col-md-1 control-label">Vendedor</label>
+							<label class="form-label" for="empresa" class="col-md-1 control-label">Vendedor</label>
 							<div class="col-md-3">
 								<select class="form-control input-sm" id="id_vendedor" name="id_vendedor">
 									<?php
@@ -122,11 +122,11 @@
 									?>
 								</select>
 							</div>
-							<label for="tel2" class="col-md-1 control-label">Fecha</label>
+							<label class="form-label" for="tel2" class="col-md-1 control-label">Fecha</label>
 							<div class="col-md-2">
 								<input type="text" class="form-control input-sm" id="fecha" value="<?php echo $fecha_factura;?>" readonly>
 							</div>
-							<label for="email" class="col-md-1 control-label">Pago</label>
+							<label class="form-label" for="email" class="col-md-1 control-label">Pago</label>
 							<div class="col-md-2">
 								<select class='form-control input-sm ' id="condiciones" name="condiciones">
 									<option value="Efectivo" <?php if ($condiciones=='Efectivo'){echo "selected";}?>>Efectivo</option>
@@ -145,21 +145,22 @@
 							</div>
 						</div>
 				
-				
+
 				<div class="col-md-12">
 					<div class="pull-right">
-						<button type="submit" class="btn btn-default">
-						  <span class="glyphicon glyphicon-refresh"></span> Actualizar datos
+				
+						<button type="submit" class="btn btn-outline-primary">
+						  <span class="bx bx-refresh bx-sm"></span> Actualizar datos
 						</button>
 				
-						<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nuevoCliente">
-						 <span class="glyphicon glyphicon-user"></span> Nuevo cliente
+						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoCliente">
+						 <span class="bx bx-user-plus bx-sm"></span> Nuevo cliente
 						</button>
-						<button type="button" class="btn btn-default" data-bs-toggle="modal" data-bs-target="#myModal">
-						 <span class="glyphicon glyphicon-search"></span> Agregar productos
+						<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+						 <span class="bx bx-search-alt bx-sm"></span> Agregar productos
 						</button>
-						<button type="button" class="btn btn-default" onclick="imprimir_factura1('<?php echo $id_factura;?>')">
-						  <span class="glyphicon glyphicon-print"></span> Imprimir
+						<button type="button" class="btn btn-outline-primary" onclick="imprimir_factura1('<?php echo $id_factura;?>')">
+						  <span class="bx bx-printer bx-sm"></span> Imprimir
 						</button>
 					</div>	
 				</div>

@@ -47,7 +47,7 @@ include "config.php";
 		  <div class="pd-20 card-box mb-30">
 			  <div class="clearfix mb-20">
 				  <div class="pull-left">
-					  <h4 class="text-blue h4">Facturas</h4>
+					  <h4 class="main-title">Facturas</h4>
 				  </div>
 				  <div class="pull-right">
 					  <a href="php\facturacion_backend\nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>
@@ -146,9 +146,9 @@ include "config.php";
 						<td scope="row"><?php echo $pago_factura; ?></td>
 						<td scope="row" class='text-right'><?php echo number_format ($total_venta,2); ?></td>					
 					<td class="text-right">
-						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class='btn btn-default' title='Editar factura' ><i class='bx bxs-edit bx-sm'></i></a> 
-						<a href="#" class='btn btn-default' title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class='bx bxs-download bx-sm'></i></a> 
-						<a href="#" class='btn btn-default' title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class='bx bxs-trash bx-sm' ></i></a>
+					<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class="btn btn-outline-primary" title='Editar factura' ><i class='bx bxs-edit bx'></i></a> 
+						<a href="#" class="btn btn-outline-primary" title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class='bx bxs-download bx'></i></a> 
+						<a href="#" class="btn btn-outline-primary" title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class='bx bxs-trash bx' ></i></a>
 					</td>
 						
 					</tr>

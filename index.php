@@ -40,7 +40,7 @@ include ("php\sidebar2\indexcabe.php");
 		echo '<div class="alert alert-'.$color.'" role="alert">'.$mensaje.'</div>';
 	}
 ?>
-	
+	<body class="login-page">
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
