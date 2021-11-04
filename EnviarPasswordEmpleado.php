@@ -6,6 +6,9 @@ if(!empty($sessData['estado']['msg'])){
     $statusMsgType = $sessData['estado']['type'];
     unset($_SESSION['sessData']['estado']);
 }
+
+include ("php\sidebar2\indexcabe.php");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +16,8 @@ if(!empty($sessData['estado']['msg'])){
 	
 	<!-- Basic Page Info -->
 	<meta charset="utf-8">
-	<title>Tesis - Bootstrap Admin Dashboard HTML Template</title>
+	<title>SERCOMP- RECUPERACION DE CONTRASEÑA</title>
+
 
 	
 	<!-- Site favicon -->
@@ -21,41 +25,8 @@ if(!empty($sessData['estado']['msg'])){
 	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
 
 
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-119386393-1');
-	</script>
-</head>
 <body class="login-page">
-<div class="login-header box-shadow">
-	<div class="container-fluid d-flex justify-content-between align-items-center">
-	<div class="brand-logo">
-				<a href="index.php">
-				<img class="fondo" src="vendors\images\Sercomp-bar.svg" alt="">
-				</a>
-			</div>
-		<div class="login-menu">
-			<ul>
-					<li><a href="register.php">Registro</a></li>
-			</ul>
-		</div>
-	</div>
-</div>
+
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
@@ -83,7 +54,33 @@ if(!empty($sessData['estado']['msg'])){
 		</div>
 	</div>
 </div>
+	<!-- js -->
+		<!-- js -->
+		<script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Light Switch -->
+   <!-- Chart library -->
+<script src="./plugins/chart.min.js"></script>
+<!-- Icons library -->
+<script src="plugins/feather.min.js"></script>
+
+<!-- Custom scripts -->
+<script src="js/script.js"></script>
+
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<?php   
+      	
+		include('php/ppie\ppiemenu.php');	
+	?>
 </body>
+</html>
 		
 
 
