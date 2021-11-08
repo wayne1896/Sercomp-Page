@@ -37,7 +37,9 @@ include ("php\sidebar2\indexcabe.php");
 		}
 	}
 	if (!empty($mensaje) and !empty($color)) {
-		echo '<div class="alert alert-'.$color.'" role="alert">'.$mensaje.'</div>';
+		echo '<div class="alert alert-'.$color.'" role="alert">'.$mensaje.'
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>';
 	}
 ?>
 	<body class="login-page">
@@ -57,7 +59,9 @@ include ("php\sidebar2\indexcabe.php");
                         if(@$_GET['Empty']==true)
                         {
                     ?>
-                        <div class="alert-light text-danger text-center py-2"  style="margin-top:20px"><?php echo $_GET['Empty'] ?></div>                                
+                        <div class="alert-light text-danger text-center py-2"  style="margin-top:20px"><?php echo $_GET['Empty'] ?>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>                                
                     <?php
                         }
                     ?>
@@ -67,7 +71,9 @@ include ("php\sidebar2\indexcabe.php");
                         if(@$_GET['Invalid']==true)
                         {
                     ?>
-                        <div class="alert-light text-danger text-center py-2" style="margin-top:20px"><?php echo $_GET['Invalid'] ?></div>                                
+                        <div class="alert-light text-danger text-center py-2" style="margin-top:20px"><?php echo $_GET['Invalid'] ?>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>                                
                     <?php
                         }
                     ?>

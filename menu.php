@@ -48,6 +48,7 @@
 	}
 	if (!empty($mensaje) and !empty($color)) {
 		echo '<div class="alert alert-'.$color.'" role="alert">'.$mensaje.' <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>';
 	}
 		
