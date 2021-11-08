@@ -153,9 +153,7 @@
 						  <span class="bx bx-refresh bx-sm"></span> Actualizar datos
 						</button>
 				
-						<button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoCliente">
-						 <span class="bx bx-user-plus bx-sm"></span> Nuevo cliente
-						</button>
+						
 						<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">
 						 <span class="bx bx-search-alt bx-sm"></span> Agregar productos
 						</button>

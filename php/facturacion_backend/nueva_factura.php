@@ -39,6 +39,46 @@
 	</script>
 </head>
   <body>
+  <?php 
+			$mensaje='';
+			$color='';
+			if (isset($_GET['s'])) {
+				switch ($_GET['s']) {
+					case 'success':
+						$mensaje='Registro almacenado correctamente';
+						$color='success';
+						break;
+					case 'error':
+						$mensaje='Imposible almacenar el registro';
+						$color='danger';
+						break;
+					case 'successudt':
+						$mensaje='Registro actualizado correctamente';
+						$color='success';
+						break;
+						case 'errorudt':
+						$mensaje='Imposible actualizar el registro';
+						$color='danger';
+						break;
+					case 'successdlt':
+						$mensaje='Registro inhabilitado correctamente';
+						$color='success';
+						break;
+					case 'errordlt':
+						$mensaje='Imposible inhabilitar el registro';
+						$color='danger';
+						break;
+					}
+				}
+				if (!empty($mensaje) ) {
+					?>
+					<div class="alert alert-info text-center" style="margin-top:20px;">
+					<?php echo $mensaje; ?>
+					<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				</div>
+				<?php
+				}
+			?>
 
   <div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
 	<div class="panel panel-info">
@@ -108,9 +148,9 @@
 				<div class="col-md-12">
 					<div class="pull-right">
 					
-						<button type="button"  class="btn btn-outline-primary" data-toggle="modal" data-target="#nuevoCliente">
+						<a type="button" href='..\clientes_backend\clientenuevofac.php'  class="btn btn-outline-primary" >
 						 <span class="bx bx-user-plus bx-sm"></span> Nuevo cliente
-						</button>
+									</a>
 						<button type="button"  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">
 						 <span class="bx bx-search-alt bx-sm"></span> Agregar productos
 						</button>
