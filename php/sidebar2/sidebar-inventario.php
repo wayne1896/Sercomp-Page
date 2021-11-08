@@ -159,7 +159,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
     <div class="main-nav-start">
       <div class="search-wrapper">
         <i data-feather="search" aria-hidden="true"></i>
-        <input type="text" name="busqueda" id="busqueda" placeholder="Palabra a buscar ..." required>
+        <input type="text" name="q" id="q" placeholder="Código o nombre del producto" required onkeyup='load(1);'>
       </div>
     </div>
     <div class="main-nav-end">

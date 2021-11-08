@@ -12,6 +12,16 @@
  		
 		include('php/sidebar2\sidebar-inventario.php');	
 		include('php/consultas/consultainventario.php');	
+		
+		if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
+			header("location: login.php");
+			exit;
+			}
+	
+		/* Connect To Database*/
+		require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+		require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos
+		
     ?>
 
 	<!-- Basic Page Info -->
@@ -27,7 +37,8 @@
   <!-- Custom styles -->
   <link rel="stylesheet" href="./css/style.min.css">
   <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  
+
+  <link rel="stylesheet" href="css1/custom.css">
 
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -45,49 +56,81 @@
 <div class="mobile-menu-overlay"></div>
 
 <div class="container">
-    <div class="pd-ltr-20">
-        
-       
-           
-			<!-- Responsive tables Start -->
-			<div class="pd-20 card-box mb-30">
+	<div class="panel panel-success">
+		<div class="panel-heading">
+		    <div >
+				<button type='button' class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#nuevoProducto"><span class="glyphicon glyphicon-plus" ></span> Agregar</button>
+				<a type='button' class="btn btn-secondary" href='categorias.php'><span class="glyphicon glyphicon-plus" ></span> Ver categorias</a>
+			</div>
+			<h4 class="main-title">Inventario</h4>
+		</div>
 
-					<div class="clearfix mb-20">
-						<div class="pull-left">
-						<h4 class="main-title">Inventario</h4>
-					</div>
-
-						<div class="pull-right">
-                       		 <a href="#addnew" class="btn btn-primary"  data-bs-toggle="modal"><i class=""></i> Nuevo</a>
-						</div>
-					</div>
-
-			    <?php 
+		
 			
-					if(isset($_SESSION['message'])){
-								?>
-								<div class="alert alert-info text-center" style="margin-top:20px;">
-									<?php echo $_SESSION['message']; ?>
-									<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-								</div>
-
-								<?php
-		
-								unset($_SESSION['message']);
-								
-                                }
-				          	?>
-		         
-				 <section id="tabla_resultado">
-		<!-- AQUI SE DESPLEGARA NUESTRA TABLA DE CONSULTA -->
-		
-		</section
-</div>
+			
+			<?php
+			include("modal/registro_productos.php");
+			include("modal/editar_productos.php");
+			
+			?>
+			<form class="form-horizontal" role="form" id="datos">
+				
 						
-						</div>
+				<div class="row">
+				<?php 
+	
+	if(isset($_SESSION['message'])){
+		?>
+		<div class="alert alert-info text-center" style="margin-top:20px;">
+			<?php echo $_SESSION['message']; ?>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+   
+		</div>
+		<?php
+
+		unset($_SESSION['message']);
+	}
+?>
+					
+					<div class='col-md-4'>
+						<label class="form-label">Filtrar por categoría</label>
+						<select class='form-control' name='id_categoria' id='id_categoria' onchange="load(1);">
+							<option value="">Selecciona una categoría</option>
+							<?php 
+							$query_categoria=mysqli_query($con,"select * from categorias order by nombre_categoria");
+							while($rw=mysqli_fetch_array($query_categoria))	{
+								?>
+							<option value="<?php echo $rw['id_categoria'];?>"><?php echo $rw['nombre_categoria'];?></option>			
+								<?php
+							}
+							?>
+						</select>
+					</div>
+					<div class='col-md-12 text-center'>
+						<span id="loader"></span>
 					</div>
 				</div>
+				<hr>
 				
+				<div class='row'>
+					<div id="resultados"></div><!-- Carga los datos ajax -->
+				</div>	
+				<div class='row'>
+					<div class='outer_div'></div><!-- Carga los datos ajax -->
+				</div>
+			</form>
+				
+			
+		
+	
+			
+			
+			
+  </div>
+</div>
+		 
+	
+	<hr>
 		
 
 <!-- js -->
@@ -109,9 +152,61 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
+
 </body>
 <?php   
         include('php\inventario_backend\Modals\Modal_Inventario.php');	
 		include('php/ppie\ppiemenu.php');	
 	?>
-</html><script src="buscadores\peticioninventario.js"></script>
+</html>	<script type="text/javascript" src="js1/productos.js"></script>
+<script>
+function eliminar (id){
+		var q= $("#q").val();
+		var id_categoria= $("#id_categoria").val();
+		$.ajax({
+			type: "GET",
+			url: "./ajax1/buscar_productos.php",
+			data: "id="+id,"q":q+"id_categoria="+id_categoria,
+			 beforeSend: function(objeto){
+				$("#resultados").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados").html(datos);
+			load(1);
+			}
+		});
+	}
+		
+	$(document).ready(function(){
+			
+		<?php 
+			if (isset($_GET['delete'])){
+		?>
+			eliminar(<?php echo intval($_GET['delete'])?>);	
+		<?php
+			}
+		
+		?>	
+	});
+		
+$( "#guardar_producto" ).submit(function( event ) {
+  $('#guardar_datos').attr("disabled", true);
+  
+ var parametros = $(this).serialize();
+	 $.ajax({
+			type: "POST",
+			url: "ajax1/nuevo_producto.php",
+			data: parametros,
+			 beforeSend: function(objeto){
+				$("#resultados_ajax_productos").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados_ajax_productos").html(datos);
+			$('#guardar_datos').attr("disabled", false);
+			load(1);
+		  }
+	});
+  event.preventDefault();
+})
+
+</script>

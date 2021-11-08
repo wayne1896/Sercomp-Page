@@ -106,7 +106,7 @@
 					 				<td>
 									 
 										 
-									 <a href='categorias.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
+									 <a href='categorias1.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
 									
 									 
 					 				</td>
