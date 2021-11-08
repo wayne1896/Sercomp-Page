@@ -52,5 +52,46 @@
 		}
 		header("Location: ../../ordensin.php?s=".$msj);
 	}
+	if ($i=='UDP') {
+		
+		$msj='';
+		$codigo=$_POST['codigo'];
+		$servicios=$_POST['servicio'];
+		$detalle=$_POST['descripcion'];
+        $nombre=$_POST['nombre'];
+		$telefono=$_POST['telefono'];
+		$ciudad=$_POST['ciudad'];
+        $sector=$_POST['sector'];
+        $calle=$_POST['calle']; 
+        $numcasa=$_POST['numcasa'];
+		$lat=$_POST['lat'];
+		$long=$_POST['long'];
+		$fecha=date('y-m-d');
+		
+		
+		$sql="
+		UPDATE `orden` SET 
+		`descripcion_orden`='$detalle',
+		`servicio_orden`='$servicios',
+		`ciudad_orden`='$ciudad',
+		`sector_orden`='$sector',
+		`calle_orden`='$calle',
+		`numcasa_orden`='$numcasa'
+		
+		WHERE 
+		id_orden ='$codigo'
+		";
+		
+		
+		if ($mysqli->query($sql)){
+			$msj='success';
+		}
+		else{
+			$msj='error';
+			echo "error:".mysqli_error($mysqli);
+		}
+		header("Location: ../../ordenasig.php?s=".$msj);
+	}
+	
 	
 ?>

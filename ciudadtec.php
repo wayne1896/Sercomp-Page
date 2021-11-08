@@ -53,9 +53,7 @@
 						<h4 class="main-title">Ciudad</h4>
 							
 						</div>
-						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary"  data-bs-toggle="modal"><i class=""></i> Nuevo</a>
-						</div>
+					
 					</div>
 					<?php 
 	
@@ -102,8 +100,7 @@
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\direccion_backend\ciudad\Modals\cambiar_estado_Ciudad.php');
-							 include('php\direccion_backend\ciudad\Modals\ActualizarCiudadModal.php');
+						
 		 				}
 			 			?> 
 	  </tbody>

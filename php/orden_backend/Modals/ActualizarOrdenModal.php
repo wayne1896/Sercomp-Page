@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <center><h4 class="modal-title" id="myModalLabel">Editar Orden</h4></center>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
                 
             </div>
             <div class="modal-body">
@@ -15,7 +15,7 @@
             <h1>Datos Básicos de la Orden</h1>
                     
                     <div class="form-group">
-                                   <a href="#" data-toggle="modal" data-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
+                                   <a href="#" data-bs-toggle="modal" data-target="#extraLargeModal"><FONT SIZE=5>Cargar Ubicacion por GPS </font></a>
                            
                               </div>
                        <label for="inputName">Servicios:</label>
@@ -49,8 +49,8 @@
                            <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
                                <option value="">Seleccione Su Ciudad</option>
                                    <?php 
-                                   if($result3->num_rows > 0){ 
-                                       while($row2 = $result3->fetch_assoc()){  
+                                   if($result4->num_rows > 0){ 
+                                       while($row2 = $result4->fetch_assoc()){  
                                            echo '<option value="'.$row2['id_ciudad'].'">'.$row2['nombre_ciudad'].'</option>'; 
                                        } 
                                    }else{ 
@@ -115,7 +115,7 @@
     });
 });</script>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                 <button type="submit" name="editar" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Actualizar Ahora</a>
 			</div>
             </form>

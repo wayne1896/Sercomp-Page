@@ -135,7 +135,7 @@
 									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 									 <td scope='row'>".$row['nombre_empleado']." ".$row['apellido_empleado']."</td>
 					 				<td>
-									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='../../pdf/index2.php?id_orden=".$row['id_orden']."'  class='btn btn-primary'>Ver Detalles</a>
 								
 									 
 					 				</td>

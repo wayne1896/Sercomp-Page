@@ -64,9 +64,7 @@ include('php/consultas/consultaservicios.php');
 						<h4 class="main-title">Sub Servicios </h4>
 							
 						</div>
-						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary" data-bs-toggle="modal"><i class=""></i> Nuevo</a>
-						</div>
+						
 					</div>
 					<?php 
 	
@@ -107,15 +105,12 @@ include('php/consultas/consultaservicios.php');
                                      <td scope='row'>".$row['precio_catservicio']."</td>
 
 					 				<td>
-									 <a href='#edit_".$row['id_catservicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
-
-									 <a href='#delete_".$row['id_catservicio']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\servicios_backend\Subservicio\Modals\cambiar_estado_Servicio.php');
-							 include('php\servicios_backend\Subservicio\Modals\ActualizarServicioModal.php');
+							
                              $c++;
 		 				}
 			 			?> 

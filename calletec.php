@@ -61,9 +61,7 @@ include('php/consultas/consultadireccion.php');
 						<h4 class="main-title">Calle</h4>
 							
 						</div>
-						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary" data-bs-toggle="modal"><i class=""></i> Nuevo</a>
-						</div>
+					
 					</div>
 					<?php 
 	
@@ -84,7 +82,7 @@ include('php/consultas/consultadireccion.php');
                                 <th scope="col">ID</th>
 			 				    <th scope="col">Calle</th>
 			 				    <th scope="col">Estado</th> 	
-                  <th scope="col">Acciones</th> 			
+               			
 			 				
 								</tr>
 							</thead>
@@ -109,8 +107,7 @@ include('php/consultas/consultadireccion.php');
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
-							 include('php\direccion_backend\calle\Modals\ActualizarCalleModal.php');
+							 
                              $c++;
 		 				}
 			 			?> 

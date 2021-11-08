@@ -77,10 +77,7 @@
 						<h4 class="main-title">Ordenes Asignadas</h4>
 							
 						</div>
-						<div class="pull-right">
-                        <a href="php\orden_backend\ordennuevo.php" class="btn btn-primary" > Nuevo</a>
 						
-						</div>
 					</div>
 					<?php 
 	

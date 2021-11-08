@@ -94,10 +94,10 @@
 					 				<td scope='row'>".$row['nombre_ciudad']."</td>
 									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_ciudad']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='#edit_".$row['id_ciudad']."'  data-bs-toggle='modal' class='btn btn-primary'>Editar</a>
 									 <a href='sector.php?id=".$row['id_ciudad']."' class='btn btn-info'>Ver Sectores</a>	 
 										 
-									 <a href='#delete_".$row['id_ciudad']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#delete_".$row['id_ciudad']."'  data-bs-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>

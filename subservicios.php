@@ -87,7 +87,8 @@ include('php/consultas/consultaservicios.php');
                                 <th scope="col">ID</th>
 			 				    <th scope="col">Nombre</th>
                                  <th scope="col">Descripcion</th> 
-			 				    <th scope="col">Precio</th> 				
+			 				    <th scope="col">Precio</th> 		
+								 <th scope="col">Estado</th> 		
 			 				<th></th>
 								</tr>
 							</thead>
@@ -104,11 +105,12 @@ include('php/consultas/consultaservicios.php');
 					 				<td scope='row'>".$row['nombre_catservicio']."</td>
                                      <td scope='row'>".$row['descripcion_catservicio']."</td>
                                      <td scope='row'>".$row['precio_catservicio']."</td>
+									 <td scope='row'>".$row['estado_catservicio']."</td>
 
 					 				<td>
-									 <a href='#edit_".$row['id_catservicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='#edit_".$row['id_catservicio']."'  data-bs-toggle='modal' class='btn btn-primary'>Editar</a>
 
-									 <a href='#delete_".$row['id_catservicio']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#delete_".$row['id_catservicio']."'  data-bs-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>

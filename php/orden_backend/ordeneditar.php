@@ -1,3 +1,12 @@
+<?php
+  include('..\consultas\consultaorden1.php');
+			$id= $_GET['id'];
+			if(isset($_GET['id'])){
+				$query=extraerorden($_GET['id']);
+			 $row=$query->fetch_assoc();
+			}
+			
+?>
 <!DOCTYPE html>
 <html>
 
@@ -70,7 +79,7 @@ $db =  connect();
 	
 <main class="main" id="skip-target">
     <div class="container" >
-    <form method="POST"  action="registroordenp.php?accion=INS">
+    <form method="POST"  action="registroordenp.php?accion=UDP">
     <div class="main-title-wrapper">
     <h1 class="sign-up__title">Datos Básicos de la orden</h1>
     </div>
@@ -78,12 +87,7 @@ $db =  connect();
     <div class="row new-page__row">
             <div class="mx-auto" >
               <div class="main-content new-page-content" >
-                  <div>
-                  <a href="#" class="secondary-default-btn"  data-bs-toggle="modal" data-bs-target="#extraLargeModal"><FONT SIZE=5>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round"  aria-hidden="true"></svg> 
-                                Cargar Ubicacion por GPS </font></a>
-                  </div>
+               
          
                     <label class="form-label" for="inputName">Servicios:</label>
                     <select class="form-control" title="Seleccione el servicio a ofrecer" id="servicio" name="servicio">
@@ -96,25 +100,24 @@ $db =  connect();
                     }
                     ?>
                     </select>
-                
+                     
+                    <input type="text" class="form-control" readonly="" name="codigo" id="codigo" value="<?php echo $row['id_orden']; ?>" placeholder="Ingrese el nombre del Cliente"/>
+                    <?php $id2= $row['id_orden'];
+                     ?>
                     <label class="form-label" for="inputfistname">Ingrese el detalle del problema:</label>
-                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="2"><?php echo $row['descripcion_orden']; ?></textarea>
                     
-                        <label class="form-label" for="inputPassword">Nombre del Cliente:</label>
-                        <select class="form-control" title="Nombre cliente" id="nombre" name="nombre">
-                                 <option value="">Seleccione el Cliente</option>
-                                 <?php 
-                    if($result3->num_rows > 0){ 
-                        while($row2 = $result3->fetch_assoc()){  
-                            echo '<option value="'.$row2['id_cliente'].'">'.$row2['nombre_cliente'].' '.$row2['apellido_cliente'].'</option>'; 
-                        } 
-                    }
-                    ?>
-                    </select>
+                 
+                           <label for="inputPassword">Nombre del Cliente:</label>
+                           <input type="text" class="form-control" readonly="" name="nombre" id="nombre" value="<?php echo $row['nombre_cliente'].' '.$row['apellido_cliente']; ?>" placeholder="Ingrese el nombre del Cliente"/>
+                       
                     
                         <label class="form-label" for="inputfistname">Teléfono:</label>
-                        <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el Teléfono del Cliente"/>
+                        <input type="number" class="form-control" name="telefono" id="telefono" value="<?php echo $row['telefono_cliente']; ?>"  placeholder="Ingrese el Teléfono del Cliente"/>
                     
+                        
+                        <label class="form-label" for="inputName">Numero de Casa:</label>
+                                <input type="number" class="form-control" name="numcasa" id="numcasa"    value="<?php echo $row['numcasa_orden']; ?>" placeholder="Ingrese su Numero de Casa"/>
                     <label class="form-label" for="inputName">Ciudad:</label>
                         <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
                             <option value="">Seleccione Su Ciudad</option>
@@ -140,11 +143,8 @@ $db =  connect();
                             </select>
 
                             
-                                <label class="form-label" for="inputName">Numero de Casa:</label>
-                                <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
                           
-                        <input type="number" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
-                        <input type="number" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
+                     
                            </div>
                     
                            <script>$(document).ready(function(){
@@ -191,7 +191,7 @@ $db =  connect();
    
 <div class="main-btns-wrapper">
 <a type="button" class="secondary-default-btn" href="../../ordensin.php"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancel</a>
-                                <button type="submit" name="editar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Guardar</a>
+                                <button type="submit" name="editar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Actualizar</a>
                                 </div>
             </form>
         
@@ -268,7 +268,7 @@ $db =  connect();
 				$("#btn").on( 'click', function () {
 				    $.ajax({
 				        type: 'post',
-				        url: 'localizado.php',
+				        url: 'localizado1.php',
 				        data: 'long='+iLongitud+'&lat='+iLatitud,
 				        success: function( data ) {
 				            document.write( data );
@@ -309,8 +309,8 @@ $db =  connect();
 </script>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-secondary"  data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-primary"  data-bs-dismiss="modal">OK</button>
                 </div>
             </div>
         </div>

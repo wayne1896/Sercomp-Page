@@ -130,17 +130,17 @@ include('php/sidebar2\sidebar-orden.php');
                                      <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
 									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
-									 <a href='#asig_".$row['id_orden']."'  data-toggle='modal' class='btn btn-secondary'>Asignar</a>
+									 <a href='php/orden_backend/ordeneditar.php?id=".$row['id_orden']."' class='btn btn-primary'>Editar</a>
+									 <a href='#asig_".$row['id_orden']."'  data-bs-toggle='modal' class='btn btn-secondary'>Asignar</a>
 									
-									 <a href='#delete_".$row['id_orden']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 
 									 
 					 				</td>
 					 			</tr>
 		 					";
 							 include('php\orden_backend\Modals\ActualizarOrdenModal.php');
 							  include('php\orden_backend\Modals\asignar_ordenModal.php');
-							 include('php\orden_backend\Modals\cambiar_estado_Orden.php');
+							 
 							
 		 				}
 			 			?> 

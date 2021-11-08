@@ -4,7 +4,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <center><h4 class="modal-title" id="myModalLabel">Editar Empleado</h4></center>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-bs.dismiss="modal" aria-hidden="true">&times;</button>
                 
             </div>
             <div class="modal-body">
@@ -38,7 +38,7 @@
                         <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento"  value="<?php echo $row['fechanacimiento_empleado']; ?>" required="required" placeholder="Fecha de Nacimiento"/>
                     </div>
                     <label for="inputName">Cargo:</label>
-                    <select class="form-group" title="Seleccione Su Cargo" id="cargo" name="cargo">
+                    <select class="form-control" title="Seleccione Su Cargo" id="cargo" name="cargo">
                                  
                                  <?php 
                     if($result1->num_rows > 0){ 
@@ -50,7 +50,7 @@
                     </select>
                        <h1>Dirección</h1>
 
-                                    <select class="controls"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
+                                    <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" required="required" name="ciudad">
                         <option value="">Seleccione Su Ciudad</option>
                     <?php 
                     if($result->num_rows > 0){ 
@@ -63,14 +63,14 @@
                     ?>
                     </select>
 
-                        <select class="form-group" title="Seleccione Su Sector" id="sector" required="required" name="sector">
+                        <select class="form-control" title="Seleccione Su Sector" id="sector" required="required" name="sector">
                         <option value="">Seleccione una ciudad primero</option>
                         
                         </select>
-                        <select class="controls" title="Seleccione Su Calle" id="calle" required="required" name="calle">
+                        <select class="form-control" title="Seleccione Su Calle" id="calle" required="required" name="calle">
                         <option value="">Seleccione un sector primero</option>
                         </select>
-                        <div class="form-group">
+                        <div class="form-control">
                         <label for="inputName">Numero de Casa</label>
                         <input type="number" class="form-control" name="numcasa" id="numcasa" value="<?php echo $row['numcasa_empleado']; ?>" required="required" placeholder="Ingrese su Numero de Casa"/>
                     </div>
@@ -115,7 +115,7 @@
     });
 });</script>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                 <button type="submit" name="editar" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Actualizar Ahora</a>
 			</form>
             </div>

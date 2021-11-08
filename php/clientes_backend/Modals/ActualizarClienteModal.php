@@ -37,7 +37,7 @@
                  
                     <div class="form-group">
                         <label for="inputName">Fecha de nacimiento</label>
-                        <input type='text' class='dateFilter' class="form-control" name="fechanacimiento" id="fechanacimiento"  value="<?php echo $row['fechanacimiento_cliente']; ?>" required="required" placeholder="Fecha de Nacimiento"/>
+                        <input type="date" class='dateFilter' class="form-control" name="fechanacimiento" id="fechanacimiento"  value="<?php echo $row['fechanacimiento_cliente']; ?>" required="required" placeholder="Fecha de Nacimiento"/>
                     </div>
                        <h1>Dirección</h1>
 
@@ -107,7 +107,7 @@
     });
 });</script>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-bs-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                 <button type="submit" name="editar" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Actualizar Ahora</a>
 			</form>
             </div>

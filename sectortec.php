@@ -59,9 +59,7 @@ include('php/consultas/consultadireccion.php');
 						<h4 class="main-title">Sector</h4>
 							
 						</div>
-						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary"  data-bs-toggle="modal"><i class=""></i> Nuevo</a>
-						</div>
+						
 					</div>
 					<?php 
 	

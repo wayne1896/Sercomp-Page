@@ -37,13 +37,17 @@ if(isset($_POST['agregar'])){
 		$database = new Connection();
 		$db = $database->open();
 		try{
-			$id1=$_POST['idciudad'];
+			$id1=$_POST['idservicio'];
 			$id = $_GET['id'];
 			$nombre=$_POST['nombre'];
+			$descripcion=$_POST['descripcion'];
+			$precio=$_POST['precio'];
 
-			$sql = "UPDATE sector SET nombre_sector = '$nombre' WHERE id_sector = '$id'";
+			$sql = "UPDATE catservicios SET nombre_catservicio = '$nombre',
+			descripcion_catservicio = '$descripcion', precio_catservicio = '$precio'  
+			WHERE id_catservicio = '$id'";
 			//if-else statement in executing our query
-			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Sector actualizado correctamente' : 'No se puso actualizar Sector';
+			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Subservicio actualizado correctamente' : 'No se puso actualizar Subservicio';
 
 		}
 		catch(PDOException $e){

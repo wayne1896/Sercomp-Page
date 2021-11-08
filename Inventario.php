@@ -11,7 +11,7 @@
 
  		
 		include('php/sidebar2\sidebar-inventario.php');	
-		include('php/consultas/consultacliente.php');	
+		include('php/consultas/consultainventario.php');	
     ?>
 
 	<!-- Basic Page Info -->
@@ -110,7 +110,7 @@
 
 </body>
 <?php   
-        include('php/clientes_backend/Modals/AgregarModal.php');	
+        include('php\inventario_backend\Modals\Modal_Inventario.php');	
 		include('php/ppie\ppiemenu.php');	
 	?>
 </html><script src="buscadores\peticioninventario.js"></script>

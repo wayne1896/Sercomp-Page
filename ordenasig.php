@@ -9,7 +9,7 @@
 
   // Fetch all the country data 
   $query = "SELECT * FROM ciudad ORDER BY nombre_ciudad ASC"; 
-  $result = $db->query($query); 
+  $result3 = $db->query($query); 
 
  
 

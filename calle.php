@@ -105,13 +105,13 @@ include('php/consultas/consultadireccion.php');
 					 				<td scope='row'>".$row['nombre_calle']."</td>
                    <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_calle']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>		 
-									 <a href='#delete_".$row['id_calle']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#edit_".$row['id_calle']."'  data-bs-toggle='modal' class='btn btn-primary'>Editar</a>		 
+									 <a href='#delete_".$row['id_calle']."'  data-bs-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
+							 include('php\direccion_backend\calle\Modals\cambiar_estado_Calle.php');
 							 include('php\direccion_backend\calle\Modals\ActualizarCalleModal.php');
                              $c++;
 		 				}

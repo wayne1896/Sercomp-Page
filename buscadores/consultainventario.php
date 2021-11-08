@@ -73,8 +73,8 @@ if ($buscarProducto->num_rows > 0)
 		</tbody>
 		</div>
 		';
-        include('../php/empleados_backend/Modals/cambiar_estado_Empleado.php');
-        include('../php/empleados_backend/Modals/ActualizarEmpleadoModal.php');
+        include('../php/inventario_backend/Modals/cambiar_estado_Servicios.php');
+        include('../php/inventario_backend/Modals/ActualizarServiciosModal.php');
 	}
 
 	$tabla.='</table>';

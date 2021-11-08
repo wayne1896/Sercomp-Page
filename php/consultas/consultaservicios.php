@@ -1,7 +1,7 @@
 <?php
 	function lista_servicios(){		
 		include('php/conexion.php');	
-		$sql="SELECT *  FROM  `servicios` where estado_servicio='Activo'";
+		$sql="SELECT *  FROM  `servicios` ";
 		
 		return $result=$mysqli->query($sql); 
 	}

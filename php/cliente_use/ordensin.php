@@ -131,9 +131,9 @@
                                      <td scope='row'>".$row['nombre_cliente']." ".$row['apellido_cliente']."</td>
 									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_orden']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='ordeneditar.php?id=".$row['id_orden']."'  class='btn btn-primary'>Editar</a>
 									
-									 <a href='#delete_".$row['id_orden']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 
 									 
 					 				</td>
 					 			</tr>

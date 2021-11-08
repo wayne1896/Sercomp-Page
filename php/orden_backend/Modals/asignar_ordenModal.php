@@ -5,7 +5,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <center><h4 class="modal-title" id="myModalLabel">Asignar Orden</h4></center>
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-hidden="true">&times;</button>
                 
             </div>
             <div class="modal-body">
@@ -14,9 +14,11 @@
             <h1>Asignar A</h1>
             <div class="group-form">
             <label for="inputName">Empleado:</label>
-                       <select class="form-group" title="Seleccione el Empleado" id="empleado" name="empleado">
+                       <select class="form-control" title="Seleccione el Empleado" id="empleado" name="empleado">
                                     <option value="">Seleccione el Empleado</option>
                                     <?php 
+                                     $query3 = "SELECT * FROM empleado ORDER BY nombre_empleado ASC"; 
+                                     $result4 = $db->query($query3); 
                                      
                        if($result4->num_rows > 0){ 
                            while($row3 = $result4->fetch_assoc()){  
@@ -28,7 +30,7 @@
             </div>
 
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                 <button type="submit" name="asignar" class="btn btn-success"><span class="glyphicon glyphicon-check"></span> Asignar</a>
 			</div>
             </form>

@@ -102,10 +102,10 @@ include('php/consultas/consultadireccion.php');
 					 				<td scope='row'>".$row['nombre_sector']."</td>
                                      <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_sector']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='#edit_".$row['id_sector']."'  data-bs-toggle='modal' class='btn btn-primary'>Editar</a>
 									 <a href='calle.php?id=".$row['id_sector']."' class='btn btn-info'>Ver Calles</a>	 
 										 
-									 <a href='#delete_".$row['id_sector']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#delete_".$row['id_sector']."'  data-bs-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>

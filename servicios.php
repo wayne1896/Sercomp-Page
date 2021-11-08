@@ -98,15 +98,15 @@
 					 			
 									 <td scope='row'><span class='label ".$label_class."'>".$text_estado."</span></td>
 					 				<td>
-									 <a href='#edit_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-primary'>Editar</a>
+									 <a href='#edit_".$row['id_servicio']."'  data-bs-toggle='modal' class='btn btn-primary'>Editar</a>
 										 
 									 <a href='subservicios.php?id=".$row['id_servicio']."' class='btn btn-info'>Ver Categorias</a>
-									 <a href='#delete_".$row['id_servicio']."'  data-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
+									 <a href='#delete_".$row['id_servicio']."'  data-bs-toggle='modal' class='btn btn-danger' >Cambiar Estado</a>
 									 
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
+							 include('php\servicios_backend\Modals\cambiar_estado_Servicios.php');
 							 
 							 include('php\servicios_backend\Modals\ActualizarServiciosModal.php');
 		 				}

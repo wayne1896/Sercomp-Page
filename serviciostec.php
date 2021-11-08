@@ -53,9 +53,7 @@
 						<h4 class="main-title">Servicios</h4>
 							
 						</div>
-						<div class="pull-right">
-                        <a href="#addnew" class="btn btn-primary"  data-bs-toggle="modal"><i class="fa fa-code"></i> Nuevo</a>
-						</div>
+						
 					</div>
 					<?php 
 	
@@ -105,9 +103,7 @@
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php/clientes_backend/Modals/cambiar_estado_cliente.php');
-							 
-							 include('php\servicios_backend\Modals\ActualizarServiciosModal.php');
+							
 		 				}
 			 			?> 
 	  </tbody>
