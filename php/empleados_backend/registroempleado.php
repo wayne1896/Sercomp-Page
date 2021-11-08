@@ -29,7 +29,7 @@ include('../conexion.php');
 			 fechanacimiento_empleado = '$fecha', ciudad_empleado = '$ciudad', sector_empleado = '$sector', calle_empleado = '$calle', numcasa_empleado = '$numcasa'
 			 , telefono_empleado = '$telefono',cargo_empleado='$cargo', correo_empleado = '$correo' WHERE id_empleado = '$id'";
 			//if-else statement in executing our query
-			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Empleado actualizado correctamente' ;
+			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Empleado actualizado correctamente':"" ;
 
 		}
 		catch(PDOException $e){
@@ -91,13 +91,13 @@ include('../conexion.php');
 		
 		
 		if ($mysqli->query($sql)){
-			$msj='success';
+			$_SESSION['message'] ='Registro almacenado correctamente';
 		}
 		else{
-			$msj='error';
+			$_SESSION['message'] ='Imposible almacenar el registro'.mysqli_error($mysqli);
 			echo "error:".mysqli_error($mysqli);
 		}
-		header("Location: ../../empleado.php?s=".$msj);
+		header("Location: ../../empleado.php");
 	}	
 
 

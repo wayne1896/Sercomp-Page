@@ -240,11 +240,11 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
         <ul class="users-item-dropdown nav-user-dropdown dropdown">
           <li><a href="perfil.php?id2=<?php echo $id2;?>">
               <i data-feather="user" aria-hidden="true"></i>
-              <span>Profile</span>
+              <span>Perfil</span>
             </a></li>
-          <li><a href="##">
+          <li><a href="perfilempresa.php">
               <i data-feather="settings" aria-hidden="true"></i>
-              <span>Account settings</span>
+              <span>Cuenta de empresa</span>
             </a></li>
             <li><a class="log-out" href="#"  data-bs-toggle="modal" data-bs-target="#logoutModal">
               <i data-feather="log-out" aria-hidden="true" ></i>

@@ -47,13 +47,13 @@
 		
 		
 		if ($mysqli->query($sql)){
-			$msj='success';
+			$_SESSION['message'] ='Registro almacenado correctamente';
 		}
 		else{
-			$msj='error';
+			$_SESSION['message'] ='Imposible almacenar el registro'.mysqli_error($mysqli);
 			echo "error:".mysqli_error($mysqli);
 		}
-		header("Location: ../../empleado.php?s=".$msj);
+		header("Location: ../../empleado.php");
 	}
 
 	
@@ -85,13 +85,13 @@
 		 WHERE id_empleado ='$codigo' ";
 		
 		if ($mysqli->query($sql)){
-			$msj='successudt';
+			$_SESSION['message'] ='Registro actualizado correctamente';
 		}
 		else{
-			$msj='errorudt';
+			$_SESSION['message'] ='Imposible actualizar el registro'.mysqli_error($mysqli);
 			echo "error:".mysqli_error($mysqli);
 		}
-		header("Location: ../../menutecnico.php?s=".$msj);
+		header("Location: ../../menutecnico.php");
 	}
 	
 ?>

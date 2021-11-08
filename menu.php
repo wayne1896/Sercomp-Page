@@ -8,51 +8,15 @@
 
  include('php/sidebar2\sidebar.php');	
 
- $mensaje='';
-	$color='';
-	if (isset($_GET['s'])) {
-		switch ($_GET['s']) {
-			case 'success':
-				$mensaje='Registro almacenado correctamente';
-				$color='success';
-				break;
-			case 'error':
-				$mensaje='Imposible almacenar el registro';
-				$color='danger';
-				break;
-				case 'successact':
-					$mensaje='Se Activo el cliente';
-					$color='success';
-					break;
-				case 'erroract':
-					$mensaje='El Cliente ya esta activado';
-					$color='danger';
-					break;
-			case 'successudt':
-				$mensaje='Registro actualizado correctamente';
-				$color='success';
-				break;
-			case 'errorudt':
-				$mensaje='Imposible actualizar el registro';
-				$color='danger';
-				break;
-			case 'successdlt':
-				$mensaje='Registro inhabilitado correctamente';
-				$color='success';
-				break;
-			case 'errordlt':
-				$mensaje='Imposible inhabilitar el registro';
-				$color='danger';
-				break;
-		}
-	}
-	if (!empty($mensaje) and !empty($color)) {
-		echo '<div class="alert alert-'.$color.'" role="alert">'.$mensaje.' <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-		</div>';
-	}
-		
-	?>
+ if(isset($_SESSION['message'])){
+	 ?>
+	 <div class="alert alert-info text-center" style="margin-top:20px;">
+	 <?php echo $_SESSION['message']; ?>
+	 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+ </div>
+ <?php
+ unset($_SESSION['message']);
+ }?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">

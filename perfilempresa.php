@@ -109,7 +109,7 @@ if ($conexion -> connect_errno)
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>ID </label>
-                        <input type="text" class="form-control" readonly="" id="codigo" name="codigo" placeholder="Company" value="<?php echo $row['id_perfil'] ?>">
+                        <input type="text" class="form-control" readonly="" id="codigo" name="codigo" placeholder="ID" value="<?php echo $row['id_perfil'] ?>">
                       </div>
                     </div>
                    
@@ -124,13 +124,13 @@ if ($conexion -> connect_errno)
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Company" value="<?php echo $row['nombre_empresa'] ?>">
+                        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la compañia" value="<?php echo $row['nombre_empresa'] ?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Ciudad</label>
-                        <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Last Name" value="<?php echo $row['ciudad'] ?>">
+                        <input type="text" class="form-control" id="ciudad" name="ciudad" placeholder="Ciudad" value="<?php echo $row['ciudad'] ?>">
                       </div>
                     </div>
                   </div>
@@ -138,13 +138,13 @@ if ($conexion -> connect_errno)
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Direccion</label>
-                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Company" value="<?php echo $row['direccion'] ?>">
+                        <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion" value="<?php echo $row['direccion'] ?>">
                       </div>
                     </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Telefono</label>
-                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="" value="<?php echo $row['telefono'] ?>">
+                        <input type="text" class="form-control" id="telefono" name="telefono" placeholder="Telefono" value="<?php echo $row['telefono'] ?>">
                       </div>
                     </div>
                   </div>
@@ -153,21 +153,16 @@ if ($conexion -> connect_errno)
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Codigo postal</label>
-                        <input type="text" class="form-control" id="codigopostal" name="codigopostal" placeholder="" value="<?php echo $row['codigo_postal'] ?>">
+                        <input type="text" class="form-control" id="codigopostal" name="codigopostal" placeholder="Codigo postal" value="<?php echo $row['codigo_postal'] ?>">
 					 </div>
                     </div>
                     <div class="col-md-4 px-1">
                       <div class="form-group">
                         <label>Impuesto</label>
-                        <input type="text" class="form-control" id="impuesto" name="impuesto" placeholder="" value="<?php echo $row['impuesto'] ?>">
+                        <input type="text" class="form-control" id="impuesto" name="impuesto" placeholder="Impuesto" value="<?php echo $row['impuesto'] ?>">
                       </div>
                     </div>
-                    <div class="col-md-4 pl-1">
-                      <div class="form-group">
-                        <label>Logo Url</label>
-                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="" value="<?php echo $row['logo_url'] ?>">
-                      </div>
-                    </div>
+                    
                   </div>
 
 
@@ -175,7 +170,7 @@ if ($conexion -> connect_errno)
 				  
                   <div class="row">
                     <div class="update ml-auto mr-auto">
-                      <input type="submit" class="btn btn-primary btn-round" value="Update Profile">
+                      <input type="submit" class="btn btn-primary btn-round" value="Actualizar Perfil">
                     </div>
                   </div>
                 </form>
