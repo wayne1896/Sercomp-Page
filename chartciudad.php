@@ -337,7 +337,7 @@ $id= $_GET['id'];
       </div>
       <div class="col-lg-3">
             
-            <article class="white-block">
+      <article class="white-block">
               <div class="top-cat-title">
                 <h3>Facturas</h3>
                 <?php
@@ -386,7 +386,7 @@ $password = "";
 $dbname = "tesis";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$sqll = "SELECT Count(id_factura) from factura where estado_factura= 'Pagado'  ";
+$sqll = "SELECT Count(id_factura), sum(totalpago) from factura where estado_factura= 'Pagado'  ";
 if (mysqli_query($conn, $sqll))
 {
 echo "";
@@ -403,8 +403,12 @@ while($row = mysqli_fetch_assoc($result))
 {
 ?>
                     <div class="top-cat-list__title">
-                      Pagadas <div class="top-cat-list__subtitle">
+                      Pagadas 
                      <span class="success"><?php echo $row['Count(id_factura)'];?></span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                      Cobro pagado <span class="succes"><?php echo $row['sum(totalpago)'];?></span>
+                    
                      <?php
 }
 }
@@ -413,7 +417,7 @@ else
 echo '0 results';
 }
 ?>
-                    </div>
+                   
                     </div>
                     
                   </a>
@@ -428,7 +432,7 @@ $password = "";
 $dbname = "tesis";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$sqll = "SELECT Count(id_factura) from factura where estado_factura= 'Pendiente'  ";
+$sqll = "SELECT Count(id_factura), sum(totalpago) from factura where estado_factura= 'Pendiente'  ";
 if (mysqli_query($conn, $sqll))
 {
 echo "";
@@ -445,8 +449,12 @@ while($row = mysqli_fetch_assoc($result))
 {
 ?>
                     <div class="top-cat-list__title">
-                     Pendientes<div class="top-cat-list__subtitle">
+                     Pendientes
                      <span class="warning"><?php echo $row['Count(id_factura)'];?></span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                      Cobro pendiente <span class="warning"><?php echo $row['sum(totalpago)'];?></span>
+                    
                      <?php
 }
 }
@@ -457,7 +465,7 @@ echo '0 results';
 ?>
                     
                     
-                    </div> </div>
+                    </div> 
                   </a>
                 </li>
                 <li>
@@ -470,7 +478,7 @@ $password = "";
 $dbname = "tesis";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-$sqll = "SELECT Count(id_factura) from factura where estado_factura= 'Anulada'  ";
+$sqll = "SELECT Count(id_factura), sum(totalpago) from factura where estado_factura= 'Anulada'  ";
 if (mysqli_query($conn, $sqll))
 {
 echo "";
@@ -487,8 +495,11 @@ while($row = mysqli_fetch_assoc($result))
 {
 ?>
                     <div class="top-cat-list__title">
-                      Anuladas <div class="top-cat-list__subtitle">
+                      Anuladas 
                      <span class="danger"><?php echo $row['Count(id_factura)'];?></span>
+                     </div>
+                     <div class="top-cat-list__subtitle">
+                      Cobro anulado <span class="danger"><?php echo $row['sum(totalpago)'];?></span>
                      <?php
 }
 }
@@ -499,7 +510,7 @@ echo '0 results';
 ?>
                     
                     
-                    </div> </div>
+                    </div> 
                   </a>
                 </li>
                 
