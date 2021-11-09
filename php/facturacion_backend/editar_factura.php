@@ -87,9 +87,9 @@
 		?>
 			<form class="form-horizontal" role="form" id="datos_factura">
 				<div class="form-group row">
-				  <label class="form-label" for="nombre_cliente" class="col-md-1 control-label">Cliente</label>
+				  <label class="form-label" for="nombre_cliente"   class="col-md-1 control-label">Cliente</label>
 				  <div class="col-md-3">
-					  <input type="text" class="form-control input-sm" id="nombre_cliente" placeholder="Selecciona un cliente" required value="<?php echo $nombre_cliente;?>">
+					  <input type="text" class="form-control input-sm" readonly="" id="nombre_cliente" placeholder="Selecciona un cliente" required value="<?php echo $nombre_cliente;?>">
 					  <input id="id_cliente" name="id_cliente" type='hidden' value="<?php echo $id_cliente;?>">	
 				  </div>
 				  <label class="form-label" for="tel1" class="col-md-1 control-label">Teléfono</label>
@@ -104,7 +104,7 @@
 						<div class="form-group row">
 							<label class="form-label" for="empresa" class="col-md-1 control-label">Vendedor</label>
 							<div class="col-md-3">
-								<select class="form-control input-sm" id="id_vendedor" name="id_vendedor">
+								<select class="form-control input-sm"  readonly="" id="id_vendedor" name="id_vendedor">
 									<?php
 										$sql_vendedor=mysqli_query($con,"select * from empleado order by nombre_empleado");
 										while ($rw=mysqli_fetch_array($sql_vendedor)){
@@ -128,7 +128,7 @@
 							</div>
 							<label class="form-label" for="email" class="col-md-1 control-label">Pago</label>
 							<div class="col-md-2">
-								<select class='form-control input-sm ' id="condiciones" name="condiciones">
+								<select class='form-control input-sm ' readonly="" id="condiciones" name="condiciones">
 									<option value="Efectivo" <?php if ($condiciones=='Efectivo'){echo "selected";}?>>Efectivo</option>
 									<option value="Cheque" <?php if ($condiciones=='Cheque'){echo "selected";}?>>Cheque</option>
 									<option value="Transferencia" <?php if ($condiciones=='Transferencia'){echo "selected";}?>>Transferencia bancaria</option>
@@ -154,9 +154,7 @@
 						</button>
 				
 						
-						<button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#myModal">
-						 <span class="bx bx-search-alt bx-sm"></span> Agregar productos
-						</button>
+				
 						<button type="button" class="btn btn-outline-primary" onclick="imprimir_factura1('<?php echo $id_factura;?>')">
 						  <span class="bx bx-printer bx-sm"></span> Imprimir
 						</button>

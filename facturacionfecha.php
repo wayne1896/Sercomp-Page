@@ -58,10 +58,10 @@ include "config.php";
 				<div class="form-row align-items-center">
 					<div class="col-sm-3 my-1"> 
 						Fecha de inicio
-						<input type='text' class='dateFilter' name='fromDate' value='<?php if(isset($_POST['fromDate'])) echo $_POST['fromDate']; ?>'>
+						<input type='date' class='dateFilter' name='fromDate' value='<?php if(isset($_POST['fromDate'])) echo $_POST['fromDate']; ?>'>
 					</div>
 					<div class="col-sm-3 my-1">
-						Fecha final <input type='text' class='dateFilter' name='endDate' value='<?php if(isset($_POST['endDate'])) echo $_POST['endDate']; ?>'>
+						Fecha final <input type='date' class='dateFilter' name='endDate' value='<?php if(isset($_POST['endDate'])) echo $_POST['endDate']; ?>'>
 					</div>
 					<div class="col-sm-3 my-1">
 						<button type='submit' class="btn btn-primary" name='but_search' > Buscar</button>
@@ -108,7 +108,6 @@ include "config.php";
                   <tr class="users-table-info">
 				<tr >
 					<th scope="col">#</th>
-					
 					<th scope="col">Fecha</th>
 					<th scope="col">Cliente</th>
 					<th scope="col">Vendedor</th>
@@ -145,10 +144,16 @@ include "config.php";
 						<td scope="row"><span class="label <?php echo $label_class;?>"><?php echo $text_estado; ?></span></td>
 						<td scope="row"><?php echo $pago_factura; ?></td>
 						<td scope="row" class='text-right'><?php echo number_format ($total_venta,2); ?></td>					
-					<td class="text-right">
-					<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>" class="btn btn-outline-primary" title='Editar factura' ><i class='bx bxs-edit bx'></i></a> 
+					<td class="text-right">	<?php
+						if($row['estado_factura']=='Pendiente'){
+							?>
+						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>"
+						 class="btn btn-outline-primary" title='Editar factura' ><i class='bx bxs-edit bx'></i></a> 
+						 <?php
+							}
+						?>
 						<a href="#" class="btn btn-outline-primary" title='Descargar factura' onclick="imprimir_factura1('<?php echo $id_factura;?>');"><i class='bx bxs-download bx'></i></a> 
-						<a href="#" class="btn btn-outline-primary" title='Borrar factura' onclick="eliminar('<?php echo $numero_factura; ?>')"><i class='bx bxs-trash bx' ></i></a>
+						
 					</td>
 						
 					</tr>
@@ -160,11 +165,7 @@ include "config.php";
                     echo "</tr>";
                 }
                 ?>
-        <tr>
-					<td colspan=7><span class="pull-right"><?php
-					 echo paginate($reload, $page, $total_pages, $adjacents);
-					?></span></td>
-				</tr>
+        
 				</tbody>
 			  </table>
 			</div>

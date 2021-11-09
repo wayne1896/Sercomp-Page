@@ -61,7 +61,7 @@ $simbolo_moneda=get_row('perfil','moneda', 'id_perfil', 1);
 			<td><?php echo $nombre_producto;?></td>
 			<td class='text-right'><?php echo $precio_venta_f;?></td>
 			<td class='text-right'><?php echo $precio_total_f;?></td>
-			<td class='text-center'><a href="#" onclick="eliminar('<?php echo $id_detalle ?>')"><i class='bx bxs-trash bx-sm'></i></i></a></td>
+			
 		</tr>		
 		<?php
 	}

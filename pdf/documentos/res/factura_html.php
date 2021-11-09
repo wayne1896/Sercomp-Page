@@ -117,10 +117,15 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 		  <td style="width:25%;"><?php echo date("d/m/Y");?></td>
 		   <td style="width:40%;" >
 				<?php 
-				if ($condiciones=='Efectivo'){echo "Efectivo";}
-				elseif ($condiciones=='Cheque'){echo "Cheque";}
-				elseif ($condiciones=='Transferencia'){echo "Transferencia bancaria";}
-				elseif ($condiciones=='Credito'){echo "Crédito";}
+				if ($condiciones=='Efectivo'){echo "Efectivo";
+					$estado="Pagado";}
+				elseif ($condiciones=='Cheque'){echo "Cheque";
+					$estado="Pendiente";}
+				elseif ($condiciones=='Transferencia'){echo "Transferencia bancaria";
+					$estado="Pendiente";}
+				elseif ($condiciones=='Credito'){echo "Crédito";
+					$estado="Pendiente";}
+				
 				?>
 		   </td>
         </tr>
@@ -212,7 +217,7 @@ while ($row=mysqli_fetch_array($sql))
 
 	$insert=mysqli_query($con,"INSERT INTO `factura`(`numero_factura`, `tipodepago_factura`, `tipodefactura`, 
 	`totalpago`, `fecha_factura`, `estado_factura`, `id_cliente`, `id_empleado`) VALUES
-	('$numero_factura','$condiciones','Normal','$total_factura','$date','Pagado','$id_cliente','$id_vendedor')");
+	('$numero_factura','$condiciones','Normal','$total_factura','$date','$estado','$id_cliente','$id_vendedor')");
 $delete=mysqli_query($con,"DELETE FROM tmp WHERE session_id='".$session_id."'");
 
 ?>
