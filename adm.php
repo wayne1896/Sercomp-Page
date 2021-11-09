@@ -381,7 +381,7 @@ while($row = mysqli_fetch_assoc($result))
                      <span class="success"><?php echo $row['Count(id_factura)'];?></span>
                      </div>
                      <div class="top-cat-list__subtitle">
-                      Cobro pagado <span class="succes"><?php echo $row['sum(totalpago)'];?></span>
+                      Cobro pagado <span class="succes">RD$ <?php echo $row['sum(totalpago)'];?></span>
                     
                      <?php
 }
@@ -427,7 +427,7 @@ while($row = mysqli_fetch_assoc($result))
                      <span class="warning"><?php echo $row['Count(id_factura)'];?></span>
                      </div>
                      <div class="top-cat-list__subtitle">
-                      Cobro pendiente <span class="warning"><?php echo $row['sum(totalpago)'];?></span>
+                      Cobro pendiente <span class="warning">RD$ <?php echo $row['sum(totalpago)'];?></span>
                     
                      <?php
 }
@@ -473,7 +473,7 @@ while($row = mysqli_fetch_assoc($result))
                      <span class="danger"><?php echo $row['Count(id_factura)'];?></span>
                      </div>
                      <div class="top-cat-list__subtitle">
-                      Cobro anulado <span class="danger"><?php echo $row['sum(totalpago)'];?></span>
+                      Cobro anulado <span class="danger">RD$ <?php echo $row['sum(totalpago)'];?></span>
                      <?php
 }
 }
