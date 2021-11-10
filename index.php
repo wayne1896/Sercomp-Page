@@ -35,7 +35,7 @@ include ("php\sidebar2\indexcabe.php");
                         if(@$_GET['Empty']==true)
                         {
                     ?>
-                        <div class="alert-light text-danger text-center py-2"  style="margin-top:20px"><?php echo $_GET['Empty'] ?>
+                        <div  class="alert alert-warning alert-dismissible fade show"  style="margin-top:20px"><?php echo $_GET['Empty'] ?>
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>                                
                     <?php
@@ -47,29 +47,14 @@ include ("php\sidebar2\indexcabe.php");
                         if(@$_GET['Invalid']==true)
                         {
                     ?>
-                        <div class="alert-light text-danger text-center py-2" style="margin-top:20px"><?php echo $_GET['Invalid'] ?>
+                        <div  class="alert alert-warning alert-dismissible fade show" style="margin-top:20px"><?php echo $_GET['Invalid'] ?>
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 					</div>                                
                     <?php
                         }
                     ?>
 						<form>
-							<div class="select-role">
-								<div class="btn-group btn-group-toggle" data-toggle="buttons" >
-									<label class="btn active">
-										<input type="radio" name="rol" value="admin">
-										<div class="icon"><img src="vendors/images/briefcase.svg" class="svg" alt=""></div>
-										<span>Yo soy</span>
-										Empleado
-									</label>
-									<label class="btn">
-										<input type="radio" name="rol" value="cliente">
-										<div class="icon"><img src="vendors/images/person.svg" class="svg" alt=""></div>
-										<span>Yo soy</span>
-										Cliente
-									</label>
-								</div>
-							</div>
+						
 							<div class="input-group custom">
 								<input type="text" name="usuario" class="form-control form-control-lg" placeholder="Correo">
 								<div class="input-group-append custom">

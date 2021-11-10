@@ -139,7 +139,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 		  exit();
 	  }
 	  
-	  $consulta = "SELECT nombre_empleado, apellido_empleado, cargo FROM empleado e join nomina n on (e.id_nomina=n.id_nomina) where e.correo_empleado='$id2'";
+	  $consulta = "SELECT nombre_empleado, apellido_empleado, cargo FROM empleado e join nomina n on (e.id_nomina=n.id_nomina) where e.usuario='$id2'";
 	  
 	  if ($resultado = $mysqli->query($consulta)) {
 	  
