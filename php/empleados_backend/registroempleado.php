@@ -23,11 +23,12 @@ include('../conexion.php');
 			$telefono=$_POST['telefono'];
 			$cargo=$_POST['cargo'];
 			$correo=$_POST['correo'];
+			$usuario=$_POST['usuario'];
 			$clave=$_POST['clave'];
 
 			$sql = "UPDATE empleado SET nombre_empleado = '$nombre', apellido_empleado = '$apellido', cedula_empleado = '$cedula',
 			 fechanacimiento_empleado = '$fecha', ciudad_empleado = '$ciudad', sector_empleado = '$sector', calle_empleado = '$calle', numcasa_empleado = '$numcasa'
-			 , telefono_empleado = '$telefono',cargo_empleado='$cargo', correo_empleado = '$correo' WHERE id_empleado = '$id'";
+			 , telefono_empleado = '$telefono',cargo_empleado='$cargo', correo_empleado = '$correo' , usuario = '$usuario' WHERE id_empleado = '$id'";
 			//if-else statement in executing our query
 			$_SESSION['message'] = ( $db->exec($sql) ) ? 'Empleado actualizado correctamente':"" ;
 
@@ -64,12 +65,13 @@ include('../conexion.php');
         $numcasa=$_POST['numcasa'];
 		$telefono=$_POST['telefono'];
         $correo=$_POST['correo'];
+		$usuario=$_POST['usuario'];
         $clave=$_POST['clave'];
 		
 		$sql="
 		INSERT INTO `empleado`( `nombre_empleado`, `apellido_empleado`, `cedula_empleado`, 
 		`fechanacimiento_empleado`, `ciudad_empleado`, `sector_empleado`, `calle_empleado`, 
-		`numcasa_empleado`, `telefono_empleado`, `correo_empleado`, `clave_empleado`, `cargo_empleado`,
+		`numcasa_empleado`, `telefono_empleado`, `correo_empleado`, `usuario` , `clave_empleado`, `cargo_empleado`,
 		 `ocupacion_empleado`, `estado_empleado`, `id_nomina`)
 		VALUES (
 	   '$nombre',

@@ -121,6 +121,12 @@ if ($conexion -> connect_errno)
                         <input type="email" class="form-control" id="correo" name="correo" placeholder="Email" value="<?php echo $row['correo_empleado'] ?>">
                       </div>
                     </div>
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Usuario</label>
+                        <input type="email" class="form-control" id="usuario" readonly='' name="usuario" placeholder="Email" value="<?php echo $row['usuario'] ?>">
+                      </div>
+                    </div>
                   </div>
                   <div class="row">
                     <div class="col-md-4 pr-1">

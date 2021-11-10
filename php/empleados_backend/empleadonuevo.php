@@ -66,6 +66,9 @@
 
                         <label class="form-label" for="inputEmail">E-Mail:</label>
                         <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su email"/>
+
+                        <label class="form-label" for="inputEmail">Usuario:</label>
+                        <input type="email" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario"/>
                    
                         <label class="form-label" for="inputpassword">Contraseña:</label>
                         <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingrese su Contraseña"/>

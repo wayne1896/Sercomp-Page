@@ -13,6 +13,9 @@
             <div class="form-group">
                         <label for="inputEmail">E-Mail</label>
                         <input type="email" class="form-control" name="correo" id="correo" value="<?php echo $row['correo_empleado']; ?>" required="required" placeholder="Ingrese su email"/>
+                        
+                        <label for="inputEmail">Usuario</label>
+                        <input type="email" class="form-control" name="usuario" readonly='' id="usuario" value="<?php echo $row['usuario']; ?>" required="required" placeholder="Ingrese su email"/>
                     </div>
 
                     <h1>Datos Personales</h1> 
