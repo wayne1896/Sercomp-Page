@@ -97,7 +97,7 @@
 						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='badge-active';}
 						else{$text_estado="Pendiente";$label_class='badge-pending';}
 						if ($estado_factura=='Anulada'){$text_estado="Anulada";$label_class='badge-trashed';}
-						
+						$idfac=$row['id_factura'];
 							echo "
 								<tr>
 									<td>".$row['id_factura']."</td>
@@ -178,22 +178,22 @@ paypal.Button.render({
 
     onAuthorize: function(data, actions) {
         return actions.payment.execute().then(function(payment) {
+			var idfac = "<?php echo $idfac ?>";
 		
     		//sweetalert for successful transaction
-    		swal('Thank you!', 'Paypal purchase successful.', 'success');
+    		swal.fire('Thank you!', 'Paypal purchase successful.', 'success');
 			
-        });
+        }).then(function() {
+    window.location = "pagar.php?id=<?php echo $idfac ?>" ;
+});
 		
-		<?php	$sql1 = "UPDATE `factura` SET `estado_factura`='Pagado' WHERE id_factura='".$row['id_factura']."'" ;
-										  $query1 = $conn->query($sql1);
-										 
-									
-			?>
+		
 			
     },
-	
+
 
 }, '#paypal-button');
+	
 
 </script>
 </body>

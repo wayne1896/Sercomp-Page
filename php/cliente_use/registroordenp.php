@@ -91,7 +91,7 @@
 			$_SESSION['message'] ='Imposible actualizar el registro'.mysqli_error($mysqli);
 			echo "error:".mysqli_error($mysqli);
 		}
-		header("Location: ordensin.php?s=".$msj);
+		header("Location: ordensin.php");
 	}
 	
 	
