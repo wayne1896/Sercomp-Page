@@ -68,7 +68,7 @@
                         <input type="email" class="form-control" name="correo" id="correo" placeholder="Ingrese su email"/>
 
                         <label class="form-label" for="inputEmail">Usuario:</label>
-                        <input type="email" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario"/>
+                        <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Ingrese su usuario"/>
                    
                         <label class="form-label" for="inputpassword">Contraseña:</label>
                         <input type="password" class="form-control" name="clave" id="clave" placeholder="Ingrese su Contraseña"/>
@@ -144,7 +144,7 @@
                    
                             <div class="main-btns-wrapper">
                                 <a type="button" class="secondary-default-btn"  href="../../empleado.php"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Cancel</a>
-                                <button type="submit" name="editar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Guardar</a>
+                                <button type="submit" name="guardar" class="primary-default-btn"><span class="glyphicon glyphicon-check"></span> Guardar</a>
                                 </div>
                           
                           

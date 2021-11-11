@@ -84,6 +84,7 @@ include('../conexion.php');
 	   '$numcasa',
 	   '$telefono',
        '$correo',
+	   '$usuario',
        '$clave',
 	   '$cargo',
 	   '$rol',
