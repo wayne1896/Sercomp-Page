@@ -44,7 +44,7 @@ join cliente e on (o.id_cliente=e.id_cliente) join servicios g on (o.servicio_or
 		join ciudad c on (o.ciudad_orden=c.id_ciudad) 
 		join sector s on (o.sector_orden=s.id_sector) JOIN calle b on (o.calle_orden=b.id_calle) 
 		join empleado f on (o.id_empleado=f.id_empleado)
-         where f.correo_empleado='$id2' and o.estado_orden='Asignada'";
+         where f.usuario='$id2' and o.estado_orden='Asignada'";
 		return $result=$mysqli->query($sql); 
 	}	
 

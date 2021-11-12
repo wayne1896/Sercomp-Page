@@ -15,10 +15,6 @@ if (@mysqli_connect_errno()) {
   $query=$con->query("select * from perfil where id_perfil=1");
   while ( $row= $query->fetch_assoc() ) {
 
-
-
-
-
 /*Datos de la empresa*/
 define('NOMBRE_EMPRESA', $row['nombre_empresa']);
 define('DIRECCION_EMPRESA', $row['ciudad']." ".$row['direccion']);
