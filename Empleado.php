@@ -52,6 +52,7 @@
 				</div>
 				<div class="pull-right"> 
 					<a href="php\empleados_backend\empleadonuevo.php" class="btn btn-primary" ><i class=""></i> Nuevo</a>
+					<a href="cargos.php" class="btn btn-secondary" ><i class=""></i> Cargos</a>
 				</div>	
 			</div>
 			<?php 

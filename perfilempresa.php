@@ -103,7 +103,7 @@ if ($conexion -> connect_errno)
                 <h5 class="card-title">Editar Cuenta de la Empresa</h5>
               </div>
               <div class="card-body">
-                <form method="POST" action="php\empleados_backend\registroempleadop.php?accion=UDT">
+                <form method="POST" action="php\registroperfil.php?accion=UDT">
 		
                   <div class="row">
                     <div class="col-md-4 pr-1">
@@ -134,7 +134,7 @@ if ($conexion -> connect_errno)
                       </div>
                     </div>
                   </div>
-				  <div class="row">
+                  <div class="row">
                     <div class="col-md-4 pr-1">
                       <div class="form-group">
                         <label>Direccion</label>
@@ -154,7 +154,7 @@ if ($conexion -> connect_errno)
                       <div class="form-group">
                         <label>Codigo postal</label>
                         <input type="text" class="form-control" id="codigopostal" name="codigopostal" placeholder="Codigo postal" value="<?php echo $row['codigo_postal'] ?>">
-					 </div>
+                      </div>
                     </div>
                     <div class="col-md-4 px-1">
                       <div class="form-group">
@@ -162,8 +162,14 @@ if ($conexion -> connect_errno)
                         <input type="text" class="form-control" id="impuesto" name="impuesto" placeholder="Impuesto" value="<?php echo $row['impuesto'] ?>">
                       </div>
                     </div>
-                    
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label>Tasa del dolar</label>
+                        <input type="text" class="form-control" id="tasa" name="tasa" placeholder="Tasa del dolar" value="<?php echo $row['tasa_dolar'] ?>">
+                      </div>
+                    </div>
                   </div>
+              </div>
 
 
 

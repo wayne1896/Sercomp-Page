@@ -92,7 +92,7 @@
           WHERE id_factura='".$_GET['id']."'";
 						$query = $conn->query($sql);
 						$row = $query->fetch_assoc();
-                        $tasa=60;
+                        
 						$estado_factura=$row['estado_factura'];
 						if ($estado_factura=='Pagado'){$text_estado="Pagada";$label_class='badge-active';}
 						else{$text_estado="Pendiente";$label_class='badge-pending';}
@@ -110,6 +110,10 @@
                     <td colspan='2'><span id='paypal-button'></span></td>
 								</tr>
 							";
+							$sql = "SELECT * FROM perfil WHERE id_perfil=1 ";
+										  $query1 = $conn->query($sql);
+										  $row1 = $query1->fetch_assoc();
+										  $tasa=$row1['tasa_dolar'];
                             $preciofinal=$row['totalpago'] / $tasa;
 							
 						
