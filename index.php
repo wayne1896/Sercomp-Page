@@ -23,7 +23,7 @@ include ("php\sidebar2\indexcabe.php");
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7">
-					<img  src="vendors/images/Sercomp.png" alt="">
+					<img  src="vendors/images/Sercomp.png" alt="logo">
 				</div>
 				<div class="col-md-6 col-lg-5">
 				<form action="php/validacion.php" method="post">

@@ -50,7 +50,10 @@
 </head>
 
 <body>
-	 
+
+<div class="container" align="center">
+<img  src="vendors/images/Sercomp1.png" alt="">
+</div>	 
 
 			
 
