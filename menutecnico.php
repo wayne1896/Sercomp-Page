@@ -53,10 +53,47 @@ unset($_SESSION['message']);
 	<body>
 		 
 	
-<div class="container" align="center">
-<img  src="vendors/images/Sercomp1.png" alt="">
-</div>	 
+	<div class="card  pd-20 height-100-p mb-30 " style="background-color: rgba(245, 245, 245, 0.4);" >
+	<div class="card-body">
+		<div class="row align-items-center">
+			<div class="col-md-4">
+				<img src="vendors/images/banner-img.png" alt="">
+			</div>
+			<div class="col-md-8">
+				<h4 class="main-title">
+					!Bienvenido de nuevo! 
+					<?php 
+      
+      $id2=$_SESSION['User'];
+	  
+	 
+	  $mysqli = new mysqli("localhost", "root", "", "tesis");
+
+	  /* comprobar la conexión */
+	  if (mysqli_connect_errno()) {
+		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  exit();
+	  }
+	  
+	  $consulta = "SELECT nombre_empleado, apellido_empleado, cargo, nombre_ciudad, nombre_sector, nombre_calle, numcasa_empleado FROM empleado e join nomina n on (e.id_nomina=n.id_nomina) join ciudad c on (c.id_ciudad=e.ciudad_empleado)
+	   join sector s on (s.id_sector=e.sector_empleado) join calle k on (k.id_calle=e.calle_empleado)
+	    where e.usuario='$id2'";
+	  
+	  if ($resultado = $mysqli->query($consulta)) {
+	  
+		  /* obtener el array de objetos */
+		  while ($fila = $resultado->fetch_row()) {
+        echo"<div class='weight-600 font-30 text-blue'>".$fila[0]." ". $fila[1]." !</div>
+				</h4>
+				<p class='white-block__title'>Cargo: ".$fila[2]."</p>
+				<p class='white-block__title'>Direccion: ".$fila[3]." ".$fila[4]." ".$fila[5]." Casa #".$fila[6].".</p>
 				
+				
+				";}}?>
+			</div>
+		</div>
+	</div>
+</div>
 	
 	
 	
