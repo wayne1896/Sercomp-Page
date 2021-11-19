@@ -74,10 +74,8 @@ include ("php\sidebar2\indexcabe.php");
 	<script src="vendors/scripts/script.min.js"></script>
 	<script src="vendors/scripts/process.js"></script>
 	<script src="vendors/scripts/layout-settings.js"></script>
-	<?php   
-      	
-		include('php/ppie\ppiemenu.php');	
-	?>
+	
+	
 </body>
 </html>
 		
