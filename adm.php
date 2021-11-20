@@ -1,6 +1,6 @@
 <?php 
 
-include('php/sidebar2\sidebar-dash.php');	
+include('php/sidebar2/sidebar-dash.php');	
       include('php/consultas/consultacliente.php');	
   ?>
   	<!-- Basic Page Info -->
@@ -522,6 +522,6 @@ echo '0 results';
 </body>
 <?php   
 
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

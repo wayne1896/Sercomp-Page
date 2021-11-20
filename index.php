@@ -3,7 +3,7 @@
 	<title>SERCOMP - LOGIN</title>
 
 	<?php	
-include ("php\sidebar2\indexcabe.php");
+include ("php/sidebar2/indexcabe.php");
 
 
 
@@ -148,7 +148,7 @@ include ("php\sidebar2\indexcabe.php");
 	<script src="vendors/scripts/layout-settings.js"></script>
 	<?php   
       	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </body>
 </html>

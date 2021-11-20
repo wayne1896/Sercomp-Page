@@ -103,7 +103,7 @@ include('../consultas/consultaorden.php');
 </body>
 <?php   
        
-		include('../ppie\ppiemenu.php');	
+		include('../ppie/ppiemenu.php');	
 	?>
     
 </html>

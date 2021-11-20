@@ -16,9 +16,9 @@
 	   $query1 = "SELECT * FROM nomina ORDER BY cargo ASC"; 
        $result1 = $db->query($query1); 
 
- 		include('php/pcabeza\navbar_empleado.php');	
-		include('php/sidebar\sidebar.php');	
-		include('php\consultas\consultaempleado.php');	
+ 		include('php/pcabeza/navbar_empleado.php');	
+		include('php/sidebar/sidebar.php');	
+		include('ph/consultas/consultaempleado.php');	
        
     ?>
 
@@ -118,8 +118,8 @@
 </body>
 <?php   
         include('php/clientes_backend/Modals/AgregarModal.php');	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>
-<script src="buscadores\peticionorden.js"></script>
+<script src="buscadores/peticionorden.js"></script>
 

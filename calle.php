@@ -9,7 +9,7 @@
 
 
 
-include('php/sidebar2\sidebar-direcciones.php');	
+include('php/sidebar2/sidebar-direcciones.php');	
 include('php/consultas/consultadireccion.php');	
         $id= $_GET['id'];
 			if(isset($_GET['id'])){
