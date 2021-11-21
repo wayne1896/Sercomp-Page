@@ -12,7 +12,7 @@
 		
 		$servicios=$_POST['servicio'];
 		$detalle=$_POST['descripcion'];
-        $nombre=$_POST['nombre'];
+        $nombre=$_POST['codigo'];
 		$telefono=$_POST['telefono'];
 		$ciudad=$_POST['ciudad'];
         $sector=$_POST['sector'];
@@ -24,7 +24,7 @@
 		
 		$sql="
 		INSERT INTO `orden`( `descripcion_orden`, `servicio_orden`, `ciudad_orden`, `sector_orden`, `calle_orden`, `numcasa_orden`, 
-		`lat`, `lon`, `fecha_orden`, `estado_orden`, `telefono_orden`, `id_cliente`, `id_empleado`, `id_servicio`) 
+		`lat`, `lon`, `fecha_orden`, `estado_orden`,`proceso_orden`, `telefono_orden`, `id_cliente`, `id_empleado`, `id_servicio`) 
 		VALUES (
 	   '$detalle',
 	   '$servicios',
@@ -36,6 +36,7 @@
 	   '$long',
 	   '$fecha',
 	   'Sin Asignar',
+	   '0',
 	   '$telefono',
        '$nombre',
 	   '0',
@@ -50,7 +51,7 @@
 			$_SESSION['message'] ='Imposible almacenar el registro'.mysqli_error($mysqli);
 			echo "error:".mysqli_error($mysqli);
 		}
-		header("Location: ordensin.php");
+	header("Location: ordensin.php");
 	}
 	
 	if ($i=='UDP') {

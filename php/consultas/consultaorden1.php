@@ -1,7 +1,7 @@
 <?php
 
 	function extraerorden($id){		
-		include('..\conexion.php');	
+		include('../conexion.php');	
 		$sql="SELECT * FROM orden o 
 join cliente e on (o.id_cliente=e.id_cliente) join servicios g on (o.servicio_orden=g.id_servicio) 
  join ciudad c on (o.ciudad_orden=c.id_ciudad) 

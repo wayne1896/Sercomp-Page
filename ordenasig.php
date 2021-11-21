@@ -22,7 +22,7 @@
 
 
  		
-		include('php/sidebar2\sidebar-orden2.php');	
+		include('php/sidebar2/sidebar-orden2.php');	
 		include('php/consultas/consultaorden.php');	
     ?>
 
@@ -69,7 +69,7 @@
 							
 						</div>
 						<div class="pull-right">
-                        <a href="php\orden_backend\ordennuevo.php" class="btn btn-primary" ><i class="fa fa-code"></i> Nuevo</a>
+                        <a href="php/orden_backend/ordennuevo.php" class="btn btn-primary" ><i class="fa fa-code"></i> Nuevo</a>
                         <a href="ordensin.php" class="btn btn-secondary"><i class="fa fa-code"></i>Ver Orden sin asignar</a>
 						</div>
 					</div>
@@ -119,7 +119,7 @@
 </body>
 <?php   
         include('php/clientes_backend/Modals/AgregarModal.php');	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>
-<script src="buscadores\peticionorden.js"></script>
+<script src="buscadores/peticionorden.js"></script>

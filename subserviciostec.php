@@ -9,7 +9,7 @@
 
 
 
-include('php/sidebar\sidebartecnico.php');	
+include('php/sidebar/sidebartecnico.php');	
 include('php/consultas/consultaservicios.php');	
         $id= $_GET['id'];
 			if(isset($_GET['id'])){
@@ -126,7 +126,7 @@ $( document ).ready(function() {
   $('#addnew').click(function() {
     $.ajax({
         // la URL para la petición
-        url : 'php\direccion_backend\sector\Modals\Modal_Sector.php',
+        url : 'php/direccion_backend/sector/Modals/Modal_Sector.php',
  
         // la información a enviar
         data : { 'id' : <?php echo $id; ?> },
@@ -153,7 +153,7 @@ $( document ).ready(function() {
   $('#edit_').click(function() {
     $.ajax({
         // la URL para la petición
-        url : 'php\direccion_backend\sector\Modals\ActualizarSectorsModal.php',
+        url : 'php/direccion_backend/sector/Modals/ActualizarSectorsModal.php',
  
         // la información a enviar
         data : { 'id' : <?php echo $id; ?> },
@@ -197,7 +197,7 @@ $( document ).ready(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 <?php   
-        include('php\servicios_backend\Subservicio\Modals\Modal_Servicio.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/servicios_backend/Subservicio/Modals/Modal_Servicio.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

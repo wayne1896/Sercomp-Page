@@ -22,10 +22,8 @@ include ("php/sidebar2/indexcabe.php");
 	<div class="login-wrap d-flex align-items-center flex-wrap justify-content-center">
 		<div class="container">
 			<div class="row align-items-center">
-				<div class="col-md-6 col-lg-7">
-					<img  src="vendors/images/Sercomp.png" alt="logo">
-				</div>
-				<div class="col-md-6 col-lg-5">
+				
+				<div>
 				<form action="php/validacion.php" method="post">
 					<div class="login-box bg-white box-shadow border-radius-10">
 						<div class="login-title">

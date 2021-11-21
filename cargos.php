@@ -4,7 +4,7 @@
 
 	<?php 
  		
-		include('php/sidebar2\sidebar-empleado.php');	
+		include('php/sidebar2/sidebar-empleado.php');	
 		include('php/consultas/consultacargo.php');	
     ?>
 
@@ -104,7 +104,7 @@
 		 					";
 					
 							 
-							 include('php\cargo_backend\Modals\ActualizarCargoModal.php');
+							 include('php/cargo_backend/Modals/ActualizarCargoModal.php');
 		 				}
 			 			?> 
 	  </tbody>
@@ -135,7 +135,7 @@
 
 </body>
 <?php   
-        include('php\cargo_backend\Modals\Modal_Cargo.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/cargo_backend/Modals/Modal_Cargo.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

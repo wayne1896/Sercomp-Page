@@ -4,7 +4,7 @@
 
 	<?php 
  		
-		include('php/sidebar2\sidebar-servicios.php');	
+		include('php/sidebar2/sidebar-servicios.php');	
 		include('php/consultas/consultaservicios.php');	
     ?>
 
@@ -107,9 +107,9 @@
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\servicios_backend\Modals\cambiar_estado_Servicios.php');
+							 include('php/servicios_backend/Modals/cambiar_estado_Servicios.php');
 							 
-							 include('php\servicios_backend\Modals\ActualizarServiciosModal.php');
+							 include('php/servicios_backend/Modals/ActualizarServiciosModal.php');
 		 				}
 			 			?> 
 	  </tbody>
@@ -140,7 +140,7 @@
 
 </body>
 <?php   
-        include('php\servicios_backend\Modals\Modal_Servicios.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/servicios_backend/Modals/Modal_Servicios.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

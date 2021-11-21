@@ -4,8 +4,8 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 	exit;
 	} ?>
 <!-- Site favicon -->
-<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+<link rel="icon" type="image/png" href="vendors/images/iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors/images/iconbar.png">
 
   <link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
 
@@ -47,10 +47,10 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="php\cliente_use\facturaspendientes.php">Facturas pendientes</a>
+                            <a href="php/cliente_use/facturaspendientes.php">Facturas pendientes</a>
                         </li>
                         <li>
-                            <a href="php\cliente_use\facturaspagadas.php">Facturas pagadas</a>
+                            <a href="php/cliente_use/facturaspagadas.php">Facturas pagadas</a>
                         </li>
                     </ul>
                 </li>
@@ -71,10 +71,10 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                     </a>
                     <ul class="cat-sub-menu">
                         <li>
-                            <a href="php\cliente_use\ordensin.php">Orden en proceso</a>
+                            <a href="php/cliente_use/ordensin.php">Orden en proceso</a>
                         </li>
                         <li>
-                            <a href="php\cliente_use\ordenasig.php">Orden finalizadas</a>
+                            <a href="php/cliente_use/ordenasig.php">Orden finalizadas</a>
                         </li>
                     </ul>
                 </li>
@@ -97,7 +97,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 
 	  /* comprobar la conexión */
 	  if (mysqli_connect_errno()) {
-		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  printf("Falló la conexión: %s/n", mysqli_connect_error());
 		  exit();
 	  }
 	  
@@ -181,7 +181,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
      
          
           <li>
-           <a href="php\cliente_use\ordenasig.php">
+           <a href="php/cliente_use/ordenasig.php">
            
             <div  id="notification-latest"> 
             </div>
@@ -189,7 +189,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
           </li>
          
           <li>
-            <a class="link-to-page" href="php\cliente_use\ordenasig.php">Ver ordenes</a>
+            <a class="link-to-page" href="php/cliente_use/ordenasig.php">Ver ordenes</a>
           </li>
         </ul>
       </div>

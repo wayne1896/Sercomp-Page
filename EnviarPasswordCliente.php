@@ -6,7 +6,7 @@ if(!empty($sessData['estado']['msg'])){
     $statusMsgType = $sessData['estado']['type'];
     unset($_SESSION['sessData']['estado']);
 }
-include ("php\sidebar2\indexcabe.php");
+include ("php/sidebar2/indexcabe.php");
 
 ?>
 <!DOCTYPE html>
@@ -20,8 +20,8 @@ include ("php\sidebar2\indexcabe.php");
 
 	
 	<!-- Site favicon -->
-	<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+	<link rel="icon" type="image/png" href="vendors/images/iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors/images/iconbar.png">
 
 
 <body class="login-page">
@@ -40,7 +40,7 @@ include ("php\sidebar2\indexcabe.php");
 				<p></p>
         		<?php echo !empty($statusMsg)?'<p class="'.$statusMsgType.'">'.$statusMsg.'</p>':''; ?>
 				
-				<form action="recuperacion\MiCuentaCliente.php" method="post">
+				<form action="recuperacion/MiCuentaCliente.php" method="post">
 				<input type="email" name="emailcliente" class="form-control form-control-lg" placeholder="EMAIL" required="">
 				<p></p>
 				<div class="send-button">

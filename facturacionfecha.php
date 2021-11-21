@@ -7,7 +7,7 @@
 require_once ("config/db.php");
 require_once ("config/conexion.php");
 include "config.php";
-		include('php/sidebar2\sidebar-facturacion2.php');	
+		include('php/sidebar2/sidebar-facturacion2.php');	
 		
     ?>
 
@@ -50,7 +50,7 @@ include "config.php";
 					  <h4 class="main-title">Facturas</h4>
 				  </div>
 				  <div class="pull-right">
-					  <a href="php\facturacion_backend\nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>
+					  <a href="php/facturacion_backend/nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>
 				  </div>
 				
 			</div>
@@ -147,7 +147,7 @@ include "config.php";
 					<td class="text-right">	<?php
 						if($row['estado_factura']=='Pendiente'){
 							?>
-						<a href="php\facturacion_backend\editar_factura.php?id_factura=<?php echo $id_factura;?>"
+						<a href="php/facturacion_backend/editar_factura.php?id_factura=<?php echo $id_factura;?>"
 						 class="btn btn-outline-primary" title='Editar factura' ><i class='bx bxs-edit bx'></i></a> 
 						 <?php
 							}
@@ -196,7 +196,7 @@ include "config.php";
 </body>
 <?php   
         include('php/clientes_backend/Modals/AgregarModal.php');	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 	<!--  modal logout -->
 	<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -221,6 +221,6 @@ include "config.php";
 		</div>
 	  </div>
 	</div>
-</html>	<script src="buscadores\peticioncliente.js"></script>
+</html>	<script src="buscadores/peticioncliente.js"></script>
 <script type="text/javascript" src="js/VentanaCentrada.js"></script>
 	<script type="text/javascript" src="js/facturas.js"></script>

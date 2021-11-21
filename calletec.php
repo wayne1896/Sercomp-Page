@@ -8,7 +8,7 @@
 
 
 
-include('php/sidebar\sidebartecnico.php');		
+include('php/sidebar/sidebartecnico.php');		
 include('php/consultas/consultadireccion.php');	
         $id= $_GET['id'];
 			if(isset($_GET['id'])){
@@ -194,7 +194,7 @@ $( document ).ready(function() {
 
 </body>
 <?php   
-        include('php\direccion_backend\calle\Modals\Modal_Calle.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/direccion_backend/calle/Modals/Modal_Calle.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

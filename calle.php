@@ -113,8 +113,8 @@ include('php/consultas/consultadireccion.php');
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\direccion_backend\calle\Modals\cambiar_estado_Calle.php');
-							 include('php\direccion_backend\calle\Modals\ActualizarCalleModal.php');
+							 include('php/direccion_backend/calle/Modals/cambiar_estado_Calle.php');
+							 include('php/direccion_backend/calle/Modals/ActualizarCalleModal.php');
                              $c++;
 		 				}
 			 			?> 
@@ -201,7 +201,7 @@ $( document ).ready(function() {
 
 </body>
 <?php   
-        include('php\direccion_backend\calle\Modals\Modal_Calle.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/direccion_backend/calle/Modals/Modal_Calle.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

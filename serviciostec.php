@@ -4,7 +4,7 @@
 
 	<?php 
  		
-		include('php/sidebar\sidebartecnico.php');	
+		include('php/sidebar/sidebartecnico.php');	
 		include('php/consultas/consultaservicios.php');	
     ?>
 
@@ -134,7 +134,7 @@
 
 </body>
 <?php   
-        include('php\servicios_backend\Modals\Modal_Servicios.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/servicios_backend/Modals/Modal_Servicios.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

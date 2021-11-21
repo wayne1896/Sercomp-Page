@@ -10,7 +10,7 @@
 
 
  		
-		include('php/sidebar2\sidebar-inventario.php');	
+		include('php/sidebar2/sidebar-inventario.php');	
 		include('php/consultas/consultainventario.php');	
 		
 		if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
@@ -155,8 +155,8 @@
 
 </body>
 <?php   
-        include('php\inventario_backend\Modals\Modal_Inventario.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/inventario_backend/Modals/Modal_Inventario.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>	<script type="text/javascript" src="js1/productos.js"></script>
 <script>

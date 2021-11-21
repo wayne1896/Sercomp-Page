@@ -5,7 +5,7 @@
 	<?php 
 
 		
-		include('php/sidebar\sidebartecnico.php');	
+		include('php/sidebar/sidebartecnico.php');	
 		include('php/consultas/consultadireccion.php');	
     ?>
 
@@ -133,7 +133,7 @@
 
 </body>
 <?php   
-        include('php\direccion_backend\ciudad\Modals\Modal_Ciudad.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/direccion_backend/ciudad/Modals/Modal_Ciudad.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

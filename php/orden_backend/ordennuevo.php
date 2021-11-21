@@ -40,13 +40,13 @@ $db =  connect();
  
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	  <!-- Custom styles -->
 	  <link rel="stylesheet" href="../../css/style.min.css">
 	  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	
 	
 
@@ -143,8 +143,8 @@ $db =  connect();
                                 <label class="form-label" for="inputName">Numero de Casa:</label>
                                 <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
                           
-                        <input type="number" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
-                        <input type="number" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
+                        <input type="text" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
+                        <input type="text" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
                            </div>
                     
                            <script>$(document).ready(function(){
@@ -237,7 +237,7 @@ $db =  connect();
                 <title>Geolocalizador web</title>
 <link href="css/reset.css" rel="stylesheet" style="text/css" />
 <link href="css/main.css" rel="stylesheet" style="text/css" media="screen" />
-<script src="http://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+
 
 </head>
 <body>
@@ -320,6 +320,6 @@ $db =  connect();
 
 <?php   
        
-		include('../ppie\ppiemenu.php');	
+		include('../ppie/ppiemenu.php');	
 	?>
     

@@ -7,8 +7,8 @@
 
 
  			
-		include('php/sidebar2\sidebar-empleado.php');	
-		include('php\consultas\consultaempleado.php');	
+		include('php/sidebar2/sidebar-empleado.php');	
+		include('php/consultas/consultaempleado.php');	
        
     ?>
 
@@ -51,7 +51,7 @@
 					<h4 class="main-title">Empleados</h4>
 				</div>
 				<div class="pull-right"> 
-					<a href="php\empleados_backend\empleadonuevo.php" class="btn btn-primary" ><i class=""></i> Nuevo</a>
+					<a href="php/empleados_backend/empleadonuevo.php" class="btn btn-primary" ><i class=""></i> Nuevo</a>
 					<a href="cargos.php" class="btn btn-secondary" ><i class=""></i> Cargos</a>
 				</div>	
 			</div>
@@ -96,7 +96,7 @@
 </body>
 <?php   
         include('php/empleados_backend/modals/Modal_Empleado.php');	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>
-<script src="buscadores\peticionempleado.js"></script>
+<script src="buscadores/peticionempleado.js"></script>

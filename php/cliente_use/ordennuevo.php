@@ -42,7 +42,7 @@ $db =  connect();
  
 	<!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- CSS only -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	  <!-- Custom styles -->
@@ -93,6 +93,7 @@ $db =  connect();
                                  <?php 
                     if($result2->num_rows > 0){ 
                         while($row1 = $result2->fetch_assoc()){  
+
                             echo '<option value="'.$row1['id_servicio'].'">'.$row1['nombre_servicio'].'</option>'; 
                         } 
                     }
@@ -102,89 +103,40 @@ $db =  connect();
                     <label class="form-label" for="inputfistname">Ingrese el detalle del problema:</label>
                     <textarea class="form-control" name="descripcion" id="descripcion" rows="2"></textarea>
                     
-                        <label class="form-label" for="inputPassword">Nombre del Cliente:</label>
-                        <select class="form-control" title="Nombre cliente" id="nombre" name="nombre">
-                                 <option value="">Seleccione el Cliente</option>
+                
                                  <?php 
                     if($result3->num_rows > 0){ 
                         while($row2 = $result3->fetch_assoc()){  
-                            echo '<option value="'.$row2['id_cliente'].'">'.$row2['nombre_cliente'].' '.$row2['apellido_cliente'].'</option>'; 
-                        } 
-                    }
+                            echo '
+                            <input type="text" class="form-control" name="codigo" readonly="" hidden id="codigo" value="'.$row2['id_cliente'].'" placeholder="Ingrese el Teléfono del Cliente"/>
+                          '; 
+                     
                     ?>
-                    </select>
+                
                     
                         <label class="form-label" for="inputfistname">Teléfono:</label>
-                        <input type="number" class="form-control" name="telefono" id="telefono" placeholder="Ingrese el Teléfono del Cliente"/>
+                        <input type="text" class="form-control" name="telefono" readonly="" id="telefono" value="<?php echo $row2['telefono_cliente'];?>" placeholder="Ingrese el Teléfono del Cliente"/>
                     
                     <label class="form-label" for="inputName">Ciudad:</label>
-                        <select class="form-control"  title="Seleccione Su Ciudad" id="ciudad" name="ciudad">
-                            <option value="">Seleccione Su Ciudad</option>
-                                <?php 
-                                if($result1->num_rows > 0){ 
-                                    while($row = $result1->fetch_assoc()){  
-                                        echo '<option value="'.$row['id_ciudad'].'">'.$row['nombre_ciudad'].'</option>'; 
-                                    } 
-                                }else{ 
-                                    echo '<option value="">Ciudad no disponible</option>'; 
-                                } 
-                                ?>
-                        </select>
+                    <input type="text" class="form-control" hidden name="ciudad" id="ciudad" value="<?php echo $row2['ciudad_cliente'];?>" placeholder="Ingrese el Teléfono del Cliente"/>
+                       <p class="form-label" > <FONT SIZE=5><?php echo $row2['nombre_ciudad'];?> </font></p>
 
                             <label class="form-label" for="inputName">Sector:</label>
-                            <select class="form-control" title="Seleccione Su Sector" id="sector" name="sector">
-                                  <option value="">Seleccione una ciudad primero</option>
-                           </select>
+                            <input type="text" class="form-control" hidden name="sector" id="sector" value="<?php echo $row2['sector_cliente'];?>" placeholder="Ingrese el Teléfono del Cliente"/>
+                       <p class="form-label"> <FONT SIZE=5> <?php echo $row2['nombre_sector'];?> </font></p>
 
                             <label class="form-label" class="form-label" for="inputName">Calle:</label>
-                            <select class="form-control" title="Seleccione Su Calle" id="calle" name="calle">
-                                <option value="">Seleccione un sector primero</option>
-                            </select>
-
+                            <input type="text" class="form-control" hidden name="calle" id="calle" value="<?php echo $row2['calle_cliente'];?>" placeholder="Ingrese el Teléfono del Cliente"/>
+                       <p class="form-label"> <FONT SIZE=5> <?php echo $row2['nombre_calle'];?> </font></p>
                             
                                 <label class="form-label" for="inputName">Numero de Casa:</label>
-                                <input type="number" class="form-control" name="numcasa" id="numcasa" placeholder="Ingrese su Numero de Casa"/>
+                                <input type="number" class="form-control" name="numcasa" id="numcasa"  value="<?php echo $row2['numcasa_cliente'];  }  }?>" placeholder="Ingrese su Numero de Casa"/>
                           
-                        <input type="number" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>" required="required" />
-                        <input type="number" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" required="required" />
+                        <input type="text" hidden="" class="form-control" name="lat" id="lat"  value="<?php echo  $lat; ?>"  />
+                        <input type="text" hidden="" class="form-control" name="long" id="long"  value="<?php echo  $long; ?>" />
                            </div>
                     
-                           <script>$(document).ready(function(){
-    $('#ciudad').on('change', function(){
-        var ciudadID = $(this).val();
-        var ciudadNombre = $(this).val();
-        if(ciudadID){
-            $.ajax({
-                type:'POST',
-                url:'../../ajaxData.php',
-                data:'id_ciudad='+ciudadID,
-                success:function(html){
-                    $('#sector').html(html);
-                    $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
-                }
-            }); 
-        }else{
-            $('#sector').html('<option value="">Seleccione una ciudad primero</option>');
-            $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
-        }
-    });
-    
-    $('#sector').on('change', function(){
-        var sectorID = $(this).val();
-        if(sectorID){
-            $.ajax({
-                type:'POST',
-                url:'../../ajaxData.php',
-                data:'id_sector='+sectorID,
-                success:function(html){
-                    $('#calle').html(html);
-                }
-            }); 
-        }else{
-            $('#calle').html('<option value="">Seleccione un sector primero</option>'); 
-        }
-    });
-});</script>
+                       
 
 <?php if($lat=null){ ?>
   

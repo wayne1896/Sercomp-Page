@@ -5,7 +5,7 @@
 	<?php 
 
   
-include('php/sidebar2\sidebar-orden.php');	
+include('php/sidebar2/sidebar-orden.php');	
 
 
   include_once 'dbConfig.php'; 
@@ -78,7 +78,7 @@ include('php/sidebar2\sidebar-orden.php');
 							
 						</div>
 						<div class="pull-right">
-                        <a href="php\orden_backend\ordennuevo.php" class="btn btn-primary" > Nuevo</a>
+                        <a href="php/orden_backend/ordennuevo.php" class="btn btn-primary" > Nuevo</a>
 						<a href="ordenasig.php" class="btn btn-secondary"><i class="fa fa-code"></i>Ver Orden asignadas</a>
 						</div>
 					</div>
@@ -139,8 +139,8 @@ include('php/sidebar2\sidebar-orden.php');
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\orden_backend\Modals\ActualizarOrdenModal.php');
-							  include('php\orden_backend\Modals\asignar_ordenModal.php');
+							 include('php/orden_backend/Modals/ActualizarOrdenModal.php');
+							  include('php/orden_backend/Modals/asignar_ordenModal.php');
 							 
 							
 		 				}
@@ -187,7 +187,7 @@ include('php/sidebar2\sidebar-orden.php');
 </footer>
 </body>
 <?php   
-        include('php\orden_backend\Modals\Modal_Orden.php');	
+        include('php/orden_backend/Modals/Modal_Orden.php');	
 		
 	?>
 	

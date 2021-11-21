@@ -19,8 +19,8 @@ include ("php/sidebar2/regcabe.php");
  
 	
 	<!-- Site favicon -->
-	<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+	<link rel="icon" type="image/png" href="vendors/images/iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors/images/iconbar.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- Mobile Specific Metas -->
@@ -65,7 +65,7 @@ include ("php/sidebar2/regcabe.php");
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-6 col-lg-7">
-					<img src="src\images\register-page-img.png" alt="">
+					<img src="src/images/register-page-img.png" alt="">
 				</div>
 				<div class="col-md-6 col-lg-5">
 				<form id="regForm" action="php/clientes_backend/registroclientep.php?accion=INS" method="POST">

@@ -5,7 +5,7 @@
 	<?php 
 
 	
-		include('php/sidebar2\sidebar-direcciones.php');	
+		include('php/sidebar2/sidebar-direcciones.php');	
 		include('php/consultas/consultadireccion.php');	
     ?>
 
@@ -103,8 +103,8 @@
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\direccion_backend\ciudad\Modals\cambiar_estado_Ciudad.php');
-							 include('php\direccion_backend\ciudad\Modals\ActualizarCiudadModal.php');
+							 include('php/direccion_backend/ciudad/Modals/cambiar_estado_Ciudad.php');
+							 include('php/direccion_backend/ciudad/Modals/ActualizarCiudadModal.php');
 		 				}
 			 			?> 
 	  </tbody>
@@ -137,7 +137,7 @@
 
 </body>
 <?php   
-        include('php\direccion_backend\ciudad\Modals\Modal_Ciudad.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/direccion_backend/ciudad/Modals/Modal_Ciudad.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

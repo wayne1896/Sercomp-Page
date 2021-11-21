@@ -4,8 +4,8 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 	exit;
 	} ?>
 <!-- Site favicon -->
-<link rel="icon" type="image/png" href="../../vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="../../vendors\images\iconbar.png">
+<link rel="icon" type="image/png" href="../../vendors/images/iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="../../vendors/images/iconbar.png">
 
   <link rel="stylesheet" type="text/css" href="../../vendors/styles/footer.css">
 
@@ -50,7 +50,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
                 </li>
 
                 <li>
-                    <a  href="../../php\tecnico_use\ordenasig.php">
+                    <a  href="../../php/tecnico_use/ordenasig.php">
                         <span class="bx bx-receipt bx-sm" aria-hidden="true"></span>  Ordenes
                        
                            
@@ -78,7 +78,7 @@ if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] !=
 
 	  /* comprobar la conexión */
 	  if (mysqli_connect_errno()) {
-		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  printf("Falló la conexión: %s/n", mysqli_connect_error());
 		  exit();
 	  }
 	  

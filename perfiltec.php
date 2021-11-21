@@ -6,7 +6,7 @@
 <?php 
  
 
- include('php/sidebar\sidebartecnico.php');	
+ include('php/sidebar/sidebartecnico.php');	
  include('php/consultas/consultaperfil.php');	
 
 $id2;
@@ -47,8 +47,8 @@ if ($conexion -> connect_errno)
 	<title>SERCOMP - Editar perfil</title>
 
 	<!-- Site favicon -->
-	<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+	<link rel="icon" type="image/png" href="vendors/images/iconbar.png">
+	<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors/images/iconbar.png">
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
@@ -105,7 +105,7 @@ if ($conexion -> connect_errno)
                 <h5 class="card-title">Editar Perfil</h5>
               </div>
               <div class="card-body">
-                <form method="POST" action="php\empleados_backend\registroempleadopp.php?accion=UDT">
+                <form method="POST" action="php/empleados_backend/registroempleadopp.php?accion=UDT">
 		
                   <div class="row">
                     <div class="col-md-4 pr-1">
@@ -294,7 +294,7 @@ if ($conexion -> connect_errno)
 
 <?php   
  
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 	
 </html>

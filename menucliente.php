@@ -5,7 +5,7 @@
  
 
  	
- include('php/sidebar\sidebarcliente.php');	
+ include('php/sidebar/sidebarcliente.php');	
 
 
 
@@ -25,8 +25,8 @@
 		<title>SERCOMP - Inicio</title>
 	
 		<!-- Site favicon -->
-		<link rel="icon" type="image/png" href="vendors\images\iconbar.png">
-		<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors\images\iconbar.png">
+		<link rel="icon" type="image/png" href="vendors/images/iconbar.png">
+		<link rel="shortcut icon" type="image/png" sizes="16x16" href="vendors/images/iconbar.png">
 		<!-- Mobile Specific Metas -->
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	  
@@ -71,7 +71,7 @@
 
 	  /* comprobar la conexión */
 	  if (mysqli_connect_errno()) {
-		  printf("Falló la conexión: %s\n", mysqli_connect_error());
+		  printf("Falló la conexión: %s/n", mysqli_connect_error());
 		  exit();
 	  }
 	  
@@ -116,7 +116,7 @@
 	</body>
 	<?php   
       
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 	
 	</html>

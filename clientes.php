@@ -9,7 +9,7 @@
 	
 
 
-include('php/sidebar2\sidebar-clientes.php');	
+include('php/sidebar2/sidebar-clientes.php');	
 include('php/consultas/consultadireccion.php');	
     ?>
 
@@ -55,7 +55,7 @@ include('php/consultas/consultadireccion.php');
 					<h4 class="main-title">Clientes</h4>
 				</div>
 				<div class="pull-right">
-					<a href="php\clientes_backend\clientenuevo.php" class="btn btn-primary" ><i class=""></i> Nuevo</a>
+					<a href="php/clientes_backend/clientenuevo.php" class="btn btn-primary" ><i class=""></i> Nuevo</a>
 				</div>
 			</div>
 			<?php 
@@ -100,7 +100,7 @@ include('php/consultas/consultadireccion.php');
 </body>
 <?php   
         include('php/clientes_backend/Modals/AgregarModal.php');	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 
-</html>	<script src="buscadores\peticioncliente.js"></script>
+</html>	<script src="buscadores/peticioncliente.js"></script>

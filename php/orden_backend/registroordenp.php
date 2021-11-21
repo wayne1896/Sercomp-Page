@@ -24,7 +24,7 @@
 		
 		$sql="
 		INSERT INTO `orden`( `descripcion_orden`, `servicio_orden`, `ciudad_orden`, `sector_orden`, `calle_orden`, `numcasa_orden`, 
-		`lat`, `lon`, `fecha_orden`, `estado_orden`, `telefono_orden`, `id_cliente`, `id_empleado`, `id_servicio`) 
+		`lat`, `lon`, `fecha_orden`, `estado_orden` ,`proceso_orden`, `telefono_orden`, `id_cliente`, `id_empleado`, `id_servicio`) 
 		VALUES (
 	   '$detalle',
 	   '$servicios',
@@ -36,6 +36,7 @@
 	   '$long',
 	   '$fecha',
 	   'Sin Asignar',
+	   '0',
 	   '$telefono',
        '$nombre',
 	   '0',

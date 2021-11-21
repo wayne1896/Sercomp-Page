@@ -9,7 +9,7 @@
 
 
 
-include('php/sidebar\sidebarcliente.php');	
+include('php/sidebar/sidebarcliente.php');	
 include('php/consultas/consultaservicios.php');	
         $id= $_GET['id'];
 			if(isset($_GET['id'])){
@@ -111,8 +111,8 @@ include('php/consultas/consultaservicios.php');
 					 				</td>
 					 			</tr>
 		 					";
-							 include('php\servicios_backend\Subservicio\Modals\cambiar_estado_Servicio.php');
-							 include('php\servicios_backend\Subservicio\Modals\ActualizarServicioModal.php');
+							 include('php/servicios_backend/Subservicio\Modals/cambiar_estado_Servicio.php');
+							 include('php/servicios_backend/Subservicio\Modals/ActualizarServicioModal.php');
                              $c++;
 		 				}
 			 			?> 
@@ -198,7 +198,7 @@ $( document ).ready(function() {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </body>
 <?php   
-        include('php\servicios_backend\Subservicio\Modals\Modal_Servicio.php');	
-		include('php/ppie\ppiemenu.php');	
+        include('php/servicios_backend/Subservicio/Modals/Modal_Servicio.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 </html>

@@ -6,7 +6,7 @@
 
 
 
-		include('php/sidebar2\sidebar-facturacion.php');	
+		include('php/sidebar2/sidebar-facturacion.php');	
 		include('php/consultas/consultacliente.php');	
     ?>
 
@@ -51,7 +51,7 @@
 					<h4 class="main-title">Facturas</h4>
 				</div>
 				<div class="pull-right">
-					<a href="php\facturacion_backend\nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>
+					<a href="php/facturacion_backend/nueva_factura.php" class="btn btn-info"><span class="glyphicon glyphicon-plus" ></span> Nueva Factura</a>
 				</div>
 			
 				<div id="resultados">
@@ -87,7 +87,7 @@
 </body>
 <?php   
         include('php/clientes_backend/Modals/AgregarModal.php');	
-		include('php/ppie\ppiemenu.php');	
+		include('php/ppie/ppiemenu.php');	
 	?>
 	<!--  modal logout -->
 	<div class="modal" id="logoutModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -112,6 +112,6 @@
 		</div>
 	  </div>
 	</div>
-</html>	<script src="buscadores\peticioncliente.js"></script>
+</html>	<script src="buscadores/peticioncliente.js"></script>
 <script type="text/javascript" src="js/VentanaCentrada.js"></script>
 	<script type="text/javascript" src="js/facturas.js"></script>
