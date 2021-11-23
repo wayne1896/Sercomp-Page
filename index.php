@@ -97,32 +97,38 @@ include ("php/sidebar2/indexcabe.php");
 							</div>
 						</form>
 					</div>
-				</div> <!-- Modal -->
-<div class="modal fade" id="Recuperacion" tabindex="-1" role="dialog" aria-labelledby="Recuperacion" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 align="center" class="modal-title" id="exampleModalLabel">Recuperacion de contraseña</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div align="center" class="modal-body">
-       <a type="button" class="btn btn-primary" href="EnviarPasswordEmpleado.php">Empleado</a>
-	   <a type="button" class="btn btn-secondary" href="EnviarPasswordCliente.php">Cliente</a>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button>
-       
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+				</div> 
+				</div>
 		</div>
 	</div>
 </div>
 </div>
+				
+				
+				
+				
+				
+<!-- Modal -->
+<div class="modal fade" id="Recuperacion" tabindex="-1" role="dialog" aria-labelledby="Recuperacion" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+	  <div class="modal-content">
+		  <div class="modal-header">
+			  <h5 align="center" class="modal-title" id="exampleModalLabel">Recuperacion de contraseña</h5>
+			  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div align="center" class="modal-body">
+				<a type="button" class="btn btn-primary" href="EnviarPasswordEmpleado.php">Empleado</a>	
+				<a type="button" class="btn btn-secondary" href="EnviarPasswordCliente.php">Cliente</a>	
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-warning" data-dismiss="modal">Cerrar</button> 
+			</div>
+		</div>
+	</div>
+</div>
+
 	<!-- js -->
 		<!-- js -->
 		<script

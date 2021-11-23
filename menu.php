@@ -8,15 +8,7 @@
 
  include('php/sidebar2/sidebar.php');	
 
- if(isset($_SESSION['message'])){
-	 ?>
-	 <div class="alert alert-info text-center" style="margin-top:20px;">
-	 <?php echo $_SESSION['message']; ?>
-	 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
- </div>
- <?php
- unset($_SESSION['message']);
- }?>
+?>
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -52,6 +44,19 @@
 <body>
 
 <div class="card  pd-20 height-100-p mb-30 " style="background-color: rgba(245, 245, 245, 0.4);" >
+
+
+<?php
+ if(isset($_SESSION['message'])){
+	?>
+	<div class="alert alert-info text-center" style="margin-top:20px;">
+	<?php echo $_SESSION['message']; ?>
+	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<?php
+unset($_SESSION['message']);
+}
+?>
 	<div class="card-body">
 		<div class="row align-items-center">
 			<div class="col-md-4">

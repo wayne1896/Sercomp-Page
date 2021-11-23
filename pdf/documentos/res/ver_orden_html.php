@@ -53,18 +53,19 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
         <tr>
 
             <td style="width: 25%; color: #444444;">
-			<img src="http://localhost/tesis/logo.png" />
+			<img style="width: 100%;" src="documentos\res\logo.jpg" alt="Logo"><br>
                 
             </td>
 			<td style="width: 50%; color: #34495e;font-size:12px;text-align:center">
                 <span style="color: #34495e;font-size:14px;font-weight:bold"><?php echo NOMBRE_EMPRESA;?></span>
 				<br><?php echo DIRECCION_EMPRESA;?><br> 
-				Teléfono: <?php echo TELEFONO_EMPRESA;?><br>
+				RNC: <?php echo RNC;?><br>
+				Telefono: <?php echo TELEFONO_EMPRESA;?><br>
 				Email: <?php echo EMAIL_EMPRESA;?>
                 
             </td>
 			<td style="width: 25%;text-align:right">
-			ORDEN Nº <?php echo $numero_factura;?>
+			ORDEN No <?php echo $numero_factura;?>
 			</td>
 			
         </tr>

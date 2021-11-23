@@ -127,6 +127,13 @@ if ($conexion -> connect_errno)
                         <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre de la compañia" value="<?php echo $row['nombre_empresa'] ?>">
                       </div>
                     </div>
+
+                    <div class="col-md-4 pl-1">
+                      <div class="form-group">
+                        <label>RNC</label>
+                        <input type="text" class="form-control" id="rnc" name="rnc" placeholder="RNC" value="<?php echo $row['RNC'] ?>">
+                      </div>
+                    </div>
                     <div class="col-md-4 pl-1">
                       <div class="form-group">
                         <label>Ciudad</label>

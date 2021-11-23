@@ -17,6 +17,7 @@ if (@mysqli_connect_errno()) {
 
 /*Datos de la empresa*/
 define('NOMBRE_EMPRESA', $row['nombre_empresa']);
+define('RNC', $row['RNC']);
 define('DIRECCION_EMPRESA', $row['ciudad']." ".$row['direccion']);
 define('TELEFONO_EMPRESA', $row['telefono']);
 define('EMAIL_EMPRESA', $row['email']);

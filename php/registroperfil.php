@@ -12,6 +12,7 @@
 		$codigo=$_POST['codigo'];
 		$correo=$_POST['correo'];
 		$nombre=$_POST['nombre'];
+		$rnc=$_POST['rnc'];
 		$ciudad=$_POST['ciudad'];
 		$direccion=$_POST['direccion'];
 		$telefono=$_POST['telefono'];
@@ -23,6 +24,7 @@
 		
 		$sql="UPDATE `perfil` SET 
 		`nombre_empresa`='$nombre',
+		`RNC`='$rnc',
 		`direccion`='$direccion',
 		`ciudad`='$ciudad',
 		`codigo_postal`='$codigopostal',

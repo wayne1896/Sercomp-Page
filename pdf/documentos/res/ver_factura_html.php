@@ -53,18 +53,20 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
         <tr>
 
             <td style="width: 25%; color: #444444;">
-                <img style="width: 100%;" src="../../img/logo.jpg" alt="Logo"><br>
+                <img style="width: 100%;" src="documentos\res\logo.jpg" alt="Logo"><br>
                 
             </td>
 			<td style="width: 50%; color: #34495e;font-size:12px;text-align:center">
                 <span style="color: #34495e;font-size:14px;font-weight:bold"><?php echo NOMBRE_EMPRESA;?></span>
 				<br><?php echo DIRECCION_EMPRESA;?><br> 
-				Teléfono: <?php echo TELEFONO_EMPRESA;?><br>
+				RNC: <?php echo RNC;?><br>
+				Telefono: <?php echo TELEFONO_EMPRESA;?><br>
+	
 				Email: <?php echo EMAIL_EMPRESA;?>
                 
             </td>
 			<td style="width: 25%;text-align:right">
-			FACTURA Nº <?php echo $numero_factura;?>
+			FACTURA No <?php echo $numero_factura;?>
 			</td>
 			
         </tr>
@@ -86,7 +88,7 @@ table.page_footer {width: 100%; border: none; background-color: white; padding: 
 				echo $rw_cliente['nombre_cliente'];
 				echo "<br>";
 				echo $rw_cliente['nombre_ciudad']." ".$rw_cliente['nombre_sector']." ".$rw_cliente['nombre_calle']." No Casa: ".$rw_cliente['numcasa_cliente'];
-				echo "<br> Teléfono: ";
+				echo "<br> Telefono: ";
 				echo $rw_cliente['telefono_cliente'];
 				echo "<br> Email: ";
 				echo $rw_cliente['correo_cliente'];
