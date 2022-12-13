@@ -171,22 +171,10 @@ include('php/sidebar2/sidebar-orden.php');
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- ! Footer -->
-<footer class="footer">
-  <div class="container footer--flex">
-    <div class="footer-start">
-    
-    <p>Sercomp - Todos los derechos reservados 2021  </p>
-			
-    </div>
-    <ul class="footer-end">
-      <li><a href="##">About</a></li>
-      <li><a href="##">Support</a></li>
-    </ul>
-  </div>
-</footer>
+
 </body>
 <?php   
+		include('php/ppie/ppiemenu.php');
         include('php/orden_backend/Modals/Modal_Orden.php');	
 		
 	?>
